@@ -132,7 +132,6 @@ buttonC.addEventListener("click", () => {
     buttonC.classList.add("active")
     listprojet.classList.add("colorC")
     buttonC.classList.add("up")
-    v = 100
     ReactDOM.render(<ProjetC />, listprojet)
 })
 buttonPython.addEventListener("click", desactiver)
@@ -140,35 +139,30 @@ buttonPython.addEventListener("click", () => {
     buttonPython.classList.add("active")
     listprojet.classList.add("colorPy")
     buttonPython.classList.add("up")
-    v = 100
     up(buttonPython)
 })
 buttonMDP.addEventListener("click", desactiver)
 buttonMDP.addEventListener("click", () => {
     buttonMDP.classList.add("active")
     buttonMDP.classList.add("up")
-    v = 100
     up(buttonMDP)
 })
 buttonBD.addEventListener("click", desactiver)
 buttonBD.addEventListener("click", () => {
     buttonBD.classList.add("active")
     buttonBD.classList.add("up")
-    v = 100
     up(buttonBD)
 })
 buttonHCJ.addEventListener("click", desactiver)
 buttonHCJ.addEventListener("click", () => {
     buttonHCJ.classList.add("active")
     buttonHCJ.classList.add("up")
-    v = 100
     up(buttonHCJ)
 })
 buttonLinux.addEventListener("click", desactiver)
 buttonLinux.addEventListener("click", () => {
     buttonLinux.classList.add("active")
     buttonLinux.classList.add("up")
-    v = 100
     up(buttonLinux)
 })
 contact.addEventListener("mouseover", () => {
