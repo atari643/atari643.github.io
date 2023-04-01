@@ -205,6 +205,35 @@ nav button{
     100%{box-shadow: 5px 5px 100px rgb(0,153,242);}
     
 }
+@keyframes ledHCJ {
+    0%{box-shadow: 5px 5px 100px #dd4b25;}
+    33%{box-shadow: 5px 5px 100px #2862e9;}
+    66%{box-shadow: 5px 5px 100px #efd81d;}
+    100%{box-shadow: 5px 5px 100px #dd4b25;}
+    
+}
+@keyframes ledMDP {
+    0%{box-shadow: 5px 5px 100px green;}
+    50%{box-shadow: 5px 5px 100px black;}
+    100%{box-shadow: 5px 5px 100px green;}
+}
+@keyframes ledBD {
+    0%{box-shadow: 5px 5px 100px #4a4a4a;}
+    50%{box-shadow: 5px 5px 100px #db5443;}
+    100%{box-shadow: 5px 5px 100px #4a4a4a;}
+}
+@keyframes ledLinux {
+    0%{box-shadow: 5px 5px 100px #d7d8d3;}
+    33%{box-shadow: 5px 5px 100px #000000;}
+    66%{box-shadow: 5px 5px 100px #f5ce10;}
+    100%{box-shadow: 5px 5px 100px #d7d8d3;}
+}
+@keyframes ledRS {
+    0%{box-shadow: 5px 5px 100px #d7d8d3;}
+    33%{box-shadow: 5px 5px 100px #000000;}
+    66%{box-shadow: 5px 5px 100px #f5ce10;}
+    100%{box-shadow: 5px 5px 100px #d7d8d3;}
+}
 .colorJava{
     animation-name: ledJ;
     animation-duration: 3s;
@@ -220,6 +249,32 @@ nav button{
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
+.colorHCJ{
+    animation-name: ledHCJ;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.colorMDP{
+    animation-name: ledMDP;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.colorBD{
+    animation-name: ledBD;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.colorLinux{
+    animation-name: ledLinux;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.colorRS{
+    animation-name: ledRS;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
 .image{
     margin: 50px;
     width: 65%;

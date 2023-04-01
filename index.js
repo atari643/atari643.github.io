@@ -5,6 +5,7 @@ var buttonPython = document.getElementById("Python")
 var buttonLinux = document.getElementById("Linux")
 var buttonMDP = document.getElementById("MDP")
 var buttonBD = document.getElementById("BD")
+var buttonRS = document.getElementById("RS")
 var allbutton = document.querySelectorAll("nav div")
 var listprojet = document.querySelector(".projet")
 var Portfolio = document.querySelector(".portFolio")
@@ -23,10 +24,10 @@ class Description extends React.Component{
 class ProjetJava extends React.Component {
     render() {
         const items = [
-            <img class='image odomo' src='./images/odomo.png' alt='odomo' />,
-            <img class='image biosphère' src='./images/tableBiosphère.png' alt='Biosphère' />,
+            <img class='image odomo' src='./images/java/projet-1/odomo.png' alt='odomo' />,
+            <img class='image biosphère' src='./images/java/projet-2/tableBiosphère.png' alt='Biosphère' />,
         ]
-        const java = <img class='logo' src='./images/javalogo.png' alt='javalogo'></img>
+        const java = <img class='logo' src='./images/java/javalogo.png' alt='javalogo'></img>
         const lis = items.map(item => <div><li>{java}{item}</li><i class="icofont-expand icofont-2x"></i></div>)
         return <ul>
             {lis}
@@ -40,7 +41,9 @@ class FenetreProjet extends React.Component {
             <h1>{this.props.title}</h1>
             <img class='reTEX' src={this.props.image}></img>
             <p>{this.props.text}</p>
-            <button class="Download"  href={this.props.url}><i class="icofont-download"></i>PDF</button>
+            <form action={this.props.url}>
+                <button class="Download" type="submit"><i class="icofont-download"></i>PDF</button>
+            </form>
         </div>
 }
 }
@@ -55,6 +58,74 @@ class ProjetC extends React.Component {
         </ul>
     }
 }
+class ProjetPy extends React.Component {
+    render() {
+        const items = [
+        ]
+        const Py = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
+        const lis = items.map(item => <div><li>{Py}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        return <ul>
+            {lis}
+        </ul>
+    }
+}
+class ProjetHCJ extends React.Component {
+    render() {
+        const items = [
+        ]
+        const HCJ = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
+        const lis = items.map(item => <div><li>{HCJ}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        return <ul>
+            {lis}
+        </ul>
+    }
+}
+class ProjetMDP extends React.Component {
+    render() {
+        const items = [
+        ]
+        const MDP = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
+        const lis = items.map(item => <div><li>{MDP}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        return <ul>
+            {lis}
+        </ul>
+    }
+}
+class ProjetBD extends React.Component {
+    render() {
+        const items = [
+        ]
+        const BD = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
+        const lis = items.map(item => <div><li>{BD}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        return <ul>
+            {lis}
+        </ul>
+    }
+}
+class ProjetLinux extends React.Component {
+    render() {
+        const items = [
+        ]
+        const Linux = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
+        const lis = items.map(item => <div><li>{Linux}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        return <ul>
+            {lis}
+        </ul>
+    }
+}
+class ProjetRS extends React.Component {
+    render() {
+        const items = [
+        ]
+        const RS = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
+        const lis = items.map(item => <div><li>{RS}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        return <ul>
+            {lis}
+        </ul>
+    }
+}
+
+
 
 afficher.addEventListener('click',()=>{
     ReactDOM.render(<Description/>, document.querySelector("#me"));
@@ -70,7 +141,11 @@ function desactiver() {
     listprojet.classList.remove("colorJava");
     listprojet.classList.remove("colorC")
     listprojet.classList.remove("colorPy")
-
+    listprojet.classList.remove("colorHCJ")
+    listprojet.classList.remove("colorMDP")
+    listprojet.classList.remove("colorBD")
+    listprojet.classList.remove("colorLinux")
+    listprojet.classList.remove("colorRS")
 }
 
 var etoileHaut = document.querySelector('.Top');
@@ -109,15 +184,14 @@ buttonJava.addEventListener("click", () => {
     
     var open = document.querySelectorAll(".icofont-expand")
     open.forEach((userItem) => {
-    console.log(userItem.parentElement.firstChild.lastChild.src)
     userItem.addEventListener("click",()=>{
-        if(userItem.parentElement.firstChild.lastChild.src=="http://127.0.0.1:5500/images/java/projet-1/odomo.png"){
+        if(userItem.parentElement.firstChild.lastChild.src=="https://atari643.github.io/images/java/projet-1/odomo.png"){
         ReactDOM.render(<FenetreProjet image={"./images/java/projet-1/projet-odomo.png"} text="Dans le projet odomo une grande difficulté c’était le sens de lecture dès valeur dans un tableau ou une matrice. La façon donc les valeurs sont agencés n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
-        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url="http://atari643.gihub.io/pdf/java/Portfolio-Quentin-java-1.pdf"></FenetreProjet>, document.querySelector(".window"))
-        }else if(userItem.parentElement.firstChild.lastChild.src=="http://127.0.0.1:5500/images/java/projet-2/tableBiosph%C3%A8re.png"){
+        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+        }else if(userItem.parentElement.firstChild.lastChild.src=="https://atari643.github.io/images/java/projet-2/tableBiosph%C3%A8re.png"){
             ReactDOM.render(<FenetreProjet image={"./images/java/projet-2/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux  qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation,
             jusqu’au niveau 11, du tableau des actions possibles selon les nouvelles règles de chaque niveau. La deuxième partie du projet a été pour moi la plus enrichissante avec l’implémentation d’une IA avec le choix de la méthode à suivre, 
-            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url="http://atari643.gihub.io/pdf/java/Portfolio-Quentin-java-2.pdf"></FenetreProjet>, document.querySelector(".window"))
+            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/java/Portfolio-Quentin-java-2.pdf"}></FenetreProjet>, document.querySelector(".window"))
         }
         document.querySelector(".window").classList.remove("cacher")
         document.querySelector(".icofont-close-line-circled").addEventListener("click",()=>{
@@ -129,6 +203,7 @@ buttonJava.addEventListener("click", () => {
 
     }
 )
+buttonRS
 buttonC.addEventListener("click", desactiver)
 buttonC.addEventListener("click", () => {
     buttonC.classList.add("active")
@@ -141,31 +216,42 @@ buttonPython.addEventListener("click", () => {
     buttonPython.classList.add("active")
     listprojet.classList.add("colorPy")
     buttonPython.classList.add("up")
-    up(buttonPython)
+    ReactDOM.render(<ProjetPy />, listprojet)
 })
 buttonMDP.addEventListener("click", desactiver)
 buttonMDP.addEventListener("click", () => {
     buttonMDP.classList.add("active")
     buttonMDP.classList.add("up")
-    up(buttonMDP)
+    listprojet.classList.add("colorMDP")
+    ReactDOM.render(<ProjetMDP />, listprojet)
 })
 buttonBD.addEventListener("click", desactiver)
 buttonBD.addEventListener("click", () => {
     buttonBD.classList.add("active")
     buttonBD.classList.add("up")
-    up(buttonBD)
+    listprojet.classList.add("colorBD")
+    ReactDOM.render(<ProjetBD />, listprojet)
 })
 buttonHCJ.addEventListener("click", desactiver)
 buttonHCJ.addEventListener("click", () => {
     buttonHCJ.classList.add("active")
     buttonHCJ.classList.add("up")
-    up(buttonHCJ)
+    listprojet.classList.add("colorHCJ")
+    ReactDOM.render(<ProjetHCJ />, listprojet)
 })
 buttonLinux.addEventListener("click", desactiver)
 buttonLinux.addEventListener("click", () => {
     buttonLinux.classList.add("active")
     buttonLinux.classList.add("up")
-    up(buttonLinux)
+    listprojet.classList.add("colorLinux")
+    ReactDOM.render(<ProjetLinux />, listprojet)
+})
+buttonRS.addEventListener("click", desactiver)
+buttonRS.addEventListener("click", () => {
+    buttonRS.classList.add("active")
+    listprojet.classList.add("colorRS")
+    buttonRS.classList.add("up")
+    ReactDOM.render(<ProjetRS />, listprojet)
 })
 contact.addEventListener("mouseover", () => {
     ligne.style.visibility = "visible"
