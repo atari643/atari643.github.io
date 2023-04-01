@@ -38,9 +38,9 @@ class FenetreProjet extends React.Component {
         return <div class="contenu">
             <i class="icofont-close-line-circled icofont-5x"></i>
             <h1>{this.props.title}</h1>
-            <img class='big' src={this.props.image}></img>
+            <img class='reTEX' src={this.props.image}></img>
             <p>{this.props.text}</p>
-            <button class="Download"><i class="icofont-download"></i>Download</button>
+            <button class="Download"  href={this.props.url}><i class="icofont-download"></i>PDF</button>
         </div>
 }
 }
@@ -48,7 +48,7 @@ class ProjetC extends React.Component {
     render() {
         const items = [
         ]
-        const C = <img class='logo' src='./images/javalogo.png' alt='javalogo' />
+        const C = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
         const lis = items.map(item => <div><li>{C}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
         return <ul>
             {lis}
@@ -106,16 +106,18 @@ buttonJava.addEventListener("click", () => {
         }
     }, 2000)
     var odomo = document.querySelector(".odomo")
+    
     var open = document.querySelectorAll(".icofont-expand")
     open.forEach((userItem) => {
+    console.log(userItem.parentElement.firstChild.lastChild.src)
     userItem.addEventListener("click",()=>{
-        if(userItem.parentElement.firstChild.lastChild.src=="https://atari643.github.io/images/odomo.png"){
-        ReactDOM.render(<FenetreProjet image={"./images/projet-odomo.png"} text="Dans le projet odomo une grande difficulté c’était le sens de lecture dès valeur dans un tableau ou une matrice. La façon donc les valeurs sont agencés n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
-        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique"></FenetreProjet>, document.querySelector(".window"))
-        }else if(userItem.parentElement.firstChild.lastChild.src=="https://atari643.github.io/images/tableBiosph%C3%A8re.png"){
-            ReactDOM.render(<FenetreProjet image={"./images/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux  qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation,
+        if(userItem.parentElement.firstChild.lastChild.src=="http://127.0.0.1:5500/images/java/projet-1/odomo.png"){
+        ReactDOM.render(<FenetreProjet image={"./images/java/projet-1/projet-odomo.png"} text="Dans le projet odomo une grande difficulté c’était le sens de lecture dès valeur dans un tableau ou une matrice. La façon donc les valeurs sont agencés n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
+        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url="http://atari643.gihub.io/pdf/java/Portfolio-Quentin-java-1.pdf"></FenetreProjet>, document.querySelector(".window"))
+        }else if(userItem.parentElement.firstChild.lastChild.src=="http://127.0.0.1:5500/images/java/projet-2/tableBiosph%C3%A8re.png"){
+            ReactDOM.render(<FenetreProjet image={"./images/java/projet-2/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux  qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation,
             jusqu’au niveau 11, du tableau des actions possibles selon les nouvelles règles de chaque niveau. La deuxième partie du projet a été pour moi la plus enrichissante avec l’implémentation d’une IA avec le choix de la méthode à suivre, 
-            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA"></FenetreProjet>, document.querySelector(".window"))
+            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url="http://atari643.gihub.io/pdf/java/Portfolio-Quentin-java-2.pdf"></FenetreProjet>, document.querySelector(".window"))
         }
         document.querySelector(".window").classList.remove("cacher")
         document.querySelector(".icofont-close-line-circled").addEventListener("click",()=>{
