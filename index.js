@@ -9,7 +9,7 @@ var buttonRS = document.getElementById("RS")
 var allbutton = document.querySelectorAll("nav div")
 var listprojet = document.querySelector(".projet")
 var Portfolio = document.querySelector(".portFolio")
-var contact = document.getElementById("Contact")
+var contact = document.getElementById("list")
 var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
 var afficher = document.querySelector("#afficher")
@@ -253,14 +253,15 @@ buttonRS.addEventListener("click", () => {
     buttonRS.classList.add("up")
     ReactDOM.render(<ProjetRS />, listprojet)
 })
-contact.addEventListener("mouseover", () => {
-    ligne.style.visibility = "visible"
-    ligne.classList.add("souligner")
-
-
-})
-contact.addEventListener("mouseout", () => {
-    ligne.style.visibility = "hidden"
-    ligne.classList.remove("souligner")
-
+contact.addEventListener("click", ()=>{
+    var lien = document.querySelector(".lien")
+    if( lien.classList[1]=="enroule"){
+        lien.classList.remove("enroule")
+        lien.classList.add("dérouler")
+        contact.textContent = "X"
+    }else{
+        lien.classList.remove("dérouler")
+        lien.classList.add("enroule")
+        contact.textContent = "Contact"
+    }
 })
