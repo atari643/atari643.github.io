@@ -28,7 +28,7 @@ class ProjetJava extends React.Component {
             <img class='image biosphère' src='./images/java/projet-2/tableBiosphère.png' alt='Biosphère' />,
         ]
         const java = <img class='logo' src='./images/java/javalogo.png' alt='javalogo'></img>
-        const lis = items.map(item => <div><li>{java}{item}</li><i class="icofont-expand icofont-2x"></i></div>)
+        const lis = items.map(item => <div><li><h1 class="resumer"></h1>{java}{item}</li><i class="icofont-expand icofont-2x"></i></div>)
         return <ul>
             {lis}
         </ul>
@@ -174,6 +174,9 @@ buttonJava.addEventListener("click", () => {
     listprojet.classList.add("colorJava")
     buttonJava.classList.add("up")
     ReactDOM.render(<ProjetJava />, listprojet)
+    var resume = document.querySelectorAll(".resumer")
+    resume[0].innerHTML="Completer un projet en cours <i class='icofont-check'></i>"
+    resume[1].innerHTML="Créer une IA à partir de rien <i class='icofont-check'></i>"
     var logo = document.querySelectorAll(".logo")
     setInterval(() => {
         for (var i = 0; i < logo.length; i++) {

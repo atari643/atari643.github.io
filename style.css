@@ -328,6 +328,14 @@ nav button{
     transition: 2s;
     transform: translateY(-5px);
 }
+.resumer{
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 15%;
+    color: green;
+    font-size: 100%;
+}
 
 .move {
     transition: 2s;
@@ -455,7 +463,7 @@ nav button{
     }
     nav{
         display: flex;
-        width: 70%;
+        width: 100%;
         height: 5%;
         justify-content: space-around;
         flex-direction: row;
@@ -475,6 +483,10 @@ nav button{
         flex-wrap: wrap;
         justify-content: space-around;
         font-size: 100%;
+    }
+    nav i{
+        margin-right: 100%;
+        margin-left: 100%;
     }
     nav button *{
         border: #01a203 dashed 1px;
@@ -655,4 +667,7 @@ nav button{
 .remonte{
     transform: translateY(0px);
     transition: 1s;
+}
+.icofont-expand{
+    color: rgba(255,255,255,0.4);
 }
