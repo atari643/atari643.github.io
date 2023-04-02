@@ -258,10 +258,14 @@ contact.addEventListener("click", ()=>{
     if( lien.classList[1]=="enroule"){
         lien.classList.remove("enroule")
         lien.classList.add("dérouler")
-        contact.textContent = "X"
+        contact.classList.remove("remonte")
+        contact.classList.add("decendre")
+        document.querySelector("#list i").classList.add("icofont-rotate-180")
     }else{
         lien.classList.remove("dérouler")
         lien.classList.add("enroule")
-        contact.textContent = "Contact"
+        contact.classList.remove("decendre")
+        contact.classList.add("remonte")
+        document.querySelector("#list i").classList.remove("icofont-rotate-180")
     }
 })
