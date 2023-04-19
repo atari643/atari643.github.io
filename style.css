@@ -64,7 +64,12 @@ header{
     display: flex;
     justify-content: center;
 }
-
+#java button:hover{
+    background-color: red;
+    color: white;
+    transition: 0.2s;
+    border: none;
+}
 @media screen and (min-width: 1665px){
     footer{
         position: fixed;
@@ -80,17 +85,18 @@ nav{
     display: flex;
     width: 80%;
     height: 100%;
-    justify-content: center;
+    justify-content: space-around;
+    
 }
 nav button{
     background-color: white;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
     width: 100%;
+    border-radius: 20px;
     padding-left: 50px;
     padding-right: 50px;
     height: var(--h);
-    cursor: pointer;  
+    cursor: pointer; 
+    border: none; 
     
 }
 .app{
@@ -98,6 +104,7 @@ nav button{
     height:5%;
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
 
 }
 :root{
@@ -106,6 +113,7 @@ nav button{
 
 .projet{
     border: solid white 1px;
+    border-radius: 3%;
     height: 100%;
     width: 80%;
     background-color: rgba(255, 255, 255, 0.1);
@@ -162,6 +170,7 @@ nav button{
         justify-content: center;
         flex-direction: column;
         margin-top: 240px;
+        
         
 
     }
@@ -464,6 +473,7 @@ nav button{
         flex-wrap: wrap;
         margin-top: 0px;
         margin-bottom: 100px;
+        
 
     }
     nav button{
