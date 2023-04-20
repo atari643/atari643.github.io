@@ -1,3 +1,30 @@
+class ButtonApp extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render(){
+        return <React.Fragment>
+            <div>
+                <button id={this.props.ide}>
+                    <i className={this.props.logo}></i>
+                </button>
+                <p>{this.props.name}</p>
+            </div>
+        </React.Fragment>
+    }
+}
+ReactDOM.render(
+    <nav>
+    <ButtonApp ide="java" logo="icofont-brand-java icofont-2x" name="java"/>
+    <ButtonApp ide="C" logo="icofont-brand-java icofont-2x" name="web"/>
+    <ButtonApp ide="HCJ" logo="icofont-brand-java icofont-2x" name="web"/>
+    <ButtonApp ide="Python" logo="icofont-brand-java icofont-2x" name="web"/>
+    <ButtonApp ide="Linux" logo="icofont-brand-java icofont-2x" name="web"/>
+    <ButtonApp ide="MDP" logo="icofont-brand-java icofont-2x" name="web"/>
+    <ButtonApp ide="BD" logo="icofont-brand-java icofont-2x" name="web"/>
+    <ButtonApp ide="RS" logo="icofont-brand-java icofont-2x" name="web"/>
+    </nav>
+    , document.querySelector(".app"))
 var buttonJava = document.getElementById("java")
 var buttonC = document.getElementById("C")
 var buttonHCJ = document.getElementById("HCJ")
@@ -13,6 +40,7 @@ var contact = document.getElementById("list")
 var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
 var afficher = document.querySelector("#afficher")
+
 
 class Description extends React.Component{
     render(){
@@ -125,12 +153,31 @@ class ProjetRS extends React.Component {
     }
 }
 
+class ListProjet extends React.Component {
+    render() {
+        return <ul id="Lliste"><div id="projetJava">
+            <h1>Java</h1>
+            <ProjetJava/>
+        </div>
+        <div id="projetWeb">
+            <h1>Java</h1>
+            <ProjetJava/>
+        </div>
+        <div id="projetHCJ">
+            <h1>Java</h1>
+            <ProjetJava/>
+        </div>
+        </ul>
+    }
+}
 
 
 afficher.addEventListener('click',()=>{
     ReactDOM.render(<Description/>, document.querySelector("#me"));
     document.querySelector("#me").classList.toggle("down");
 })
+
+ReactDOM.render(<ListProjet/>, document.querySelector(".list-projet"));
 function desactiver() {
     for (var i = 0; i < allbutton.length; i++) {
 

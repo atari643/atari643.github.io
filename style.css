@@ -30,11 +30,12 @@
     left: 5%;
 }
 body{
-    background-color: black;
+    background-color: white;
     height: 100vh;
     max-width: 100vw;
     display: flex;
     justify-content: center;
+    font-family: 'Centra', sans-serif !important;
     
 }
 .page{
@@ -48,6 +49,8 @@ body{
 header{
     display: flex;
     height: 80vh;
+    width: 80vw;
+    box-shadow: -10px -40px 80px cyan ;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -80,43 +83,61 @@ header{
         width: 70px;
         height: 70px;
     }
-
-nav{
-    display: flex;
-    width: 80%;
+.list-projet{
+    border: solid blue;
+    width: 75%;
     height: 100%;
-    justify-content: space-around;
-    
+    display: block !important;
 }
-nav button{
-    background-color: white;
+#projetJava{
+    border: solid;
+    display: flex;
+    flex-wrap: wrap;
+}
+#projetJava h1{
     width: 100%;
-    border-radius: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    height: var(--h);
-    cursor: pointer; 
-    border: none; 
-    
+
 }
 .app{
-    width: 100%;
-    height:5%;
+    width: 25%;
+    height:80%;
+    margin-top: 5%;
     display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
+    border-radius: 5%;
 
 }
+.app div{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 20%;
+    width: 33%;
+}
+.app nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.app button{
+    border-radius: 100%;
+    width: 100%;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 50%;
+    cursor: pointer;
+    border: none;
+}
 :root{
-    --h:100%
+    --h:30%
 }
 
 .projet{
-    border: solid white 1px;
-    border-radius: 3%;
-    height: 100%;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.1);
+    height: 100vh;
+    width: 100vw; 
+    display: flex;
 }
 }
 
@@ -190,7 +211,7 @@ nav button{
         border: solid white 1px;
         height: 100%;
         width: 80%;
-        background-color: rgba(255, 255, 255, 0.1);
+        
     }
     }
 @keyframes ledJ {
@@ -297,17 +318,15 @@ nav button{
 }
 .projet ul{
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
+    height: 500px;
+    width: 100%;
 }
 .projet div{
-    width: 33%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    
-    
 }
 .icofont-close{
     position: absolute;
@@ -329,6 +348,9 @@ nav button{
     border-top: 30px solid rgba(255, 255, 255, 0.1);
 
 }
+.projet img{
+    display: none;
+}
 
 .logo{
     width: 10%;
@@ -340,10 +362,10 @@ nav button{
 .resumer{
     width: 100%;
     position: absolute;
-    margin-top: 10px;
     margin-left: 15%;
     color: green;
     font-size: 100%;
+    bottom: 5px;
 }
 
 .move {
@@ -379,7 +401,7 @@ nav button{
 }
 .contenu h1{
     position: absolute;
-    color: white;
+    color: black;
     width: 50%;
     height: 8%;
     left: 10%;
@@ -387,7 +409,7 @@ nav button{
     border-bottom: solid white 10px;
 }
 #afficher{
-    color: white;
+    color: black;
     cursor: pointer;
     position: absolute;
     top: 60%;
@@ -399,7 +421,7 @@ nav button{
     width: 40%;
     margin-top: 10px;
     font-size: 100%;
-    color: white;
+    color: black;
 
 }
 
@@ -416,7 +438,7 @@ nav button{
     transition: 0.1s;
 }
 #Presentation{
-    color: white;
+    color: black;
     margin-left: 4%;
     margin-bottom: 10%;
     
@@ -437,7 +459,7 @@ nav button{
 
 .contenu p{
     position: absolute;
-    color: white;
+    color: black;
     width: 25%;
     top: 20%;
     text-align: justify;
