@@ -133,10 +133,8 @@ afficher.addEventListener('click',()=>{
 })
 function desactiver() {
     for (var i = 0; i < allbutton.length; i++) {
-
-        allbutton[i].classList.remove("up");
+        allbutton[i].classList.remove("color");
         allbutton[i].style.setProperty('--h', 100 + '%')
-
     }
     listprojet.classList.remove("colorJava");
     listprojet.classList.remove("colorC")
@@ -172,7 +170,7 @@ let animation = setInterval((e) => {
 buttonJava.addEventListener("click", desactiver)
 buttonJava.addEventListener("click", () => {
     listprojet.classList.add("colorJava")
-    buttonJava.classList.add("up")
+    buttonJava.classList.add("color")
     ReactDOM.render(<ProjetJava />, listprojet)
     var resume = document.querySelectorAll(".resumer")
     resume[0].innerHTML="Completer un projet en cours <i class='icofont-check'></i>"
