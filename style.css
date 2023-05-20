@@ -80,7 +80,10 @@ header{
         width: 70px;
         height: 70px;
     }
-
+.poste{
+    scale: 1;
+    border: solid;
+}
 nav{
     display: flex;
     width: 80%;
@@ -283,7 +286,7 @@ nav button{
 
 .image{
     margin: 50px;
-    width: 65%;
+    width: 75%;
 }
 .java2{
     position: absolute;
@@ -299,9 +302,14 @@ nav button{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    height: 60%;
+    
 }
 .projet div{
     width: 33%;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,10 +331,8 @@ nav button{
 }
 
 .projet li{
-    border: solid 1px black;
     width: 90%;
     height: 90%;
-    border-top: 30px solid rgba(255, 255, 255, 0.1);
 
 }
 

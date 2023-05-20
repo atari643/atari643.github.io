@@ -105,9 +105,10 @@ class ProjetBD extends React.Component {
 class ProjetLinux extends React.Component {
     render() {
         const items = [
+            <img class='image poste' src='./images/Linux/schemaPoste.png' alt='Poste' />,
         ]
         const Linux = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
-        const lis = items.map(item => <div><li>{Linux}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        const lis = items.map(item => <div><li><h1 class="resumer"></h1>{Linux}{item}</li><i class="icofont-expand icofont-2x"></i></div>)
         return <ul>
             {lis}
         </ul>
@@ -248,7 +249,35 @@ buttonLinux.addEventListener("click", () => {
     buttonLinux.classList.add("up")
     listprojet.classList.add("colorLinux")
     ReactDOM.render(<ProjetLinux />, listprojet)
+    var resume = document.querySelectorAll(".resumer")
+    resume[0].innerHTML="Installation d’une machine virtuelle <i class='icofont-check'></i>"
+    var logo = document.querySelectorAll(".logo")
+    setInterval(() => {
+        for (var i = 0; i < logo.length; i++) {
+            logo[i].classList.toggle("move")
+        }
+    }, 2000)
+    var odomo = document.querySelector(".odomo")
+    
+    var open = document.querySelectorAll(".icofont-expand")
+    open.forEach((userItem) => {
+    userItem.addEventListener("click",()=>{
+        if(userItem.parentElement.firstChild.lastChild.src=="http://127.0.0.1:5500/images/Linux/schemaPoste.png"){
+        ReactDOM.render(<FenetreProjet image={"./images/Linux/installerPoste.jpg"} text="Dans le projet odomo une grande difficulté c’était le sens de lecture dès valeur dans un tableau ou une matrice. La façon donc les valeurs sont agencés n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
+        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+        }else if(userItem.parentElement.firstChild.lastChild.src=="https://atari643.github.io/images/java/projet-2/tableBiosph%C3%A8re.png"){
+            ReactDOM.render(<FenetreProjet image={"./images/java/projet-2/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux  qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation,
+            jusqu’au niveau 11, du tableau des actions possibles selon les nouvelles règles de chaque niveau. La deuxième partie du projet a été pour moi la plus enrichissante avec l’implémentation d’une IA avec le choix de la méthode à suivre, 
+            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/java/Portfolio-Quentin-java-2.pdf"}></FenetreProjet>, document.querySelector(".window"))
+        }
+        document.querySelector(".window").classList.remove("cacher")
+        document.querySelector(".icofont-close-line-circled").addEventListener("click",()=>{
+            ReactDOM.render(<FenetreProjet image={""} text="" title=""></FenetreProjet>, document.querySelector(".window"))
+            document.querySelector(".window").classList.add("cacher")
+        })
+    })
 })
+});
 buttonRS.addEventListener("click", desactiver)
 buttonRS.addEventListener("click", () => {
     buttonRS.classList.add("active")
