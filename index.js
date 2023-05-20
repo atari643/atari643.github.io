@@ -14,6 +14,8 @@ var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
 var afficher = document.querySelector("#afficher")
 
+
+
 class Description extends React.Component{
     render(){
         return <div id="Description">
@@ -30,8 +32,20 @@ class ProjetJava extends React.Component {
         const java = <img class='logo' src='./images/java/javalogo.png' alt='javalogo'></img>
         const lis = items.map(item => <div><li><h1 class="resumer"></h1>{java}{item}</li><i class="icofont-expand icofont-2x"></i></div>)
         return <ul>
-            {lis}
+            <ItemProjet logo={java.props.src} altL={java.props.alt} type={items[0].props.class} image={items[0].props.src} altP={items[0].props.alt} title="OK"></ItemProjet>
+            <ItemProjet logo={java.props.src} altL={java.props.alt} type={items[0].props.class} image={items[0].props.src} altP={items[0].props.alt} title="OK"></ItemProjet>
+            <ItemProjet logo={java.props.src} altL={java.props.alt} type={items[0].props.class} image={items[0].props.src} altP={items[0].props.alt} title="OK"></ItemProjet>
         </ul>
+    }
+}
+
+class ItemProjet extends React.Component {
+    render(){
+        const logo = <img className='logo' src={this.props.logo} alt={this.props.altL}></img>
+        const projet = <img className={this.props.type} src={this.props.image} alt={this.props.altP} />
+        return <li className="content">
+            <h1 className="resumer">{this.props.title}<i class='icofont-check'></i></h1>{logo}{projet}
+            </li>
     }
 }
 class FenetreProjet extends React.Component {

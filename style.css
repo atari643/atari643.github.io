@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: 'Centra', sans-serif !important;
     
 }
 .etoile{
@@ -30,7 +31,7 @@
     left: 5%;
 }
 body{
-    background-color: black;
+    background: no-repeat url(test\ \(2\).jpg);
     height: 100vh;
     max-width: 100vw;
     display: flex;
@@ -80,7 +81,26 @@ header{
         width: 70px;
         height: 70px;
     }
-
+.content{
+    display: flex;
+    width:auto;
+    height: 40%;
+    margin-top: 5%;
+    width: 20%;
+    
+}
+.content .image{
+    width: 380px;
+    height: 303px;
+    border-radius: 1%;
+}
+.content .logo{
+    width: 6%;
+}
+.projet ul{
+    height: 100%;
+    justify-content: space-around;
+}
 nav{
     display: flex;
     width: 80%;
@@ -97,6 +117,7 @@ nav button{
     height: var(--h);
     cursor: pointer; 
     border: none; 
+    
     
 }
 .app{
@@ -115,9 +136,10 @@ nav button{
     border: solid white 1px;
     border-radius: 3%;
     height: 100%;
-    width: 80%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
 }
+
 }
 
 .portFolio{
@@ -281,10 +303,6 @@ nav button{
     animation-iteration-count: infinite;
 }
 
-.image{
-    margin: 50px;
-    width: 65%;
-}
 .java2{
     position: absolute;
     margin-left:100px;
@@ -322,13 +340,7 @@ nav button{
     cursor: pointer;
 }
 
-.projet li{
-    border: solid 1px black;
-    width: 90%;
-    height: 90%;
-    border-top: 30px solid rgba(255, 255, 255, 0.1);
 
-}
 
 .logo{
     width: 10%;
@@ -341,7 +353,7 @@ nav button{
     width: 100%;
     position: absolute;
     margin-top: 10px;
-    margin-left: 15%;
+    margin-left: 10%;
     color: green;
     font-size: 100%;
 }
