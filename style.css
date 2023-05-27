@@ -1,4 +1,4 @@
-*{
+*:not(p){
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,6 +29,7 @@
     bottom: 9.5%;
     left: 5%;
 }
+
 body{
     background-color: black;
     height: 100vh;
@@ -45,30 +46,84 @@ body{
     justify-content: center;
     
 }
-header{
+.center{
     display: flex;
-    height: 80vh;
-    position: relative;
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
+}
+.image.profil{
+    width: 50vw !important;
+    height: 100vh !important;
+}
+.profile{
+    width: 50% !important;
+    border-radius: 10% !important;
+}
+header{
+    display: flex;
+    height: 100vh;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: calc(10px + 2vmin);
+    background-color: #282c34;
+    color: white;
 }
 
-#profil img{
-    border-radius: 300px;
-    width : 50%;
-    height : 50%;
+.info{
+    margin-left: 40px;
 }
-#profil{
-    width: 50%;
+.projet ul div:hover{
+    filter: brightness(0.5);
+    cursor: pointer;
+}
+.title{
+    height: 10vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
 }
-#java button:hover{
-    background-color: red;
-    color: white;
+.projet ul div{
+    background-color: #000000;
+}
+#HCJ button:hover{
+    background: rgb(227,76,38);
+    background: linear-gradient(180deg, rgba(227,76,38,1) 45%, rgba(0, 0, 0, 0) 45%), linear-gradient(110deg, rgba(41,97,241,1) 66%, rgba(240,219,79,1) 66%);
     transition: 0.2s;
-    border: none;
+}
+#java button:hover{
+    background: rgb(227,76,38);
+}
+#C button:hover{
+    background: purple
+}
+#Python button:hover{
+    background-color: #000000;
+}
+.Acess{
+    display: flex;
+    justify-content: space-around;
+}
+.Acess button{
+    width: 200px;
+    height: 80px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border-left: gray solid;
+    border-right: black solid ;
+    border-bottom: black solid;
+    border-top: gray solid ;
+}
+.Acess button:hover{
+    border-left: black solid;
+    border-right: grey solid ;
+    border-bottom: black solid;
+    border-top: grey solid ;
+    transition: 0.5s;
+    
 }
 @media screen and (min-width: 1665px){
     footer{
@@ -80,10 +135,7 @@ header{
         width: 70px;
         height: 70px;
     }
-.poste{
-    scale: 1;
-    border: solid;
-}
+
 nav{
     display: flex;
     width: 80%;
@@ -92,19 +144,25 @@ nav{
     
 }
 nav button{
-    background-color: white;
     width: 100%;
-    border-radius: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    border-radius: 100%;
     height: var(--h);
     cursor: pointer; 
-    border: none; 
+    transition: 0.2s;
+    scale: 1.2;
     
 }
-.app{
+nav button:hover{
+    scale: 1.5;
+    border: none;
+    transition: 0.2s;
+}
+nav div{
+    width: 10%;
+    height: 100%;
+}
+#app{
     width: 100%;
-    height:5%;
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
@@ -118,9 +176,15 @@ nav button{
     border: solid white 1px;
     border-radius: 3%;
     height: 100%;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.1);
+    width: 95%;
+    background-color: rgba(255, 255, 255,1);
 }
+.projet ul li{
+    height: 100%;
+}
+}
+.projet{
+    border-radius: 3%;
 }
 
 .portFolio{
@@ -149,11 +213,15 @@ nav button{
 }
 
 @media screen and (max-width: 1665px){
-    .app{
+    #app{
         width: 100%;
-        height:5%;
+        height: 70vh;
         display: flex;
+        justify-content: center;
     
+    }
+    .projet ul div{
+        width: 47%;
     }
     footer{
         position: fixed;
@@ -168,32 +236,39 @@ nav button{
     }
     nav{
         display: flex;
-        width: 10%;
-        height: 5%;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 240px;
-        
-        
-
+        width: 75vw;
+        height: 50%;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        margin-bottom: 100px;
     }
     nav button{
-        background-color: white;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+        border-radius: 100%;
         width: 100%;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        height: 100%;
-        cursor: pointer;
+        height: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 100%;
+        padding: 0;
         
         
+    }
+    #RS button{
+        height: 250px;
+        width: 100%;
+    }
+    nav div {
+        width: 25%;
+        margin: 10px;
     }
     .projet{
         border: solid white 1px;
-        height: 100%;
         width: 80%;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255,1);
     }
     }
 @keyframes ledJ {
@@ -288,6 +363,11 @@ nav button{
     margin: 50px;
     width: 75%;
 }
+.poste{
+    width: 100%;
+    height: 75%;
+    margin-left: 0px;
+}
 .java2{
     position: absolute;
     margin-left:100px;
@@ -302,12 +382,12 @@ nav button{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    height: 60%;
+
     
 }
 .projet div{
     width: 33%;
-    margin-top: 10px;
+    margin: 10px;
     border-radius: 20px;
     border: solid;
     display: flex;
@@ -335,6 +415,10 @@ nav button{
     height: 90%;
 
 }
+.retourner{
+    transform: rotateY(180deg);
+    transition: 2s;
+}
 
 .logo{
     width: 10%;
@@ -343,13 +427,19 @@ nav button{
     transition: 2s;
     transform: translateY(-5px);
 }
+.lang{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+}
 .resumer{
     width: 100%;
     position: absolute;
-    margin-top: 10px;
-    margin-left: 15%;
-    color: green;
-    font-size: 100%;
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .move {
@@ -408,12 +498,15 @@ nav button{
     color: white;
 
 }
-
+hr{
+    color: white;
+    background-color: white;
+    width: 100%;
+    height: 10px;
+}
 #me{
-    position: absolute;
-    top: 60%;
-    left: 15%;
-    visibility: hidden;
+    align-items: center;
+    text-align: center;
     
 }
 .down{
@@ -423,8 +516,7 @@ nav button{
 }
 #Presentation{
     color: white;
-    margin-left: 4%;
-    margin-bottom: 10%;
+    text-align: center;
     
 }
 .Download{
@@ -452,17 +544,36 @@ nav button{
     padding-left: 60px;
     padding-top: 30px;
 }
-
+.logo{
+    visibility: hidden!important;
+}
+@media screen and (min-width:600px) and (max-width:1050px) {
+    .window p{
+        top: 50vh !important;
+        left: 10%;
+        width: 60%;
+        padding-left: 0px;
+    }
+    
+}
 
 @media screen and (max-width:1050px) {
-    .app{
+    #app{
         width: 100%;
-        height:300px;
+        height: 70vh;
         display: flex;
         justify-content: center;
+        
+    }
+    .poste{
+        height: 70%;
+        width: 80%;
+    }
+    .window{
+        height: 100vh;
+        overflow: scroll;
     }
     .window p{
-        top: 65%;
         left: 10%;
         width: 60%;
         padding-left: 0px;
@@ -479,31 +590,32 @@ nav button{
         flex-wrap: wrap;
         margin-top: 0px;
         margin-bottom: 100px;
-        
-
+    }
+    .resumer{
+        font-size: 50px;
+    }
+    .image{
+        margin-left: 25px;
+        margin-top: 25px;
+    }
+    .projet ul li{
+        width: 100%;
+        height: 100%;
     }
     nav button{
-        background-color: black;
-        border-radius: 0px;
-        width: 100%;
-        height: 88%;
-        color: #01a203;
-        border: #01a203 dashed 1px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        border-radius: 100%;
+        width: 200px;
+        height: 170px;
+        justify-content: center;
         font-size: 100%;
+        padding: 0;
     }
     nav i{
         margin-right: 100%;
         margin-left: 100%;
     }
-    nav button *{
-        border: #01a203 dashed 1px;
-        color: #01a203;
-    }
     nav div{
-        width: 25%;
+        width: 40%;
         margin: 10px;
     }
     .projet ul div{
@@ -517,15 +629,21 @@ nav button{
         position: absolute;
         color: white;
         width: 65%;
-        height: 8%;
+        height: 12%;
         left: 10%;
         top: 5%;
         border-bottom: solid white 10px;
     }
 }
-@media screen and (max-height:732px) {
+@media screen and (max-height:850px) and (max-width: 1665px) {
+    #app{
+        height: 700px;
+    }
+}
+@media screen and (max-height:732px) and (max-width:390px) {
     .window{
         height: 100vh;
+        width: 50vw;
         overflow-y: scroll;
         scrollbar-color: rebeccapurple green;
         scrollbar-width: thin;
@@ -542,9 +660,12 @@ nav button{
         width: 65%;
         top: 550px;
         text-align: justify;
-        right: 5%;
+        left: 10% !important;
         border-top: 10px solid white;
         padding-top: 30px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
     .contenu h1{
         position: absolute;
@@ -586,6 +707,22 @@ nav button{
     .projet ul div{
         width: 100%;
     }
+    header{
+        flex-direction: column!important;
+    }
+    .info{
+        margin-bottom: 200px;
+        width: 90%;
+        height: 50%;
+        margin-left: 0;
+    }
+    #Presentation{
+        margin-left: 0%;
+    }
+    .poste{
+        height: 70%;
+        width: 80%;
+    }
     
 }
 .icofont-close-line-circled{
@@ -611,9 +748,10 @@ nav button{
 }
 .contact{
     width: 100%;
-    height: 15%;
+    height: 10%;
     position: fixed;
     z-index: 1;
+    display: none;
 }
 #linkedin button{
     background-color: #0a63bc;
@@ -664,11 +802,15 @@ nav button{
     transform: translateY(-100px);
     position: fixed;
     transition: 1s;
+    display: none !important;
 }
 .dérouler{
     transform: translateY(0px);
     position: fixed;
     transition: 1s;
+}
+.bold{
+    font-weight: bold;
 }
 #list{
     position: fixed;
@@ -678,6 +820,8 @@ nav button{
     height: 50px;
     border-radius: 20%;
     background-color: white;
+    cursor: pointer;
+    z-index: 1;
 }
 .decendre{
     transform: translateY(+100px);
@@ -689,4 +833,10 @@ nav button{
 }
 .icofont-expand{
     color: rgba(255,255,255,0.4);
+}
+.suivant{
+    color:white;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
 }

@@ -24,8 +24,10 @@
                     <button type="submit"><i class="icofont-linkedin icofont-2x"></i><p>linkedin</p></button>
                 </form>
             </ul>
-            <button id="list"><i class="icofont-arrow-down"></i>Contact</button>
+            
     </div>
+    <button id="list">
+        <i class="icofont-arrow-down"></i>Contact</button>
     <div class="page">
         <header>
             <div class="animation">
@@ -34,29 +36,38 @@
                 <div class="etoile Left"></div>
                 <div class="etoile Bottom"></div>
             </div>
-            <h1 id="Presentation">
-                Bienvenue dans mon PortFolio
-            </h1>
-            <a id="afficher">
-                en savoir +
-            </a>
-            <div id="me">
-                
+            <div class="center image profil">
+                <img class="profile" src="./images/profil.jpg" alt="profil">
             </div>
-            <div id="profil">
-                <img src="images/profil.jpg" alt="">
+            <div class="info">
+                <h1 id='Presentation' class="bold">
+                    Bienvenue sur mon portFolio de développeur: 
+                </h1>
+                <div id="me">
+                    <p>Passionner par l'informatique à l'âge de 10 ans,</p>
+                    <p>il cherche un moyen d'en apprendre toujours</p>
+                    <p>plus dans tous les langages.</p>
+                </div>
+                <div class='Acess'>
+                    <a href="#Experience"><button>Mes Expériences</button> </a>
+                    <button>Mes Activités Extérieurs</button> 
+                </div>
             </div>
         </header>
-        <div class="app">
+        <hr/>
+        <div class="title" id="Experience">
+            <h1 style="color:white">Mes Expériences:</h1>
+        </div>
+        <div id="app">
             <nav>
-                <div id="java"><button><i class="icofont-brand-java icofont-2x"></i>Java</button></div>
-                <div id="HCJ"><button>Web</button></div>
-                <div id="C"><button>C#</button></div>
-                <div id="Python"><button><i class="icofont-file-python icofont-2x"></i>Python</button></div>
-                <div id="MDP"><button>Management de projet</button></div>
-                <div id="BD"><button><i class="icofont-database icofont-2x"></i>Base de donnée</button></div>
-                <div id="Linux"><button><i class="icofont-penguin-linux icofont-2x"></i>Linux</button></div>
-                <div id="RS"><button><i class="icofont-network icofont-2x"></i>Réseau</button></div>
+                <div id="java"><button><img class="lang" src="./images/logo/logoJava/1.png"></button></div>
+                <div id="HCJ"><button><img class="lang" src="./images/logo/logoWeb/1.png"></button></div>
+                <div id="C"><button><img class="lang" src="./images/logo/logoC/1.png"></button></div>
+                <div id="Python"><button><img class="lang" src="./images/logo/logoPython/1.png"></button></div>
+                <!-- <div id="MDP"><button>Management de projet</button></div> -->
+                <div id="BD"><button><img class="lang" src="./images/logo/logoSql/1.png"></button></div>
+                <div id="Linux"><button><img class="lang" src="./images/logo/logoSetup/1.png"></button></div>
+                <!-- <div id="RS"><button><i class="icofont-network icofont-2x"></i>Réseau</button></div> -->
 
             </nav>
         </div>
