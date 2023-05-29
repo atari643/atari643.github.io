@@ -204,11 +204,11 @@ buttonJava.addEventListener("click", () => {
             setTimeout(() => {
                 if (userItem.children[1].lastChild.src == "https://atari643.github.io/images/java/projet-1/odomo.png") {
                     ReactDOM.render(<FenetreProjet image={"./images/java/projet-1/projet-odomo.png"} text="Dans le projet odomo une grande difficulté c’était le sens de lecture dès valeur dans un tableau ou une matrice. La façon donc les valeurs sont agencés n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
-        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 } else if (userItem.children[1].lastChild.src == "https://atari643.github.io/images/java/projet-2/tableBiosph%C3%A8re.png") {
                     ReactDOM.render(<FenetreProjet image={"./images/java/projet-2/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux  qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation,
             jusqu’au niveau 11, du tableau des actions possibles selon les nouvelles règles de chaque niveau. La deuxième partie du projet a été pour moi la plus enrichissante avec l’implémentation d’une IA avec le choix de la méthode à suivre, 
-            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/java/Portfolio-Quentin-java-2.pdf"}></FenetreProjet>, document.querySelector(".window"))
+            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-2.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 }
                 document.querySelector(".window").classList.remove("cacher")
                 document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
@@ -304,7 +304,7 @@ buttonBD.addEventListener("click", () => {
         dynamique en matière de liberté de référence (artiste). Le thème de la qualité des données
         est extrêmement important et je pense que l’avoir traité est primordial. Aujourd’hui, le
         modèle économique mondial tant énormément dans la collecte, le traitement et l’utilisation
-        des données comme nouvelle monnaie." title="Projet Base de données pour un festival" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/SQL/Portfolio-Quentin-SQL-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+        des données comme nouvelle monnaie." title="Projet Base de données pour un festival" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/SQL/Portfolio-Quentin-SQL-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 }
                 document.querySelector(".window").classList.remove("cacher")
                 document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
@@ -339,7 +339,10 @@ buttonHCJ.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
                 if (userItem.children[1].lastChild.src == "https://atari643.github.io/images/HCJ/maquetteSite.png") {
-                    ReactDOM.render(<FenetreProjetWeb image={"./images/HCJ/maquetteSite.png"} link={"https://atari643.github.io/projetWeb.github.io/Projet.html"} text="Pour notre projet web, nous avons réalisé un personas d'étudiant en gestion recherchant des exemples de présentation d'entreprise. Nous avons créé une maquette sur Google Sites et l'avons finalisée rapidement. Ensuite, nous avons développé le site en respectant la maquette, en travaillant sur sa responsivité. Nous avons ajouté une page en anglais et créé un deuxième personas de professeur cherchant des exemples de présentation. Enfin, nous avons rédigé la présentation de notre projet et validé le site par W3C." title="Projet de création d'un site web : Cliquer sur image" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/web/Portfolio-Quentin-web-1.pdf"}></FenetreProjetWeb>, document.querySelector(".window"))
+                    ReactDOM.render(<FenetreProjetWeb image={"./images/HCJ/maquetteSite.png"} link={"https://atari643.github.io/projetWeb.github.io/Projet.html"} 
+                    text="Pour notre SAE web, nous avons divisé notre temps de projet en quatre parties. La première étape concerne la réalisation du personas . Ce dernier représente le type de personne qu'on vise lors de la création de notre site web. Nous avons choisi de viser une personne étudiant dans une école de gestion qui cherche des exemples de présentation d'entreprise. Cette dernière comprenant au moins une présentation des 7 fonctions et une analyse PESTEL.
+                    La deuxième partie concerne la création de la maquette de notre site. Réalisée sur Google site, il nous a fallu très peu de temps pour avoir le squelette de cette dernière. Après quelques rajout de détailles, elle était enfin prête (vous trouverez ci-joint le lien pour avoir une image de notre maquette. Nous avons aussi pris le temps de choisir des images libre de droit
+                    Pour lire la suite + : <a src='https://atari643.github.io/projetWeb.github.io/'>Clique ici</a>" title="Projet de création d'un site web : Cliquer sur image" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/web/Portfolio-Quentin-web-1.pdf"}></FenetreProjetWeb>, document.querySelector(".window"))
                 }
                 document.querySelector(".window").classList.remove("cacher")
                 document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
@@ -372,7 +375,7 @@ buttonLinux.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
                 if (userItem.children[1].lastChild.src == "https://atari643.github.io/images/Linux/schemaPoste.jpg") {
-                    ReactDOM.render(<FenetreProjet image={"./images/Linux/installerPoste.jpg"} text="Le projet est une installation de poste pour un client souhaitant que nous lui configurions une Machine Virtuelle pour son équipe de développeurs utilisant golang pour du développement de jeux vidéo. Ce projet nous a permis de développer nos capacités d’administrateur machine comme par exemple créer des utilisateurs, installer certains programmes et surtout configurer une machine et son environnement pour qu’elle soit fonctionnelle." title="Installation d'un Poste pour un Client" url={"https://github.com/atari643/atari643.github.io/raw/main/pdf/setup/Portfolio-Quentin-setup-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+                    ReactDOM.render(<FenetreProjet image={"./images/Linux/installerPoste.jpg"} text="Le projet est une installation de poste pour un client souhaitant que nous lui configurions une Machine Virtuelle pour son équipe de développeurs utilisant golang pour du développement de jeux vidéo. Ce projet nous a permis de développer nos capacités d’administrateur machine comme par exemple créer des utilisateurs, installer certains programmes et surtout configurer une machine et son environnement pour qu’elle soit fonctionnelle." title="Installation d'un Poste pour un Client" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/setup/Portfolio-Quentin-setup-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 }
                 document.querySelector(".window").classList.remove("cacher")
                 document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
