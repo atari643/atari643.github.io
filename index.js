@@ -13,7 +13,7 @@ var contact = document.getElementById("list")
 var contact2 = document.querySelector(".contact")
 var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
-var lienSite = "http://127.0.0.1:5500"
+var lienSite = "https://atari643.github.io"
 const lien = <h1 class="suivant">Resumer <i class="icofont-arrow-right"></i></h1>
 class ProjetJava extends React.Component {
     render() {
