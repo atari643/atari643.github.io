@@ -52,7 +52,7 @@ body{
     align-items: center;
 }
 .image.profil{
-    width: 50vw !important;
+    width: 50vw;
     height: 100vh !important;
 }
 .profile{
@@ -106,8 +106,10 @@ header{
     justify-content: space-around;
 }
 .Acess button{
-    width: 200px;
-    height: 80px;
+    width: 40vw;
+    height: 10vh;
+    max-width: 200px;
+    max-height: 80px;
     border-radius: 50px;
     cursor: pointer;
     color: white;
@@ -359,9 +361,9 @@ nav div{
     animation-iteration-count: infinite;
 }
 
-.image{
-    margin: 50px;
-    width: 75%;
+.projet .image{
+    margin: 50px !important;
+    width: 75%!important;
 }
 .poste{
     width: 100%;
@@ -437,7 +439,7 @@ nav div{
     width: 100%;
     position: absolute;
     color: white;
-    font-size: 70px;
+    font-size: 40px;
     text-align: center;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -541,7 +543,7 @@ hr{
     text-align: justify;
     right: 5%;
     border-top: 10px solid white;
-    padding-left: 60px;
+    margin-left: 60px;
     padding-top: 30px;
 }
 .logo{
@@ -552,7 +554,7 @@ hr{
         top: 50vh !important;
         left: 10%;
         width: 60%;
-        padding-left: 0px;
+        margin-left: 0px;
     }
     
 }
@@ -592,11 +594,7 @@ hr{
         margin-bottom: 100px;
     }
     .resumer{
-        font-size: 50px;
-    }
-    .image{
-        margin-left: 25px;
-        margin-top: 25px;
+        font-size: 30px;
     }
     .projet ul li{
         width: 100%;
@@ -604,8 +602,8 @@ hr{
     }
     nav button{
         border-radius: 100%;
-        width: 200px;
-        height: 170px;
+        max-width: 200px;
+        max-height: 170px;
         justify-content: center;
         font-size: 100%;
         padding: 0;
@@ -633,6 +631,81 @@ hr{
         left: 10%;
         top: 5%;
         border-bottom: solid white 10px;
+    }
+}
+@media screen and (max-height:847px) {
+    .window{
+        height:900px;
+        overflow: scroll;
+    }
+}
+@media screen and (max-width:600px) {
+    .window p{
+        top: 50vh !important;
+        margin-left: 0px;
+    }
+}
+    
+@media screen and (max-width:1050px) {
+    .window p{
+        top: 500px !important;
+        margin-left: 0px;
+        width: 500px;
+        height: 500px;
+    }
+    .window .contenu{
+        width: 500px;
+    }
+    .contenu .reTEX{
+        width: 500px;
+    }
+    .Download{
+        top: 90%;
+        width: 510px;
+        border-radius: 10px;
+        left:10%;
+    }
+}
+@media screen and (max-height:744px) and (min-width:1050px) {
+    .window p{
+        top: 500px !important;
+        margin-left: 0px;
+        width: 70vw !important;
+        height: 500px;
+        left: 10%;
+    }
+    .window .contenu{
+        width: 500px;
+    }
+    .contenu .reTEX{
+        width: 500px;
+    }
+    .Download{
+        top: 0%;
+        width: 510px;
+        border-radius: 10px;
+        left:10%;
+    }
+}
+@media screen and (max-height:744px) {
+    .window p{
+        top: 500px !important;
+        margin-left: 0px;
+        width: 500px;
+        height: 500px;
+        left: 10%;
+    }
+    .window .contenu{
+        width: 500px;
+    }
+    .contenu .reTEX{
+        width: 500px;
+    }
+    .Download{
+        top: 600px;
+        width: 100px;
+        border-radius: 10px;
+        left:90%;
     }
 }
 @media screen and (max-height:850px) and (max-width: 1665px) {
@@ -703,7 +776,15 @@ hr{
         cursor: pointer;
     }
 }
+@media screen and (max-width:558px) {
+    div.image.profile{
+        width: 100vw !important;
+    }
+}
 @media screen and (max-width:784px) {
+    div.image.profile{
+        width: 60vw;
+    }
     .projet ul div{
         width: 100%;
     }
@@ -723,6 +804,7 @@ hr{
         height: 70%;
         width: 80%;
     }
+    
     
 }
 .icofont-close-line-circled{
