@@ -14,7 +14,7 @@ var contact2 = document.querySelector(".contact")
 var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
 var lienSite = "https://atari643.github.io"
-const lien = <h1 class="suivant">Resumer <i class="icofont-arrow-right"></i></h1>
+const lien = <h1 class="suivant">Resumé<i class="icofont-arrow-right"></i></h1>
 class ProjetJava extends React.Component {
     render() {
         const items = [
@@ -204,12 +204,10 @@ buttonJava.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
                 if (userItem.children[1].lastChild.src == lienSite+"/images/java/projet-1/odomo.png") {
-                    ReactDOM.render(<FenetreProjet image={"./images/java/projet-1/projet-odomo.png"} text="Dans ce projet une grande difficulté c’était le sens de lecture dès valeur dans un tableau ou une matrice. La façon donc les valeurs sont agencés n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
-        La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+                    ReactDOM.render(<FenetreProjet image={"./images/java/projet-1/projet-odomo.png"} text="Dans ce projet une grande difficulté, c’était le sens de lecture des valeurs dans un tableau ou une matrice. La façon donc les valeurs sont agencées n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
+                    La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 } else if (userItem.children[1].lastChild.src == lienSite+"/images/java/projet-2/tableBiosph%C3%A8re.png") {
-                    ReactDOM.render(<FenetreProjet image={"./images/java/projet-2/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux  qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation,
-            jusqu’au niveau 11, du tableau des actions possibles selon les nouvelles règles de chaque niveau. La deuxième partie du projet a été pour moi la plus enrichissante avec l’implémentation d’une IA avec le choix de la méthode à suivre, 
-            et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-2.pdf"}></FenetreProjet>, document.querySelector(".window"))
+                    ReactDOM.render(<FenetreProjet image={"./images/java/projet-2/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation, jusqu’au niveau 11, du tableau des actions possibles selon les nouvelles règles de chaque niveau. La deuxième partie du projet a été pour moi la plus enrichissante avec l’implémentation d’une IA avec le choix de la méthode à suivre, et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-2.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 }
                 document.querySelector(".window").classList.remove("cacher")
                 document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {

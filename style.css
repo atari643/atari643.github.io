@@ -482,6 +482,7 @@ nav div{
     height: 8%;
     left: 10%;
     top: 5%;
+    font-size: 25px;
     border-bottom: solid white 10px;
 }
 #afficher{
@@ -630,6 +631,7 @@ hr{
         height: 12%;
         left: 10%;
         top: 5%;
+        font-size: 20px;
         border-bottom: solid white 10px;
     }
 }
