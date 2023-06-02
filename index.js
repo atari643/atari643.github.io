@@ -189,7 +189,7 @@ buttonJava.addEventListener("click", () => {
     buttonJava.classList.add("up")
     ReactDOM.render(<ProjetJava />, listprojet)
     var resume = document.querySelectorAll(".resumer")
-    resume[0].innerHTML = "Completer un projet en cours <i class='icofont-check'></i>"
+    resume[0].innerHTML = "Compléter un projet en cours <i class='icofont-check'></i>"
     resume[1].innerHTML = "Créer une IA à partir de rien <i class='icofont-check'></i>"
     var logo = document.querySelectorAll(".logo")
     setInterval(() => {
