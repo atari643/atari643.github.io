@@ -643,7 +643,7 @@ hr{
 }
 @media screen and (max-height:847px) {
     .window{
-        height:900px;
+        height:600px;
         overflow: scroll;
     }
 }
