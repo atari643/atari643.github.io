@@ -536,7 +536,7 @@ hr{
     height: 7%;
     position: absolute;
     border-radius: 15%;
-    top: 70%;
+    top: 90%;
     right: 10%;
     border-left: solid #545454;
     border-top: solid #545454;
@@ -665,7 +665,7 @@ hr{
         width: 500px;
     }
     .contenu .reTEX{
-        width: 500px;
+        width: 600px;
     }
     .Download{
         top: 90%;
