@@ -658,7 +658,7 @@ hr{
     .window p{
         top: 500px !important;
         margin-left: 0px;
-        width: 500px;
+        width: 600px;
         height: 500px;
     }
     .window .contenu{
@@ -669,7 +669,7 @@ hr{
     }
     .Download{
         top: 90%;
-        width: 510px;
+        width: 600px;
         border-radius: 10px;
         left:10%;
     }
@@ -678,7 +678,6 @@ hr{
     .window p{
         top: 500px !important;
         margin-left: 0px;
-        width: 70vw !important;
         height: 500px;
         left: 10%;
     }
@@ -699,21 +698,25 @@ hr{
     .window p{
         top: 500px !important;
         margin-left: 0px;
-        width: 500px;
+        width: 600px;
         height: 500px;
         left: 10%;
     }
+    .contenu h1{
+        width: 600px;
+        font-size:20px
+    }
     .window .contenu{
-        width: 500px;
+        width: 600px;
     }
     .contenu .reTEX{
-        width: 500px;
+        width: 600px;
     }
     .Download{
-        top: 600px;
-        width: 100px;
+        top: 90%;
+        width: 600px;
         border-radius: 10px;
-        left:90%;
+        left: 10%;
     }
 }
 @media screen and (max-height:850px) and (max-width: 1665px) {
