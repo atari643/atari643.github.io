@@ -92,6 +92,7 @@ header{
 }
 .projet ul div{
     background-color: #000000;
+    animation: Card 1s ease 0s 1 normal forwards;
 }
 #HCJ button:hover{
     background: rgb(227,76,38);
@@ -184,7 +185,7 @@ nav div{
     border: solid white 1px;
     border-radius: 3%;
     height: 100%;
-    width: 95%;
+    width: 75%;
     background-color: rgba(255, 255, 255,1);
 }
 .projet ul li{
@@ -390,6 +391,8 @@ nav div{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
 
     
 }
@@ -424,10 +427,20 @@ nav div{
 
 }
 .retourner{
-    transform: rotateY(180deg);
-    transition: 1s;
+    animation: cardClick 2s ease 0s 1 normal forwards !important;
+    
 }
-
+@keyframes cardClick {
+	0% {
+		transform: scale(1);
+	}
+    50%{
+        transform: scale(0.5);
+    }
+	100% {
+		transform: scale(1);
+	}
+}
 .logo{
     width: 10%;
     position: absolute;
@@ -932,4 +945,15 @@ hr{
     position: absolute;
     bottom: 5%;
     right: 5%;
+}
+@keyframes Card {
+	0% {
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

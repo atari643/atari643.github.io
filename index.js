@@ -14,13 +14,15 @@ var contact2 = document.querySelector(".contact")
 var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
 var imgProjetJava1="/images/java/projet-1/Code-typing-bro.png"
+var imgProjetJava2="/images/java/projet-2/Programming-amico.png"
+var imgProjetC1="/images/Csharp/projet-1/UI-UX-team-amico.png"
 var lienSite = "http://127.0.0.1:5500"
 const lien = <h1 class="suivant">Resumé<i class="icofont-arrow-right"></i></h1>
 class ProjetJava extends React.Component {
     render() {
         const items = [
             <img class='image odomo' src={imgProjetJava1} alt='odomo' />,
-            <img class='image biosphère' src='./images/java/projet-2/tableBiosphère.png' alt='Biosphère' />,
+            <img class='image biosphère' src={imgProjetJava2} alt='Biosphère' />,
         ]
         const java = <img class='logo' src='./images/java/javalogo.png' alt='javalogo'></img>
         const lis = items.map(item => <div><h1 class="resumer"></h1><li>{java}{item}</li>{lien}</div>)
@@ -58,9 +60,10 @@ class FenetreProjetWeb extends React.Component {
 class ProjetC extends React.Component {
     render() {
         const items = [
+            <img class='image Hyperstellar' src={imgProjetC1} alt='Hyperstellar' />,
         ]
         const C = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
-        const lis = items.map(item => <div><li>{C}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        const lis = items.map(item => <div><h1 class="resumer"></h1><li>{C}{item}</li>{lien}</div>)
         return <ul>
             {lis}
         </ul>
@@ -203,11 +206,10 @@ buttonJava.addEventListener("click", () => {
         userItem.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
-                console.log(userItem.children[1].lastChild.src)
                 if (userItem.children[1].lastChild.src == lienSite+imgProjetJava1) {
                     ReactDOM.render(<FenetreProjet image={"./images/java/projet-1/projet-odomo.png"} text="Dans ce projet une grande difficulté, c’était le sens de lecture des valeurs dans un tableau ou une matrice. La façon donc les valeurs sont agencées n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
                     La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
-                } else if (userItem.children[1].lastChild.src == lienSite+"/images/java/projet-2/tableBiosph%C3%A8re.png") {
+                } else if (userItem.children[1].lastChild.src == lienSite+imgProjetJava2) {
                     ReactDOM.render(<FenetreProjet image={"./images/java/projet-2/projet-biosphère.png"} text="Le projet se nomme Biosphère7 qui est écrit en java. C’est un jeu de plateau à 15 niveaux qui permet d’effectuer différentes actions selon les règles du niveau qui se cumule. Ma contribution est la réalisation, jusqu’au niveau 11, du tableau des actions possibles selon les nouvelles règles de chaque niveau. La deuxième partie du projet a été pour moi la plus enrichissante avec l’implémentation d’une IA avec le choix de la méthode à suivre, et j’ai réussi à faire une méthode d’apprentissage par renforcement avec un algorithme QLearning (off policy). " title="Projet conception d'un jeu et une IA" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-2.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 }
                 document.querySelector(".window").classList.remove("cacher")
@@ -246,6 +248,26 @@ buttonC.addEventListener("click", () => {
     listprojet.classList.add("colorC")
     buttonC.classList.add("up")
     ReactDOM.render(<ProjetC />, listprojet)
+    var resume = document.querySelectorAll(".resumer")
+    resume[0].innerHTML = "Développemnt d'une application <i class='icofont-check'></i>"
+    var open = document.querySelectorAll(".projet ul div")
+    open.forEach((userItem) => {
+        userItem.addEventListener("click", () => {
+            userItem.classList.add("retourner")
+            setTimeout(() => {
+                if (userItem.children[1].lastChild.src == lienSite+imgProjetC1) {
+                    ReactDOM.render(<FenetreProjet image={"./images/Csharp/projet-1/projet-jeux.jpg"} text="Dans ce projet, le défi majeur résidait dans l'association harmonieuse entre la partie visuelle et le développement des fonctionnalités. Il était primordial de retranscrire, dans le contexte virtuel en deux dimensions, les éléments et les règles d'un jeu de société classique de manière à simplifier au maximum l'expérience de jeu pour les utilisateurs. Par exemple, nous avons automatisé les aspects tels que le mélange des cartes ou le positionnement des pions, de manière à laisser aux joueurs le soin de se concentrer sur leurs choix et leurs actions.
+                    " title="Projet Application" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/C#/Portfolio-Quentin-C-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+                }
+                document.querySelector(".window").classList.remove("cacher")
+                document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
+                    userItem.classList.remove("retourner")
+                    ReactDOM.render(<FenetreProjet image={""} text="" title=""></FenetreProjet>, document.querySelector(".window"))
+                    document.querySelector(".window").classList.add("cacher")
+                })
+            }, 2000);
+        })
+    })
 })
 buttonPython.addEventListener("click", desactiver)
 buttonPython.addEventListener("mouseover", () => {
