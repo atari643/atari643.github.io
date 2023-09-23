@@ -13,12 +13,13 @@ var contact = document.getElementById("list")
 var contact2 = document.querySelector(".contact")
 var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
-var lienSite = "https://atari643.github.io"
+var imgProjetJava1="/images/java/projet-1/Code-typing-bro.png"
+var lienSite = "http://127.0.0.1:5500"
 const lien = <h1 class="suivant">Resumé<i class="icofont-arrow-right"></i></h1>
 class ProjetJava extends React.Component {
     render() {
         const items = [
-            <img class='image odomo' src='./images/java/projet-1/odomo.png' alt='odomo' />,
+            <img class='image odomo' src={imgProjetJava1} alt='odomo' />,
             <img class='image biosphère' src='./images/java/projet-2/tableBiosphère.png' alt='Biosphère' />,
         ]
         const java = <img class='logo' src='./images/java/javalogo.png' alt='javalogo'></img>
@@ -197,13 +198,13 @@ buttonJava.addEventListener("click", () => {
             logo[i].classList.toggle("move")
         }
     }, 2000)
-
     var open = document.querySelectorAll(".projet ul div")
     open.forEach((userItem) => {
         userItem.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
-                if (userItem.children[1].lastChild.src == lienSite+"/images/java/projet-1/odomo.png") {
+                console.log(userItem.children[1].lastChild.src)
+                if (userItem.children[1].lastChild.src == lienSite+imgProjetJava1) {
                     ReactDOM.render(<FenetreProjet image={"./images/java/projet-1/projet-odomo.png"} text="Dans ce projet une grande difficulté, c’était le sens de lecture des valeurs dans un tableau ou une matrice. La façon donc les valeurs sont agencées n’est pas forcément comment on aimerait les afficher. J’ai réussi à faire que pour chaque histogramme selon son ordre de lecture, les valeurs se rangent dans l’ordre attendu.
                     La lecture un tableau/matrice était essentiel dans la réalisation de ce projet" title="Projet météorologique" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/java/Portfolio-Quentin-java-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 } else if (userItem.children[1].lastChild.src == lienSite+"/images/java/projet-2/tableBiosph%C3%A8re.png") {
