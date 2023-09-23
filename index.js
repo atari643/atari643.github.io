@@ -16,7 +16,7 @@ var all = document.querySelector(".page")
 var imgProjetJava1="/images/java/projet-1/Code-typing-bro.png"
 var imgProjetJava2="/images/java/projet-2/Programming-amico.png"
 var imgProjetC1="/images/Csharp/projet-1/UI-UX-team-amico.png"
-var lienSite = "http://127.0.0.1:5500"
+var lienSite = "https://atari643.github.io"
 const lien = <h1 class="suivant">Resumé<i class="icofont-arrow-right"></i></h1>
 class ProjetJava extends React.Component {
     render() {
