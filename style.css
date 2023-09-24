@@ -52,6 +52,7 @@ body{
     justify-content: center;
     
 }
+
 .center{
     display: flex;
     justify-content: center;
@@ -85,7 +86,7 @@ header{
     cursor: pointer;
 }
 .title{
-    height: 10vh;
+    height: 30vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -94,45 +95,38 @@ header{
     background-color: #000000;
     animation: Card 1s ease 0s 1 normal forwards;
 }
-#HCJ button:hover{
-    background: rgb(227,76,38);
-    background: linear-gradient(180deg, rgba(227,76,38,1) 45%, rgba(0, 0, 0, 0) 45%), linear-gradient(110deg, rgba(41,97,241,1) 66%, rgba(240,219,79,1) 66%);
-    transition: 0.2s;
-}
-#java button:hover{
-    background: rgb(227,76,38);
-}
-#C button:hover{
-    background: purple
-}
-#Python button:hover{
-    background-color: #000000;
-}
+
 .Acess{
     display: flex;
     justify-content: space-around;
 }
 .Acess button{
-    width: 40vw;
-    height: 10vh;
-    max-width: 200px;
-    max-height: 80px;
-    border-radius: 50px;
-    cursor: pointer;
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-    border-left: gray solid;
-    border-right: black solid ;
-    border-bottom: black solid;
-    border-top: gray solid ;
+    box-shadow: 0px 7px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #000000 5%, #000000 100%);
+	background-color:#000000;
+	border-radius:28px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
 }
 .Acess button:hover{
-    border-left: black solid;
-    border-right: grey solid ;
-    border-bottom: black solid;
-    border-top: grey solid ;
-    transition: 0.5s;
+    background:linear-gradient(to bottom, #000000 5%, #000000 100%);
+    transition: 0.3s;
+    transform: translateY(7px);
+    box-shadow: 0px 0px 0px 0px #ffffff;
+	background-color:#000000;
     
+}
+.Acess button:active {
+	position:relative;
+	top:1px;
 }
 @media screen and (min-width: 1665px){
     footer{
@@ -185,7 +179,7 @@ nav div{
     border: solid white 1px;
     border-radius: 3%;
     height: 100%;
-    width: 75%;
+    width: 77%;
     background-color: rgba(255, 255, 255,1);
 }
 .projet ul li{
@@ -843,8 +837,6 @@ hr{
     display: flex;
     justify-content: space-around;
     background-color: white;
-    border-bottom-left-radius: 20%;
-    border-bottom-right-radius: 20%;
     padding-bottom: 20px;
     padding-top: 10px;
     width: 100%;
@@ -857,10 +849,12 @@ hr{
     height: 10%;
     position: fixed;
     z-index: 1;
-    display: none;
+    transform: translateY(-100px);
+    animation: dérouler 1s ease 0s 1 normal forwards;
 }
 #linkedin button{
     background-color: #0a63bc;
+    box-shadow: 0px 7px 0px 0px #0a63bc;
 }
 #linkedin i{
     color: white;
@@ -870,6 +864,7 @@ hr{
 }
 #Git button{
     background-color: #000000;
+    box-shadow: 0px 7px 0px 0px #000000;
 }
 #Git img{
     background-color: white;
@@ -884,6 +879,7 @@ hr{
 }
 #mail button{
     background-color: #d5443b;
+    box-shadow: 0px 7px 0px 0px #d5443b;
 }
 #mail i{
     color: white;
@@ -893,11 +889,14 @@ hr{
 }
 .contact button{
     background-color:rgba(0,0,0,0.2);
-    border: none;
-    width: 100%;
-    border-radius: 10%;
+    border:1px solid #ffffff;
+    width: 50%;
+    border-radius:28px;
     height: 70px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 #linkedin i,
 #mail i{
@@ -909,6 +908,16 @@ hr{
     position: fixed;
     transition: 1s;
     display: none !important;
+    
+}
+@keyframes dérouler {
+    0%{
+        display: block !important;
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 .dérouler{
     transform: translateY(0px);
@@ -924,7 +933,7 @@ hr{
     left: 2%;
     width: 100px;
     height: 50px;
-    border-radius: 20%;
+    border-radius: 28px;
     background-color: white;
     cursor: pointer;
     z-index: 1;
@@ -949,7 +958,7 @@ hr{
 @keyframes Card {
 	0% {
 		opacity: 0;
-		transform: translateY(-250px);
+		transform: translateY(-100px);
 	}
 
 	100% {

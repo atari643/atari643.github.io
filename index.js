@@ -249,7 +249,7 @@ buttonC.addEventListener("click", () => {
     buttonC.classList.add("up")
     ReactDOM.render(<ProjetC />, listprojet)
     var resume = document.querySelectorAll(".resumer")
-    resume[0].innerHTML = "Développemnt d'une application <i class='icofont-check'></i>"
+    resume[0].innerHTML = "Développement d'une application <i class='icofont-check'></i>"
     var open = document.querySelectorAll(".projet ul div")
     open.forEach((userItem) => {
         userItem.addEventListener("click", () => {
