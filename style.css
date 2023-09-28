@@ -560,12 +560,24 @@ hr{
     position: absolute;
     color: white;
     width: 25%;
-    top: 20%;
+    top: 15%;
     text-align: justify;
-    right: 5%;
-    border-top: 10px solid white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 20px;
+letter-spacing: 2px;
+word-spacing: 2px;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+    right: 3%;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    border-radius: 12px;
     margin-left: 60px;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 .logo{
     visibility: hidden!important;
@@ -650,6 +662,7 @@ hr{
     .contenu .reTEX{
         width: 60%;
         height: 0 40%;
+        box-shadow: 0px 7px 0px 0px #000000;
     }
     .contenu h1{
         position: absolute;
