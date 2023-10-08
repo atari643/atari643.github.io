@@ -16,7 +16,8 @@ var all = document.querySelector(".page")
 var imgProjetJava1="/images/java/projet-1/Code-typing-bro.png"
 var imgProjetJava2="/images/java/projet-2/Programming-amico.png"
 var imgProjetC1="/images/Csharp/projet-1/UI-UX-team-amico.png"
-var lienSite = "https://atari643.github.io"
+var imgRskPy="/images/Python/rsk/miniature.png"
+var lienSite = "http://127.0.0.1:5500"
 const lien = <h1 class="suivant">Resumé<i class="icofont-arrow-right"></i></h1>
 class ProjetJava extends React.Component {
     render() {
@@ -40,6 +41,22 @@ class FenetreProjet extends React.Component {
             <p>{this.props.text}</p>
             <form action={this.props.url}>
                 <button class="Download" type="submit"><i class="icofont-download"></i>PDF</button>
+            </form>
+        </div>
+    }
+}
+
+class FenetreProjetVideo extends React.Component {
+    render() {
+        return <div class="contenu">
+            <i class="icofont-close-line-circled icofont-5x"></i>
+            <h1>{this.props.title}</h1>
+            <video controls class='reTEX' src={this.props.video}>
+                Download la video
+            </video>
+            <p>{this.props.text}</p>
+            <form action={this.props.url}>
+                <button class="Download" type="submit"><i class="icofont-download"></i>video</button>
             </form>
         </div>
     }
@@ -72,9 +89,10 @@ class ProjetC extends React.Component {
 class ProjetPy extends React.Component {
     render() {
         const items = [
+            <img class='image robot' src={imgRskPy} alt='Robot'/>
         ]
         const Py = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
-        const lis = items.map(item => <div><li>{Py}{item}</li><i class="icofont-close"></i><i class="icofont-expand"></i></div>)
+        const lis = items.map(item => <div><h1 class="resumer"></h1><li>{Py}{item}</li>{lien}</div>)
         return <ul>
             {lis}
         </ul>
@@ -255,6 +273,7 @@ buttonC.addEventListener("click", () => {
         userItem.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
+                
                 if (userItem.children[1].lastChild.src == lienSite+imgProjetC1) {
                     ReactDOM.render(<FenetreProjet image={"./images/Csharp/projet-1/projet-jeux.jpg"} text="Dans ce projet, le défi majeur résidait dans l'association harmonieuse entre la partie visuelle et le développement des fonctionnalités. Il était primordial de retranscrire, dans le contexte virtuel en deux dimensions, les éléments et les règles d'un jeu de société classique de manière à simplifier au maximum l'expérience de jeu pour les utilisateurs. Par exemple, nous avons automatisé les aspects tels que le mélange des cartes ou le positionnement des pions, de manière à laisser aux joueurs le soin de se concentrer sur leurs choix et leurs actions.
                     " title="Projet Application" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/C#/Portfolio-Quentin-C-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
@@ -275,14 +294,6 @@ buttonPython.addEventListener("mouseover", () => {
     logoPython.src = "./images/logo/logoPython/2.png"
 })
 
-buttonPython.addEventListener("mousedown", () => {
-    buttonPython.style.scale = "0.8"
-    buttonPython.style.transition = "0.1s"
-})
-buttonPython.addEventListener("mouseup", () => {
-    buttonPython.style.scale = "1"
-    buttonPython.style.transition = "0.2s"
-})
 buttonPython.addEventListener("mouseout", () => {
     var logoPython = document.querySelector("#Python img")
     logoPython.src = "./images/logo/logoPython/1.png"
@@ -292,6 +303,29 @@ buttonPython.addEventListener("click", () => {
     listprojet.classList.add("colorPy")
     buttonPython.classList.add("up")
     ReactDOM.render(<ProjetPy />, listprojet)
+    var resume = document.querySelectorAll(".resumer")
+    resume[0].innerHTML = "Robot : Prédiction du tir adverse <i class='icofont-check'></i>"
+    var open = document.querySelectorAll(".projet ul div")
+    open.forEach((userItem) => {
+        userItem.addEventListener("click", () => {
+            console.log(userItem.children[1].lastChild)
+            userItem.classList.add("retourner")
+            setTimeout(() => {
+                
+                if (userItem.children[1].lastChild.src == lienSite+imgRskPy) {
+                    ReactDOM.render(<FenetreProjetVideo video={"./Video/Python/Gardien/Prediction.mp4"} text="
+                    Dans le cadre d'une compétition de robot qui joue au foot, j'ai programmé, en python, une stratégie prédictive de gardien. Le but est de prédire la trajectoire du ballon et de se placer en conséquence pour l'arrêter. En utilisant l'orientation du robot adverse le plus proche du ballon, j'ai pu prédire le seul intervalle possible où la balle pourrait aller après le tir du robot adverse. Le plus difficile a été de résoudre le cas ou si le robot adverse modifie son orientation après son tir, le gardien ne doit pas modifier sa position. Cette stratégie a aidé mon équipe de 4 joueurs à être vice-champion d'Europe de robotique.
+                    " title="Programmation d'une stratégie prédictif de gardien" url={"https://github.com/atari643/atari643.github.io/raw/rendu/Video/Python/Gardien/Prediction.mp4"}></FenetreProjetVideo>, document.querySelector(".window"))
+                }
+                document.querySelector(".window").classList.remove("cacher")
+                document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
+                    userItem.classList.remove("retourner")
+                    ReactDOM.render(<FenetreProjetVideo video={""} text="" title=""></FenetreProjetVideo>, document.querySelector(".window"))
+                    document.querySelector(".window").classList.add("cacher")
+                })
+            }, 2000);
+        })
+    })
 })
 // buttonMDP.addEventListener("click", desactiver)
 // buttonMDP.addEventListener("click", () => {

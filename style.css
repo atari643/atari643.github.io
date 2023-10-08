@@ -52,7 +52,6 @@ body{
     justify-content: center;
     
 }
-
 .center{
     display: flex;
     justify-content: center;
@@ -100,7 +99,7 @@ header{
     justify-content: space-around;
     margin-top: 50px;
 }
-.Acess button{
+.Acess a{
     box-shadow: 0px 7px 0px 0px #ffffff;
 	background:linear-gradient(to bottom, #000000 5%, #000000 100%);
 	background-color:#000000;
@@ -117,7 +116,7 @@ header{
 	text-shadow:0px 0px 0px #ffffff;
     transition: 0.3s;
 }
-.Acess button:hover{
+.Acess a:hover{
     background:linear-gradient(to bottom, #000000 5%, #000000 100%);
     transition: 0.3s;
     transform: translateY(7px);
@@ -125,7 +124,7 @@ header{
 	background-color:#000000;
     
 }
-.Acess button:active {
+.Acess a:active {
 	position:relative;
 	top:1px;
 }
@@ -474,7 +473,7 @@ nav div{
     background-color: #1a1a1a;
     position: fixed;
     top: 1%;
-    width: 90vw;
+    width: 95vw;
     height: 95vh;
     border-top: 10px;
     border-top: #313131 solid 50px;
@@ -559,23 +558,22 @@ hr{
 .contenu p{
     position: absolute;
     color: white;
-    width: 25%;
+    width: 26%;
     top: 15%;
-    text-align: justify;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-font-size: 20px;
-letter-spacing: 2px;
-word-spacing: 2px;
-font-weight: normal;
-text-decoration: none;
-font-style: normal;
-font-variant: normal;
-text-transform: none;
-    right: 3%;
+    font-size: 13px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
     border-top: 5px solid white;
     border-bottom: 5px solid white;
     border-radius: 12px;
-    margin-left: 60px;
+    right: 3%;
+    margin-left: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -591,7 +589,14 @@ text-transform: none;
     }
     
 }
-
+@media screen and (max-width: 1550px) {
+    .Download{
+        top: 90%;
+        width: 600px;
+        border-radius: 10px;
+        left:10%;
+    }
+}
 @media screen and (max-width:1050px) {
     #app{
         width: 100%;
@@ -607,15 +612,14 @@ text-transform: none;
     .window{
         height: 100vh;
         overflow: scroll;
+        
     }
     .window p{
         left: 10%;
         width: 60%;
         padding-left: 0px;
     }
-    #Presentation{
-        margin-left: 15%;
-    }
+
     nav{
         display: flex;
         width: 100%;
@@ -661,7 +665,7 @@ text-transform: none;
     }
     .contenu .reTEX{
         width: 60%;
-        height: 0 40%;
+        height: 40%;
         box-shadow: 0px 7px 0px 0px #000000;
     }
     .contenu h1{
@@ -690,7 +694,7 @@ text-transform: none;
     
 @media screen and (max-width:1050px) {
     .window p{
-        top: 500px !important;
+        top: 525px !important;
         margin-left: 0px;
         width: 600px;
         height: 500px;
@@ -860,7 +864,7 @@ text-transform: none;
     cursor: pointer;
     scale: 100%;
 }
-.contact ul{
+.contact div{
     display: flex;
     justify-content: space-around;
     background-color: white;
