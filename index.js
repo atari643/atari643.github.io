@@ -1,3 +1,24 @@
+function supprimerStylesExtensions() {
+    // Parcourez tous les éléments de la page
+    // Recherchez la balise script avec l'attribut src égal à "index.js" et type égal à "text/babel".
+var scriptElement = document.querySelector('script[src="index.js"][type="text/babel"]');
+
+if (scriptElement) {
+    // Supprimez les balises qui suivent la balise script.
+    var nextSibling = scriptElement.nextSibling;
+
+    while (nextSibling) {
+        var toRemove = nextSibling;
+        nextSibling = toRemove.nextSibling;
+        toRemove.parentNode.removeChild(toRemove);
+    }
+}
+}
+
+// Appelez la fonction lorsque la page se charge
+window.addEventListener("load", supprimerStylesExtensions);
+
+
 var buttonJava = document.getElementById("java")
 var buttonC = document.getElementById("C")
 var buttonHCJ = document.getElementById("HCJ")
@@ -6,6 +27,7 @@ var buttonLinux = document.getElementById("Linux")
 // var buttonMDP = document.getElementById("MDP")
 var buttonBD = document.getElementById("BD")
 var buttonRS = document.getElementById("RS")
+var app = document.getElementById("app")
 var allbutton = document.querySelectorAll("nav div")
 var listprojet = document.querySelector(".projet")
 var Portfolio = document.querySelector(".portFolio")
@@ -156,9 +178,15 @@ class ProjetRS extends React.Component {
     }
 }
 
-
-
-
+function selectRandomNavButton() {
+    const navButtons = document.querySelectorAll("nav button");
+    const randomIndex = Math.floor(Math.random() * navButtons.length);
+    navButtons[randomIndex].classList.add("press");
+    setTimeout(() => {
+        navButtons[randomIndex].classList.remove("press");
+    }, 1000);
+}
+setInterval(selectRandomNavButton, 1000);
 function desactiver() {
     for (var i = 0; i < allbutton.length; i++) {
 
@@ -197,6 +225,7 @@ let animation = setInterval((e) => {
     }
 
 }, 16)
+
 buttonJava.addEventListener("click", desactiver)
 buttonJava.addEventListener("mouseover", () => {
     var logoJava = document.querySelector("#java img")
@@ -242,10 +271,15 @@ buttonJava.addEventListener("click", () => {
 
 }
 )
+
+
+listprojet.style.visibility = "hidden"
 allbutton.forEach((userItem) => {
     userItem.addEventListener("mousedown", () => {
         userItem.style.scale = "0.8"
         userItem.style.transition = "0.1s"
+        listprojet.style.visibility = "visible"
+        
     })
     userItem.addEventListener("mouseup", () => {
         userItem.style.scale = "1"
