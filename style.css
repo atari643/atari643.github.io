@@ -289,51 +289,51 @@ nav div{
     }
     }
 @keyframes ledJ {
-    0%{box-shadow: 5px 5px 100px red;}
-    50%{box-shadow: 5px 5px 100px blue;}
-    100%{box-shadow: 5px 5px 100px red;}
+    0%{box-shadow: 5px 5px 25px red;}
+    50%{box-shadow: 5px 5px 25px blue;}
+    100%{box-shadow: 5px 5px 25px red;}
     
 }
 @keyframes ledC {
-    0%{box-shadow: 5px 5px 100px rgb(119,119,248);}
-    50%{box-shadow: 5px 5px 100px rgb(57,0,148);}
-    100%{box-shadow: 5px 5px 100px rgb(119,119,248);}
+    0%{box-shadow: 5px 5px 25px rgb(119,119,248);}
+    50%{box-shadow: 5px 5px 25px rgb(57,0,148);}
+    100%{box-shadow: 5px 5px 25px rgb(119,119,248);}
     
 }
 @keyframes ledPy {
-    0%{box-shadow: 5px 5px 100px rgb(0,153,242);}
-    50%{box-shadow: 5px 5px 100px rgb(242,193,8);}
-    100%{box-shadow: 5px 5px 100px rgb(0,153,242);}
+    0%{box-shadow: 5px 5px 25px rgb(0,153,242);}
+    50%{box-shadow: 5px 5px 25px rgb(242,193,8);}
+    100%{box-shadow: 5px 5px 25px rgb(0,153,242);}
     
 }
 @keyframes ledHCJ {
-    0%{box-shadow: 5px 5px 100px #dd4b25;}
-    33%{box-shadow: 5px 5px 100px #2862e9;}
-    66%{box-shadow: 5px 5px 100px #efd81d;}
-    100%{box-shadow: 5px 5px 100px #dd4b25;}
+    0%{box-shadow: 5px 5px 25px #dd4b25;}
+    33%{box-shadow: 5px 5px 25px #2862e9;}
+    66%{box-shadow: 5px 5px 25px #efd81d;}
+    100%{box-shadow: 5px 5px 25px #dd4b25;}
     
 }
 @keyframes ledMDP {
-    0%{box-shadow: 5px 5px 100px green;}
-    50%{box-shadow: 5px 5px 100px black;}
-    100%{box-shadow: 5px 5px 100px green;}
+    0%{box-shadow: 5px 5px 25px green;}
+    50%{box-shadow: 5px 5px 25px black;}
+    100%{box-shadow: 5px 5px 25px green;}
 }
 @keyframes ledBD {
-    0%{box-shadow: 5px 5px 100px #4a4a4a;}
-    50%{box-shadow: 5px 5px 100px #db5443;}
-    100%{box-shadow: 5px 5px 100px #4a4a4a;}
+    0%{box-shadow: 5px 5px 25px #4a4a4a;}
+    50%{box-shadow: 5px 5px 25px #db5443;}
+    100%{box-shadow: 5px 5px 25px #4a4a4a;}
 }
 @keyframes ledLinux {
-    0%{box-shadow: 5px 5px 100px #d7d8d3;}
-    33%{box-shadow: 5px 5px 100px #000000;}
-    66%{box-shadow: 5px 5px 100px #f5ce10;}
-    100%{box-shadow: 5px 5px 100px #d7d8d3;}
+    0%{box-shadow: 5px 5px 25px #d7d8d3;}
+    33%{box-shadow: 5px 5px 25px #000000;}
+    66%{box-shadow: 5px 5px 25px #f5ce10;}
+    100%{box-shadow: 5px 5px 25px #d7d8d3;}
 }
 @keyframes ledRS {
-    0%{box-shadow: 5px 5px 100px #d7d8d3;}
-    33%{box-shadow: 5px 5px 100px #000000;}
-    66%{box-shadow: 5px 5px 100px #f5ce10;}
-    100%{box-shadow: 5px 5px 100px #d7d8d3;}
+    0%{box-shadow: 5px 5px 25px #d7d8d3;}
+    33%{box-shadow: 5px 5px 25px #000000;}
+    66%{box-shadow: 5px 5px 25px #f5ce10;}
+    100%{box-shadow: 5px 5px 25px #d7d8d3;}
 }
 .colorJava{
     animation-name: ledJ;
