@@ -106,7 +106,7 @@ nav button:hover{
     box-shadow: 0px 0px 0px 0px #ffffff;
     transition: 0.3s;
     transform: translateY(7px);
-    scale: 1.3 !important;
+    scale: 1.2 !important;
 }
 .Acess{
     display: flex;
@@ -232,7 +232,7 @@ nav div{
 @media screen and (max-width: 1665px){
     #app{
         width: 100%;
-        height: 70vh;
+        height: 90% !important;
         display: flex;
         justify-content: center;
     
@@ -253,7 +253,7 @@ nav div{
     }
     nav{
         display: flex;
-        width: 75vw;
+        width: 50vw;
         height: 50%;
         justify-content: space-around;
         flex-direction: row;
@@ -461,6 +461,7 @@ nav div{
     width: 100%;
     height: 100%;
     border-radius: 100%;
+    cursor: pointer;
 
 }
 .resumer{
@@ -695,7 +696,7 @@ hr{
 }
 @media screen and (max-height:847px) {
     .window{
-        height:600px;
+        height:95vh;
         overflow: scroll;
     }
 }
@@ -708,7 +709,6 @@ hr{
     
 @media screen and (max-width:1050px) {
     .window p{
-        top: 525px !important;
         margin-left: 0px;
         width: 600px;
         height: 500px;
@@ -771,9 +771,9 @@ hr{
         left: 10%;
     }
 }
-@media screen and (max-height:850px) and (max-width: 1665px) {
+@media screen and (max-height:850px) {
     #app{
-        height: 700px;
+        height: 80% !important;
     }
 }
 @media screen and (max-height:732px) and (max-width:390px) {
@@ -836,6 +836,7 @@ hr{
         z-index: 2;
         color: white;
         cursor: pointer;
+        background-color: black;
     }
 }
 @media screen and (max-width:558px) {
@@ -875,8 +876,11 @@ hr{
     top: 2%;
     z-index: 2;
     color: white;
+    background-color: black;
+    
     cursor: pointer;
     scale: 100%;
+    border-radius: 27px;
 }
 .contact div{
     display: flex;
