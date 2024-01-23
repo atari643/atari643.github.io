@@ -58,11 +58,13 @@ body{
 }
 .image.profil{
     width: 50vw;
-    height: 100vh !important;
+    height: 60vh !important;
 }
 .profile{
     width: 50% !important;
+    margin-top: 50px;
     border-radius: 10% !important;
+    height: fit-content !important;
 }
 header{
     display: flex;
