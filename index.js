@@ -20,7 +20,7 @@ window.addEventListener("load", supprimerStylesExtensions);
 
 
 var buttonJava = document.getElementById("java")
-var buttonC = document.getElementById("C")
+var buttonCsharp = document.getElementById("C")
 var buttonHCJ = document.getElementById("HCJ")
 var buttonPython = document.getElementById("Python")
 var buttonLinux = document.getElementById("Linux")
@@ -37,7 +37,8 @@ var sphere = document.querySelector(".sphere")
 var all = document.querySelector(".page")
 var imgProjetJava1="/images/java/projet-1/Code-typing-bro.png"
 var imgProjetJava2="/images/java/projet-2/Programming-amico.png"
-var imgProjetC1="/images/Csharp/projet-1/UI-UX-team-amico.png"
+var imgProjetCsharp1="/images/Csharp/projet-1/UI-UX-team-amico.png"
+var imgProjetHCJ2="/images/HCJ/Digital-transformation-amico.png"
 var imgRskPy="/images/Python/rsk/miniature.png"
 var lienSite = "https://atari643.github.io"
 const lien = <h1 class="suivant">Resumé<i class="icofont-arrow-right"></i></h1>
@@ -67,6 +68,19 @@ class FenetreProjet extends React.Component {
         </div>
     }
 }
+class FenetreProjetMackdown extends React.Component {
+    render() {
+        return <div class="contenu">
+            <i class="icofont-close-line-circled icofont-5x"></i>
+            <h1>{this.props.title}</h1>
+            <img class='reTEX' src={this.props.image}></img>
+            <p>{this.props.text}</p>
+            <form action={this.props.url}>
+                <button class="Download" type="submit"><i class="icofont-download"></i>Rapport Markdown</button>
+            </form>
+        </div>
+    }
+}
 
 class FenetreProjetVideo extends React.Component {
     render() {
@@ -83,7 +97,7 @@ class FenetreProjetVideo extends React.Component {
         </div>
     }
 }
-class FenetreProjetWeb extends React.Component {
+class FenetreProjetWebCliquable extends React.Component {
     render() {
         return <div class="contenu">
             <i class="icofont-close-line-circled icofont-5x"></i>
@@ -96,10 +110,23 @@ class FenetreProjetWeb extends React.Component {
         </div>
     }
 }
-class ProjetC extends React.Component {
+class FenetreProjetWeb extends React.Component {
+    render() {
+        return <div class="contenu">
+            <i class="icofont-close-line-circled icofont-5x"></i>
+            <h1>{this.props.title}</h1>
+            <img class='reTEX' src={this.props.image}></img>
+            <p>{this.props.text}</p>
+            <form action={this.props.url}>
+                <button class="Download" type="submit"><i class="icofont-download"></i>Site web</button>
+            </form>
+        </div>
+    }
+}
+class ProjetCsharp extends React.Component {
     render() {
         const items = [
-            <img class='image Hyperstellar' src={imgProjetC1} alt='Hyperstellar' />,
+            <img class='image Hyperstellar' src={imgProjetCsharp1} alt='Hyperstellar' />,
         ]
         const C = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
         const lis = items.map(item => <div><h1 class="resumer"></h1><li>{C}{item}</li>{lien}</div>)
@@ -123,7 +150,8 @@ class ProjetPy extends React.Component {
 class ProjetHCJ extends React.Component {
     render() {
         const items = [
-            <img class='image thales' src='./images/HCJ/maquetteSite.png' alt='maquette' />
+            <img class='image thales' src='./images/HCJ/maquetteSite.png' alt='maquette' />,
+            <img class='image portfolio' src='./images/HCJ/portfolio.png' alt='portfolio' />
         ]
         const HCJ = <img class='logo' src='./images/java/javalogo.png' alt='javalogo' />
         const lis = items.map(item => <div><h1 class="resumer"></h1><li>{HCJ}{item}</li>{lien}</div>)
@@ -159,6 +187,7 @@ class ProjetLinux extends React.Component {
     render() {
         const items = [
             <img class='image poste' src='./images/Linux/schemaPoste.jpg' alt='Poste' />,
+            <img class='image network' src='./images/Linux/schemaNetwork.jpg' alt='Network' />
         ]
         const lis = items.map(item => <div><h1 class="resumer"></h1><li>{item}</li>{lien}</div>)
         return <ul>
@@ -286,20 +315,20 @@ allbutton.forEach((userItem) => {
     })
 }
 )
-buttonC.addEventListener("click", desactiver)
-buttonC.addEventListener("mouseover", () => {
-    var logoC = document.querySelector("#C img")
-    logoC.src = "./images/logo/logoC/2.png"
+buttonCsharp.addEventListener("click", desactiver)
+buttonCsharp.addEventListener("mouseover", () => {
+    var logoCsharp = document.querySelector("#C img")
+    logoCsharp.src = "./images/logo/logoCsharp/2.png"
 })
-buttonC.addEventListener("mouseout", () => {
-    var logoC = document.querySelector("#C img")
-    logoC.src = "./images/logo/logoC/1.png"
+buttonCsharp.addEventListener("mouseout", () => {
+    var logoCsharp = document.querySelector("#C img")
+    logoCsharp.src = "./images/logo/logoCsharp/1.png"
 })
-buttonC.addEventListener("click", () => {
-    buttonC.classList.add("active")
+buttonCsharp.addEventListener("click", () => {
+    buttonCsharp.classList.add("active")
     listprojet.classList.add("colorC")
-    buttonC.classList.add("up")
-    ReactDOM.render(<ProjetC />, listprojet)
+    buttonCsharp.classList.add("up")
+    ReactDOM.render(<ProjetCsharp />, listprojet)
     var resume = document.querySelectorAll(".resumer")
     resume[0].innerHTML = "Développement d'une application <i class='icofont-check'></i>"
     var open = document.querySelectorAll(".projet ul div")
@@ -308,7 +337,7 @@ buttonC.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
                 
-                if (userItem.children[1].lastChild.src == lienSite+imgProjetC1) {
+                if (userItem.children[1].lastChild.src == lienSite+imgProjetCsharp1) {
                     ReactDOM.render(<FenetreProjet image={"./images/Csharp/projet-1/projet-jeux.jpg"} text="Dans ce projet, le défi majeur résidait dans l'association harmonieuse entre la partie visuelle et le développement des fonctionnalités. Il était primordial de retranscrire, dans le contexte virtuel en deux dimensions, les éléments et les règles d'un jeu de société classique de manière à simplifier au maximum l'expérience de jeu pour les utilisateurs. Par exemple, nous avons automatisé les aspects tels que le mélange des cartes ou le positionnement des pions, de manière à laisser aux joueurs le soin de se concentrer sur leurs choix et leurs actions.
                     " title="Projet Application" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/C#/Portfolio-Quentin-C-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
                 }
@@ -361,13 +390,7 @@ buttonPython.addEventListener("click", () => {
         })
     })
 })
-// buttonMDP.addEventListener("click", desactiver)
-// buttonMDP.addEventListener("click", () => {
-//     buttonMDP.classList.add("active")
-//     buttonMDP.classList.add("up")
-//     listprojet.classList.add("colorMDP")
-//     ReactDOM.render(<ProjetMDP />, listprojet)
-// })
+
 buttonBD.addEventListener("click", desactiver)
 buttonBD.addEventListener("mouseover", () => {
     var logoBD = document.querySelector("#BD img")
@@ -423,20 +446,24 @@ buttonHCJ.addEventListener("click", () => {
     ReactDOM.render(<ProjetHCJ />, listprojet)
     var resume = document.querySelectorAll(".resumer")
     resume[0].innerHTML = "Créer et respecter la maquette du site <i class='icofont-check'></i>"
+    resume[1].innerHTML = "Créer un portfolio en utilisant React <img class='logo' style='visibility: visible;' src='./images/logo/logoReact/React.png' alt='React'></img> <i class='icofont-check'></i>"
     var open = document.querySelectorAll(".projet ul div")
     open.forEach((userItem) => {
         userItem.addEventListener("click", () => {
             userItem.classList.add("retourner")
             setTimeout(() => {
                 if (userItem.children[1].lastChild.src == lienSite+"/images/HCJ/maquetteSite.png") {
-                    ReactDOM.render(<FenetreProjetWeb image={"./images/HCJ/maquetteSite.png"} link={"https://atari643.github.io/projetWeb.github.io/Projet.html"} 
+                    ReactDOM.render(<FenetreProjetWebCliquable image={"./images/HCJ/maquetteSite.png"} link={"https://atari643.github.io/projetWeb.github.io/Projet.html"} 
                     text="Pour notre projet web, nous avons divisé notre temps de projet en quatre parties. La première étape concerne la réalisation du personas . Ce dernier représente le type de personne qu'on vise lors de la création de notre site web. Nous avons choisi de viser une personne étudiant dans une école de gestion qui cherche des exemples de présentation d'entreprise. Cette dernière comprenant au moins une présentation des 7 fonctions et une analyse PESTEL.
-                    La deuxième partie concerne la création de la maquette de notre site." title="Projet de création d'un site web : Cliquer sur image" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/web/Portfolio-Quentin-web-1.pdf"}></FenetreProjetWeb>, document.querySelector(".window"))
+                    La deuxième partie concerne la création de la maquette de notre site." title="Projet de création d'un site web : Cliquer sur image" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/web/Portfolio-Quentin-web-1.pdf"}></FenetreProjetWebCliquable>, document.querySelector(".window"))
+                }else if (userItem.children[1].lastChild.src == lienSite+"/images/HCJ/portfolio.png") {
+                    ReactDOM.render(<FenetreProjetWeb image={"./images/HCJ/portfolio.png"} url={"https://atari643.github.io/"} text="Cette expérience était la création d'un portfolio pour mettre l'ensemble de mes expériences et de mes projets. J'ai utilisé les langages HTML, CSS et JavaScript pour la réalisation de ce portfolio ainsi que l'utilisation et l'apprentissage du react pour facilité la création du site et la maintenance avec l'ajout rapide de nouvelles expériences. Ainsi le projet m'a permit de progresser dans le domaine du développement web ainsi que dans la découvert de l'apprentissage en autonomie qui ma donnée envie d'apprendre d'autre framework tels que Angular ou VueJS pour pouvoir créer des sites plus facilement et plus rapidement." title="Projet de création d'un portfolio" ></FenetreProjetWeb>, document.querySelector(".window"))
                 }
+                
                 document.querySelector(".window").classList.remove("cacher")
                 document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
                     userItem.classList.remove("retourner")
-                    ReactDOM.render(<FenetreProjetWeb image={""} text="" title="" link=""></FenetreProjetWeb>, document.querySelector(".window"))
+                    ReactDOM.render(<FenetreProjetWebCliquable image={""} text="" title="" link=""></FenetreProjetWebCliquable>, document.querySelector(".window"))
                     document.querySelector(".window").classList.add("cacher")
                 })
             }, 2000);
@@ -451,6 +478,7 @@ buttonLinux.addEventListener("click", () => {
     ReactDOM.render(<ProjetLinux />, listprojet)
     var resume = document.querySelectorAll(".resumer")
     resume[0].innerHTML = "Installation machine virtuelle <i class='icofont-check'></i>"
+    resume[1].innerHTML = "Installation de service informatique privé pour un client <i class='icofont-check'></i>"
     var logo = document.querySelectorAll(".logo")
     setInterval(() => {
         for (var i = 0; i < logo.length; i++) {
@@ -465,7 +493,12 @@ buttonLinux.addEventListener("click", () => {
             setTimeout(() => {
                 if (userItem.children[1].lastChild.src == lienSite+"/images/Linux/schemaPoste.jpg") {
                     ReactDOM.render(<FenetreProjet image={"./images/Linux/installerPoste.jpg"} text="Le projet est une installation de poste pour un client souhaitant que nous lui configurions une Machine Virtuelle pour son équipe de développeurs utilisant golang pour du développement de jeux vidéo. Ce projet nous a permis de développer nos capacités d’administrateur machine comme par exemple créer des utilisateurs, installer certains programmes et surtout configurer une machine et son environnement pour qu’elle soit fonctionnelle." title="Installation d'un Poste pour un Client" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/setup/Portfolio-Quentin-setup-1.pdf"}></FenetreProjet>, document.querySelector(".window"))
+                }else if (userItem.children[1].lastChild.src == lienSite+"/images/Linux/schemaNetwork.jpg") {
+                    ReactDOM.render(<FenetreProjetMackdown image={"./images/Linux/detailInstallation.png"} text="Dans ce projet d'installation d'un service réseau, ma participation a été la configuration des utilisateurs, service réseau (nextcloud, onlyoffice) dans un réseau émulé.  Le projet m'a permis de mettre ma connaissance théorique d'une configuration réseau en pratique. Ainsi que la conception d'un descriptif détaillant l'ensemble de l'installation destinée à une compréhension sans pré-requis d'une installation réseau." title="Installation d'un service réseau" url={"https://github.com/atari643/atari643.github.io/raw/rendu/pdf/setup/Rapport_ARTIGALA_AUBIER_S2B.md"}></FenetreProjetMackdown>, document.querySelector(".window"))
+                    var Retex = document.querySelector(".reTEX")
+                    Retex.style.width = "33%"
                 }
+                document.querySelector
                 document.querySelector(".window").classList.remove("cacher")
                 document.querySelector(".icofont-close-line-circled").addEventListener("click", () => {
                     ReactDOM.render(<FenetreProjet image={""} text="" title=""></FenetreProjet>, document.querySelector(".window"))
@@ -476,13 +509,7 @@ buttonLinux.addEventListener("click", () => {
         })
     })
 });
-// buttonRS.addEventListener("click", desactiver)
-// buttonRS.addEventListener("click", () => {
-//     buttonRS.classList.add("active")
-//     listprojet.classList.add("colorRS")
-//     buttonRS.classList.add("up")
-//     ReactDOM.render(<ProjetRS />, listprojet)
-// })
+
 contact.addEventListener("click", () => {
     var lien = document.querySelector(".lien")
     if (lien.classList[1] == "enroule") {
