@@ -305,11 +305,13 @@ buttonJava.addEventListener("click", () => {
 listprojet.style.visibility = "hidden"
 allbutton.forEach((userItem) => {
     userItem.addEventListener("mousedown", () => {
-        userItem.style.scale = "0.8"
-        userItem.style.transition = "0.1s"
-        listprojet.style.visibility = "visible"
+        userItem.style.scale = "0.8";
+        userItem.style.transition = "0.1s";
+        listprojet.style.visibility = "visible";
         
-    })
+        // Redirect to the anchor tag with class .projet
+        window.location.href = `#exp`;
+    });
     userItem.addEventListener("mouseup", () => {
         userItem.style.scale = "1"
     })

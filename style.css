@@ -203,7 +203,7 @@ nav div{
 }
 }
 .projet{
-    border-radius: 3%;
+    border-radius: 20px;
 }
 
 .portFolio{
@@ -434,7 +434,6 @@ nav div{
 
 .projet li{
     width: 90%;
-    height: 90%;
 
 }
 .retourner{
@@ -769,9 +768,14 @@ hr{
         left: 10%;
     }
 }
-@media screen and (max-height:850px) {
+@media screen and (max-height:850px) and (min-width:1050px) {
     #app{
         height: 80% !important;
+    }
+}
+@media screen and (min-width:1050px) {
+    #app{
+        height: 60% !important;
     }
 }
 @media screen and (max-height:732px) and (max-width:390px) {
@@ -1040,4 +1044,7 @@ hr{
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+.projet{
+height: calc(auto + 200px);
 }
