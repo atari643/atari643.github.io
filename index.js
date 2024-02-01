@@ -308,9 +308,6 @@ allbutton.forEach((userItem) => {
         userItem.style.scale = "0.8";
         userItem.style.transition = "0.1s";
         listprojet.style.visibility = "visible";
-        
-        // Redirect to the anchor tag with class .projet
-        window.location.href = `#exp`;
     });
     userItem.addEventListener("mouseup", () => {
         userItem.style.scale = "1"
@@ -352,6 +349,9 @@ buttonCsharp.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
+    
 })
 buttonPython.addEventListener("click", desactiver)
 buttonPython.addEventListener("mouseover", () => {
