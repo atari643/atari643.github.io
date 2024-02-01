@@ -392,6 +392,8 @@ buttonPython.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 })
 
 buttonBD.addEventListener("click", desactiver)
