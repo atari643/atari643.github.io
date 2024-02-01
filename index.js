@@ -297,9 +297,10 @@ buttonJava.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 
-}
-)
+})
 
 
 listprojet.style.visibility = "hidden"
@@ -430,6 +431,8 @@ buttonBD.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 })
 
 buttonHCJ.addEventListener("click", desactiver)
@@ -471,6 +474,8 @@ buttonHCJ.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 })
 buttonLinux.addEventListener("click", desactiver)
 buttonLinux.addEventListener("click", () => {
@@ -510,6 +515,8 @@ buttonLinux.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 });
 
 contact.addEventListener("click", () => {
