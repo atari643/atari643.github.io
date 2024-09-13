@@ -297,9 +297,10 @@ buttonJava.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 
-}
-)
+})
 
 
 listprojet.style.visibility = "hidden"
@@ -308,9 +309,6 @@ allbutton.forEach((userItem) => {
         userItem.style.scale = "0.8";
         userItem.style.transition = "0.1s";
         listprojet.style.visibility = "visible";
-        
-        // Redirect to the anchor tag with class .projet
-        window.location.href = `#exp`;
     });
     userItem.addEventListener("mouseup", () => {
         userItem.style.scale = "1"
@@ -352,6 +350,9 @@ buttonCsharp.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
+    
 })
 buttonPython.addEventListener("click", desactiver)
 buttonPython.addEventListener("mouseover", () => {
@@ -391,6 +392,8 @@ buttonPython.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 })
 
 buttonBD.addEventListener("click", desactiver)
@@ -430,6 +433,8 @@ buttonBD.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 })
 
 buttonHCJ.addEventListener("click", desactiver)
@@ -471,6 +476,8 @@ buttonHCJ.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 })
 buttonLinux.addEventListener("click", desactiver)
 buttonLinux.addEventListener("click", () => {
@@ -510,6 +517,8 @@ buttonLinux.addEventListener("click", () => {
             }, 2000);
         })
     })
+    // Redirect to the anchor tag with class .projet
+    window.location.href = `#exp`;
 });
 
 contact.addEventListener("click", () => {
