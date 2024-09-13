@@ -290,7 +290,7 @@ nav div{
         background-color: rgba(255, 255, 255,1);
     }
     }
-@keyframes ledJ {
+/* @keyframes ledJ {
     0%{box-shadow: 5px 5px 25px red;}
     50%{box-shadow: 5px 5px 25px blue;}
     100%{box-shadow: 5px 5px 25px red;}
@@ -376,7 +376,7 @@ nav div{
     animation-name: ledRS;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-}
+} */
 
 .projet .image{
     margin: 50px !important;
