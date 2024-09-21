@@ -40,7 +40,7 @@ var imgProjetJava2="/images/java/projet-2/Programming-amico.png"
 var imgProjetCsharp1="/images/Csharp/projet-1/UI-UX-team-amico.png"
 var imgProjetHCJ2="/images/HCJ/Digital-transformation-amico.png"
 var imgRskPy="/images/Python/rsk/miniature.png"
-var lienSite = "https://atari643.github.io"
+var lienSite = "http://127.0.0.1:5500"
 const lien = <h1 class="suivant">Resumé<i class="icofont-arrow-right"></i></h1>
 class ProjetJava extends React.Component {
     render() {

@@ -723,7 +723,7 @@ hr{
         left:10%;
     }
 }
-@media screen and (max-height:744px) and (min-width:1050px) {
+@media screen and (max-height:740px) and (min-width:1050px) {
     .window p{
         top: 500px !important;
         margin-left: 0px;
@@ -743,7 +743,7 @@ hr{
         left:10%;
     }
 }
-@media screen and (max-height:744px) {
+@media screen and (max-height:740px) {
     .window p{
         top: 500px !important;
         margin-left: 0px;
