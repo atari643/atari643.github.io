@@ -79,7 +79,8 @@ header{
 }
 
 .info{
-    margin-left: 40px;
+    margin-left: 100px;
+    width: 80%;
 }
 .projet ul div:hover{
     filter: brightness(0.5);
@@ -536,7 +537,9 @@ hr{
 #me{
     align-items: center;
     text-align: center;
-    
+}
+#me p {
+    width: 100%;
 }
 .down{
     transform: translateY(+30px);
@@ -699,7 +702,7 @@ hr{
 }
 @media screen and (max-width:600px) {
     .window p{
-        top: 50vh !important;
+        top: 55vh !important;
         margin-left: 0px;
     }
 }

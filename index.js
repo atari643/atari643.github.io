@@ -207,6 +207,7 @@ class ProjetRS extends React.Component {
     }
 }
 
+
 function selectRandomNavButton() {
     const navButtons = document.querySelectorAll("nav button");
     const randomIndex = Math.floor(Math.random() * navButtons.length);
