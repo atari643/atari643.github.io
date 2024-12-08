@@ -1229,6 +1229,8 @@ height: calc(auto + 200px);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
+    width: 80%;
+    margin: 0 auto;
   }
   
   #mentor {
@@ -1242,6 +1244,9 @@ height: calc(auto + 200px);
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+
     
 
   }
