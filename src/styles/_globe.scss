@@ -1,0 +1,15 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.intl-globe-wrapper { position:relative; display:flex; justify-content:center; align-items:center; padding:1.5rem 0 2.2rem; 
+  .intl-globe { position:relative; filter:drop-shadow(0 12px 32px rgba(0,0,0,.6)); }
+  .globe-backdrop { position:absolute; inset:0; pointer-events:none; display:flex; align-items:center; justify-content:center; mix-blend-mode:plus-lighter; }
+  .globe-backdrop:before { content:""; width:78%; aspect-ratio:1/1; border-radius:50%; background:radial-gradient(circle at 50% 55%, rgba($color-accent,.55), rgba($color-accent-alt,.0) 70%); filter:blur(38px) saturate(140%); opacity:.75; animation:glowPulse 6s ease-in-out infinite; }
+  .globe-caption { position:absolute; bottom:-10px; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-muted); font-weight:500; opacity:.85; }
+}
+
+body[data-theme='light'] .intl-globe-wrapper .globe-backdrop:before { opacity:.55; filter:blur(42px) saturate(160%); }
+
+@keyframes glowPulse { 0%,100%{ transform:scale(.92); opacity:.65;} 50%{ transform:scale(1.08); opacity:.85; } }
+
+/* Accessibility hidden text already defined in contact styles; ensure reuse */

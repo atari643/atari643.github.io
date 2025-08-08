@@ -1,0 +1,99 @@
+/* Base styles migrated from style.css (kept look & feel) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+:root{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#121212;color:#fff;font-family:Inter,system-ui,Arial,sans-serif;}
+#root{min-height:100vh;}
+
+/* Keep button/link look */
+.a-btn{box-shadow:0 7px 0 0 #fff;background:#000;border-radius:28px;border:1px solid #fff;color:#fff;font-weight:700;padding:10px 20px;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.a-btn:hover{transform:translateY(7px);box-shadow:0 0 0 0 #fff;transition:.3s}
+
+/* Container */
+.page{max-width:1200px;margin:0 auto;padding:16px}
+header.hero{display:flex;gap:24px;align-items:center;justify-content:space-between;min-height:80vh;background:#282c34;padding:24px;position:relative}
+.hero .profile{width:min(320px,45vw);border-radius:10%}
+.hero .info{flex:1}
+.hero .access{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+/* Project grid */
+.projet{background:#fff;border-radius:20px;padding:16px;margin:32px auto;color:#000}
+.projet .grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+.projet .card{flex:1 1 calc(33% - 16px);min-width:260px;max-width:380px;background:#000;color:#fff;border-radius:20px;box-shadow:14px 14px 14px 0 rgb(0 0 0 / .6);position:relative;overflow:hidden}
+.projet .card img{width:100%;display:block}
+.projet .card .resume{position:absolute;top:8px;left:8px;right:8px;text-align:center;font-size:1.5rem;text-shadow:-1px 0 blue,0 1px black,1px 0 black,0 -1px black}
+
+/* Timeline */
+.timeline{position:relative;max-width:1200px;margin:0 auto;padding:40px 0}
+.timeline::after{content:'';position:absolute;width:6px;background:#ddd;top:0;bottom:0;left:50%;margin-left:-3px}
+.timeline .container{position:relative;width:50%;padding:10px 40px;opacity:0;transform:translateY(20px);transition:opacity .6s ease-out, transform .6s ease-out}
+.timeline .container.show{opacity:1;transform:translateY(0)}
+.timeline .container.left{left:0}
+.timeline .container.right{left:50%}
+.timeline .container::after{content:'';position:absolute;width:25px;height:25px;right:-17px;background:#fff;border:4px solid #FF9F55;top:15px;border-radius:50%;z-index:1}
+.timeline .container.right::after{left:-16px;right:auto}
+.timeline .content{background:#fff;color:#000;border-radius:6px;padding:20px;margin:20px}
+
+/* Contact bar */
+.contact-bar{position:fixed;top:0;left:0;right:0;background:#fff;color:#000;display:none}
+.contact-bar.open{display:block;animation:slideDown .3s ease}
+@keyframes slideDown{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+.contact-btn{position:fixed;top:8px;left:8px;background:#fff;color:#000;border-radius:28px;padding:8px 12px;z-index:20;border:0;box-shadow:0 7px 0 0 #000;cursor:pointer}
+.lang-switch{position:fixed;top:8px;right:8px;background:#fff;color:#000;border-radius:28px;padding:8px 12px;z-index:20;border:0;box-shadow:0 7px 0 0 #000}
+
+.video-presentation{display:flex;justify-content:center;margin:48px}
+.video-presentation video{width:min(800px,90vw);height:auto}
+
+hr{height:10px;background:#fff;border:0;margin:24px 0}
+
+@media (max-width:900px){
+  header.hero{flex-direction:column}
+  .timeline::after{left:24px}
+  .timeline .container{width:100%;left:0;padding-left:70px}
+  .timeline .container.right .content{margin-left:0}
+}
+
+/* Legacy-like enhancements */
+header.hero{min-height:100vh}
+.hero .info{margin-left:100px}
+.hero .Acess{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;justify-content:space-around}
+.etoile{width:5px;height:5px;background:#fff;border-radius:10px;position:absolute}
+.Top{top:5%;left:5%}
+.Right{top:5%;right:5%}
+.Bottom{top:90%;right:5%}
+.Left{bottom:9.5%;left:5%}
+
+.projet{border:1px solid #fff}
+.retourner{animation:cardClick 1s ease forwards}
+@keyframes cardClick{0%{transform:scale(1)}50%{transform:scale(0.5)}100%{transform:scale(1)}}
+
+.contact{width:100%;height:10%;position:fixed;z-index:10;transform:translateY(-100px);animation:derouler 1s ease forwards}
+@keyframes derouler{0%{transform:translateY(-100px)}100%{transform:translateY(0)}}
+#list{position:fixed;top:1%;left:2%;width:100px;height:50px;border-radius:28px;background:#fff;color:#000;cursor:pointer;z-index:11;box-shadow:0 7px 0 0 #000;border:0}
+.enroule{transform:translateY(-100px);position:fixed;transition:1s;display:none!important}
+.dérouler{transform:translateY(0);position:fixed;transition:1s}
+.decendre{transform:translateY(+100px);transition:1s}
+.remonte{transform:translateY(0);transition:1s}
+.contact div{display:flex;justify-content:space-around;background:#fff;padding:10px 0;width:100%}
+.contact form{display:flex;justify-content:center;width:300px}
+.contact button{background:rgba(0,0,0,0.2);border:1px solid #fff;width:50%;border-radius:28px;height:70px;cursor:pointer;display:flex;justify-content:space-around;align-items:center}
+.icofont-ui-email{font-size:40px}
+.lang-switch{position:fixed;top:8px;right:8px;background:#fff;color:#000;border-radius:28px;padding:8px 12px;z-index:20;border:0;box-shadow:0 7px 0 0 #000}
+
+nav button{box-shadow:0 7px 0 0 #fff;transition:.3s;border-radius:100%;cursor:pointer}
+nav button:hover{transform:translateY(7px);box-shadow:0 0 0 0 #fff}
+.press{box-shadow:0 0 0 0 #fff;transform:translateY(7px);scale:1.2}
+.lang{width:100%;height:100%;border-radius:100%}
+
+.colorJava{animation:ledJ 3s infinite}
+@keyframes ledJ{0%{box-shadow:0 0 25px red}50%{box-shadow:0 0 25px blue}100%{box-shadow:0 0 25px red}}
+.colorCsharp{animation:ledC 3s infinite}
+@keyframes ledC{0%{box-shadow:0 0 25px #777}50%{box-shadow:0 0 25px #390094}100%{box-shadow:0 0 25px #777}}
+.colorPython{animation:ledPy 3s infinite}
+@keyframes ledPy{0%{box-shadow:0 0 25px #0993f2}50%{box-shadow:0 0 25px #f2c108}100%{box-shadow:0 0 25px #0993f2}}
+.colorWeb{animation:ledHCJ 4s infinite}
+@keyframes ledHCJ{0%{box-shadow:0 0 25px #dd4b25}33%{box-shadow:0 0 25px #2862e9}66%{box-shadow:0 0 25px #efd81d}100%{box-shadow:0 0 25px #dd4b25}}
+.colorSql{animation:ledBD 3s infinite}
+@keyframes ledBD{0%{box-shadow:0 0 25px #4a4a4a}50%{box-shadow:0 0 25px #db5443}100%{box-shadow:0 0 25px #4a4a4a}}
+.colorLinux{animation:ledLinux 4s infinite}
+@keyframes ledLinux{0%{box-shadow:0 0 25px #d7d8d3}33%{box-shadow:0 0 25px #000}66%{box-shadow:0 0 25px #f5ce10}100%{box-shadow:0 0 25px #d7d8d3}}

@@ -1,0 +1,72 @@
+@use 'variables' as *;
+
+/*
+ * =============================
+ * MIXINS / RESPONSIVE TOOLKIT
+ * =============================
+ * - $breakpoints centralisés (mobile-first)
+ * - Mixin breakpoint() avec direction configurable
+ * - Helpers fluides (fluid-clamp / fluid-type)
+ * - Compatibilité : responsive(xs|sm|md|lg) conservé
+ */
+
+$breakpoints: (
+  xs: 420px,
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1440px
+);
+
+@mixin breakpoint($name, $direction: max){
+  $value: map-get($breakpoints,$name);
+  @if $value == null { @error 'Breakpoint `#{$name}` inconnu.'; }
+  @if $direction == max {
+    @media (max-width: $value){ @content; }
+  } @else if $direction == min {
+    @media (min-width: $value){ @content; }
+  } @else {
+    @error 'Direction invalide: #{$direction}. Utiliser min ou max.';
+  }
+}
+
+// Alias historique pour compatibilité existante
+@mixin responsive($bp){
+  @include breakpoint($bp, max){ @content; }
+}
+
+// Centrage flex rapide
+@mixin flex-center($dir:row,$gap:0){
+  display:flex; flex-direction:$dir; align-items:center; justify-content:center; gap:$gap;
+}
+
+// Bouton de base (legacy + variables)
+@mixin button-base($bg:#000,$color:#fff){
+  cursor:pointer; border:1px solid #fff; background:$bg; color:$color; border-radius:28px; font-weight:600; transition:.3s;
+  box-shadow:0 7px 0 0 rgba(0,0,0,0.4);
+  &:hover{ transform:translateY(7px); box-shadow:none; }
+}
+
+@mixin card-shadow{ box-shadow:14px 14px 14px 0 #000; }
+
+// Génère un clamp fluid entre 2 tailles sur plage de viewport
+@mixin fluid-clamp($prop, $min, $max, $min-vw:360px, $max-vw:1440px){
+  #{$prop}: clamp(#{$min}, calc(#{$min} + (#{strip-unit($max - $min)} * ((100vw - #{$min-vw}) / (#{strip-unit($max-vw - $min-vw)})))), #{$max});
+}
+
+// Typographie fluide simple (ex: @include fluid-type(1rem,1.25rem);)
+@mixin fluid-type($min, $max){
+  @include fluid-clamp(font-size, $min, $max);
+  line-height:1.15;
+}
+
+// Utility : réduit les effets lourds sur écrans très petits
+@mixin compact-mobile{
+  @include breakpoint(xs){
+    * { scroll-margin-top:64px; }
+    .shadow-heavy { box-shadow:none !important; }
+  }
+}
+
+// Appliquer automatiquement
+@include compact-mobile;

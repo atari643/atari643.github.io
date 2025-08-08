@@ -1,0 +1,77 @@
+{
+	"welcome": "Bienvenue sur mon PortFolio:",
+	"name": "Quentin Artigala",
+	"intro": "Après deux ans à l'IUT de Bordeaux (informatique) j'intègre l'ENSEEIHT en filière Informatique & Réseaux en alternance avec l'objectif de travailler dans le domaine spatial.",
+	"nav": {
+		"experience": "Mes Expériences",
+		"cursus": "Mon Cursus",
+		"activities": "Mes Activités",
+		"internships": "Mes Stages",
+		"intl": "Internationalisation",
+		"career": "Développement Professionnel",
+		"engagement": "Engagement"
+	},
+	"projects.sectionTitle": "Cliquer sur les langages pour voir mes Expériences",
+	"timeline.cursus": [
+		{ "year": "2022-2024", "text": "IUT de Bordeaux - DUT Informatique" },
+		{ "year": "2024-2027", "text": "ENSEEIHT - Informatique & Réseaux (alternance)" }
+	],
+	"video.title": "Présentation",
+	"video.play": "Lire",
+	"video.pause": "Pause",
+	"video.currentTime": "Temps courant",
+	"video.duration": "Durée",
+	"video.progress": "Progression",
+	"video.volume": "Volume",
+	"video.mute": "Muet",
+	"video.unmute": "Son",
+	"video.seekForward": "+10s",
+	"video.seekBackward": "-10s",
+	"mentors.title": "Mes Mentors",
+	"mentors.items": [
+		{"name":"Eric Artigala","role":"Ancien CEO, chef de projet & formateur"},
+		{"name":"Tom Camin","role":"Architecte IT (Data, Security & Cloud)"},
+		{"name":"Elizaveta Shashkova","role":"Education, recherche & industrie (spatial)"}
+	],
+	"activities.title": "Activités & Sport",
+		"activities.items": [
+			{"year":"2022","title":"Coupe de France de robotique","text":"Participation avec l'équipe de l'IUT de Bordeaux"},
+			{"year":"2023","title":"Coupe d'Europe robotique (Croatie)","text":"Vice-champions d'Europe (équipe de 4)"}
+		],
+	"career.title": "Stages / Parcours",
+		"career.items": [
+				{"year":"2024","title":"Stage Capgemini (2 mois)","text":"Maintenance d’une application web & conformité code Python"}
+		],
+	"intl.title": "Internationalisation",
+		"intl.items": [
+			
+		],
+	"engagement.title": "Engagement & Durabilité"
+		,"engagement.text": "Engagement dans l'association Article 1 pour l'égalité des chances et la réussite des étudiants issus de milieux modestes.",
+	"access": {
+		"skip": "Aller au contenu",
+		"toggleTheme": "Basculer le thème",
+		"dark": "Sombre",
+		"light": "Clair"
+	},
+	"projects": {
+		"all": "Tous",
+		"search": "Rechercher",
+		"searchPlaceholder": "Rechercher dans la catégorie...",
+		"clear": "Effacer",
+		"noResults": "Aucun résultat",
+		"noProjects": "Aucun projet dans cette catégorie.",
+		"selectCategory": "Sélectionnez une catégorie",
+		"sectionTitle": "Cliquer sur les langages pour voir mes Expériences"
+	},
+	"contact": {
+		"toggle": "Contact",
+		"email": "Email",
+		"github": "GitHub",
+		"linkedin": "LinkedIn",
+		"copyEmail": "Copier l'email",
+		"copied": "Copié !",
+		"openPanel": "Ouvrir le panneau de contact",
+		"closePanel": "Fermer le panneau de contact"
+	}
+}

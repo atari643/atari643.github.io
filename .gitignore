@@ -1,0 +1,20 @@
+# Node / build
+node_modules/
+dist/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+pnpm-lock.yaml
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.local
+*.cache
+/.sass-cache
+/.parcel-cache
+coverage/

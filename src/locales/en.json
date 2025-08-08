@@ -1,0 +1,77 @@
+{
+	"welcome": "Welcome to my Portfolio:",
+	"name": "Quentin Artigala",
+	"intro": "After two years at IUT Bordeaux (CS) I joined ENSEEIHT in Computer Science & Networks apprenticeship aiming to work in the space field.",
+	"nav": {
+		"experience": "Experience",
+		"cursus": "Engineering Course",
+		"activities": "Activities",
+		"internships": "Internships",
+		"intl": "International Mobility",
+		"career": "Career Development",
+		"engagement": "Engagement"
+	},
+	"projects.sectionTitle": "Click on languages to view my experience",
+	"timeline.cursus": [
+		{ "year": "2022-2024", "text": "IUT Bordeaux - DUT Computer Science" },
+		{ "year": "2024-2027", "text": "ENSEEIHT - CS & Networks (apprenticeship)" }
+	],
+	"video.title": "Presentation",
+	"video.play": "Play",
+	"video.pause": "Pause",
+	"video.currentTime": "Current time",
+	"video.duration": "Duration",
+	"video.progress": "Progress",
+	"video.volume": "Volume",
+	"video.mute": "Mute",
+	"video.unmute": "Unmute",
+	"video.seekForward": "+10s",
+	"video.seekBackward": "-10s",
+	"mentors.title": "My Mentors",
+	"mentors.items": [
+		{"name":"Eric Artigala","role":"Former CEO, project manager & trainer"},
+		{"name":"Tom Camin","role":"IT Architect (Data, Security & Cloud)"},
+		{"name":"Elizaveta Shashkova","role":"Bridging education, research & industry (space)"}
+	],
+	"activities.title": "Activities & Sport",
+		"activities.items": [
+				{"year":"2022","title":"French Robotics Cup","text":"Participation with IUT Bordeaux team"},
+				{"year":"2023","title":"European Robotics Cup (Croatia)","text":"Vice-champions of Europe (team of 4)"}
+		],
+	"career.title": "Career Path",
+		"career.items": [
+				{"year":"2024","title":"Internship Capgemini (2 months)","text":"Web app maintenance & Python code compliance"}
+		],
+	"intl.title": "International Mobility",
+		"intl.items": [
+			
+		],
+	"engagement.title": "Sustainability & Civic Engagement"
+		,"engagement.text": "Involved in Article 1 association promoting equal opportunities for students from modest backgrounds.",
+	"access": {
+		"skip": "Skip to content",
+		"toggleTheme": "Toggle theme",
+		"dark": "Dark",
+		"light": "Light"
+	},
+	"projects": {
+		"all": "All",
+		"search": "Search",
+		"searchPlaceholder": "Search in category...",
+		"clear": "Clear",
+		"noResults": "No results",
+		"noProjects": "No project in this category.",
+		"selectCategory": "Select a category",
+		"sectionTitle": "Click on languages to view my experience"
+	},
+	"contact": {
+		"toggle": "Contact",
+		"email": "Email",
+		"github": "GitHub",
+		"linkedin": "LinkedIn",
+		"copyEmail": "Copy email",
+		"copied": "Copied!",
+		"openPanel": "Open contact panel",
+		"closePanel": "Close contact panel"
+	}
+}
