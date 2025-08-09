@@ -31,8 +31,11 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
-        run: npm install
+      # Clean install to fix Rollup native module optional dependency mismatch on Linux runners
+      - name: Clean npm install to fix Rollup native module issue
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: Build site
         run: npm run build
