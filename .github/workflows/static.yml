@@ -22,6 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -33,6 +36,9 @@ jobs:
 
       - name: Build site
         run: npm run build
+
+      - name: Add .nojekyll
+        run: echo > dist/.nojekyll
 
       - name: Upload artifact (dist)
         uses: actions/upload-pages-artifact@v3
