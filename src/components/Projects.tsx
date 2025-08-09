@@ -491,7 +491,7 @@ export default function Projects(){
               onClick={()=>setActive(btn.k)}
               onKeyDown={(e)=> { if(e.key==='Enter' || e.key===' '){ e.preventDefault(); setActive(btn.k) } }}
             >
-              <img className="lang" src={btn.paths[0]} alt={btn.label} />
+              <img className="lang" src={btn.paths[0]} alt={btn.label} loading="lazy" decoding="async" />
             </button>
           ))}
 
@@ -539,7 +539,7 @@ export default function Projects(){
               >
         <div className="halo" aria-hidden="true" />
         <div className="resume">{item.summary} {item.__cat && <span style={{display:'inline-block',marginLeft:6,padding:'2px 6px',borderRadius:12,fontSize:11,background:'rgba(255,255,255,.12)'}}>{item.__cat}</span>} <i className='icofont-check' aria-hidden="true"></i></div>
-                <img src={item.image} alt={item.title} />
+                <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
               </div>
             ))}
 

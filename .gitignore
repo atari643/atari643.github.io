@@ -6,7 +6,8 @@ dist/
 .DS_Store
 Thumbs.db
 pnpm-lock.yaml
-package-lock.json
+# Autoriser le lockfile npm pour CI
+#! package-lock.json
 
 # IDE
 .vscode/

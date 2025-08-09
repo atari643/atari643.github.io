@@ -10,11 +10,12 @@ export default function ProjectsConstellation({ nodes, active }: Props){
   useEffect(()=>{
     const el = ref.current; if(!el || !nodes.length) return
     const reduced = prefersReducedMotion()
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 640
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100)
     camera.position.z = 14
-    const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true })
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
+  const renderer = new THREE.WebGLRenderer({ antialias:!isMobile, alpha:true })
+  renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio,2))
     const size = Math.min(520, el.clientWidth)
     renderer.setSize(size, size*.62)
     el.appendChild(renderer.domElement)
@@ -25,8 +26,8 @@ export default function ProjectsConstellation({ nodes, active }: Props){
     const radius = 6
     const group = new THREE.Group()
     scene.add(group)
-    const nodeGeo = new THREE.SphereGeometry(.38, 18, 18)
-    const activeGeo = new THREE.SphereGeometry(.55, 22, 22)
+  const nodeGeo = new THREE.SphereGeometry(.38, isMobile? 12:18, isMobile? 12:18)
+  const activeGeo = new THREE.SphereGeometry(.55, isMobile? 16:22, isMobile? 16:22)
     const edgeMat = new THREE.LineBasicMaterial({ color:'#ffffff', transparent:true, opacity:.22 })
     const baseMat = new THREE.MeshBasicMaterial({ color:accent, transparent:true, opacity:.8 })
     const activeMat = new THREE.MeshBasicMaterial({ color:accentAlt, transparent:true, opacity:1 })
@@ -45,20 +46,25 @@ export default function ProjectsConstellation({ nodes, active }: Props){
     })
 
     if(nodes.length>1){
+      // Échantillonne les connexions pour éviter O(n^2) de lignes sur mobile
+      const maxEdges = isMobile ? 16 : 36
+      let edges = 0
       for(let i=0;i<nodes.length;i++){
         for(let j=i+1;j<nodes.length;j++){
+          if(edges>=maxEdges) break
           const a = nodeMeshes[i].mesh.position
           const b = nodeMeshes[j].mesh.position
           const geo = new THREE.BufferGeometry().setFromPoints([a.clone(), b.clone()])
           const line = new THREE.Line(geo, edgeMat.clone())
           ;(line.material as THREE.LineBasicMaterial).opacity = .09 + Math.random()*0.18
           group.add(line)
+          edges++
         }
       }
     }
 
     const pGeo = new THREE.BufferGeometry()
-    const pCount = 160
+  const pCount = isMobile ? 90 : 160
     const pPos = new Float32Array(pCount*3)
     for(let i=0;i<pCount;i++){
       const i3=i*3
@@ -77,13 +83,13 @@ export default function ProjectsConstellation({ nodes, active }: Props){
     let raf=0, t=0, running=true
     const animate=()=>{
       if(!running) return
-      t+=0.006
+      t+= isMobile? 0.004:0.006
       if(!reduced){
-        group.rotation.z += 0.0015
-        pts.rotation.y += 0.0008
+        group.rotation.z += isMobile? 0.001:0.0015
+        pts.rotation.y += isMobile? 0.0005:0.0008
         nodeMeshes.forEach(nm=>{
           if(active && nm.data.key===active){
-            const s = 1 + Math.sin(t*3)*0.08
+            const s = 1 + Math.sin(t*3)*(isMobile? 0.06:0.08)
             nm.mesh.scale.setScalar(s)
           }
         })

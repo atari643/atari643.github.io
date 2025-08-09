@@ -7,11 +7,12 @@ export default function ProjectsOrb(){
   useEffect(()=>{
     const wrap = wrapRef.current
     if(!wrap) return
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 640
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100)
     camera.position.z = 8
-    const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true })
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
+  const renderer = new THREE.WebGLRenderer({ antialias:!isMobile, alpha:true })
+  renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio,2))
     const size = Math.min(420, wrap.clientWidth)
     renderer.setSize(size,size)
     wrap.appendChild(renderer.domElement)
@@ -22,8 +23,9 @@ export default function ProjectsOrb(){
     const accentB = getComputedStyle(document.documentElement).getPropertyValue('--color-accent-alt').trim() || '#ec4899'
     const mat1 = new THREE.MeshBasicMaterial({ color: accentA, wireframe:true, transparent:true, opacity:.5 })
     const mat2 = new THREE.MeshBasicMaterial({ color: accentB, wireframe:true, transparent:true, opacity:.35 })
-    const geo1 = new THREE.TorusKnotGeometry(2.4, .55, 128, 16, 2, 5)
-    const geo2 = new THREE.IcosahedronGeometry(1.8,1)
+  // Réduire la tessellation sur mobile
+  const geo1 = new THREE.TorusKnotGeometry(2.4, .55, isMobile? 72:128, 16, 2, 5)
+  const geo2 = new THREE.IcosahedronGeometry(1.8, isMobile? 0:1)
     const mesh1 = new THREE.Mesh(geo1, mat1)
     const mesh2 = new THREE.Mesh(geo2, mat2)
     group.add(mesh1)
@@ -31,7 +33,7 @@ export default function ProjectsOrb(){
 
     // Subtle particles shell
     const pGeo = new THREE.BufferGeometry()
-    const pCount = 900
+  const pCount = isMobile? 420:900
     const pos = new Float32Array(pCount*3)
     for(let i=0;i<pCount;i++){
       const i3=i*3
@@ -47,15 +49,16 @@ export default function ProjectsOrb(){
     const pts = new THREE.Points(pGeo,pMat)
     scene.add(pts)
 
-    let raf=0, t=0
+    let raf=0, t=0, running=true
     const animate=()=>{
-      t+=0.006
+      if(!running) return
+      t+= isMobile? 0.004:0.006
       mesh1.rotation.x += 0.003
       mesh1.rotation.y += 0.004
       mesh2.rotation.x -= 0.002
       mesh2.rotation.y -= 0.003
       group.rotation.z = Math.sin(t*.4)*.4
-      pts.rotation.y += 0.0008
+      pts.rotation.y += isMobile? 0.0005:0.0008
       renderer.render(scene,camera)
       raf=requestAnimationFrame(animate)
     }
@@ -65,8 +68,10 @@ export default function ProjectsOrb(){
       const s = Math.min(420, wrap.clientWidth)
       renderer.setSize(s,s)
     }
+    const onVis=()=>{ running = !document.hidden; if(running){ raf=requestAnimationFrame(animate) } }
+    document.addEventListener('visibilitychange', onVis)
     window.addEventListener('resize', handleResize)
-    return ()=>{ cancelAnimationFrame(raf); window.removeEventListener('resize', handleResize); geo1.dispose(); geo2.dispose(); pGeo.dispose(); renderer.dispose(); wrap.removeChild(renderer.domElement) }
+    return ()=>{ running=false; cancelAnimationFrame(raf); document.removeEventListener('visibilitychange', onVis); window.removeEventListener('resize', handleResize); geo1.dispose(); geo2.dispose(); pGeo.dispose(); renderer.dispose(); wrap.removeChild(renderer.domElement) }
   },[])
   return <div className="projects-orb" ref={wrapRef} aria-hidden="true" />
 }

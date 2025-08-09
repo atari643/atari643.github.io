@@ -14,8 +14,10 @@ export default function VideoRing({ progress, playing }:Props){
     const scene = new THREE.Scene()
     const camera = new THREE.OrthographicCamera(-1,1,1,-1,0.1,10)
     camera.position.z = 2
-    const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true })
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2))
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 640
+  const renderer = new THREE.WebGLRenderer({ antialias:!isMobile, alpha:true })
+  // Sur mobile, garder un pixelRatio à 1 pour limiter la charge GPU
+  renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio,2))
     renderer.setSize(140,140)
     el.appendChild(renderer.domElement)
     const accent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim() || '#6366f1'
@@ -55,10 +57,11 @@ export default function VideoRing({ progress, playing }:Props){
       const shader = (ring.material as any).userData.shader
       if(shader){ shader.uniforms.uProgress.value = progRef.current }
       renderer.render(scene,camera)
-      if(!reduced || playing) raf=requestAnimationFrame(animate)
+      // Ne boucle que si la vidéo joue; sinon un seul rendu suffit
+      if(playing) raf=requestAnimationFrame(animate)
     }
     animate()
-    const onVis=()=>{ running=!document.hidden; if(running && (!reduced || playing)){ raf=requestAnimationFrame(animate) } }
+    const onVis=()=>{ running=!document.hidden; if(running && playing){ raf=requestAnimationFrame(animate) } }
     document.addEventListener('visibilitychange', onVis)
     return ()=>{ running=false; cancelAnimationFrame(raf); document.removeEventListener('visibilitychange', onVis); renderer.dispose(); el.removeChild(renderer.domElement) }
   },[playing])

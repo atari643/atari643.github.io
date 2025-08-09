@@ -41,7 +41,7 @@
 @media (max-width:540px){
   .timeline { --axis-gap:0; }
   .timeline::after { left:30px; }
-  .timeline .container { flex-direction:row; }
+  .timeline .content { background:$color-surface-alt; padding:24px 28px 22px; border-radius:18px; margin:0; max-width:520px; width:calc(50% - var(--axis-gap)); box-shadow:0 10px 34px -18px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06); position:relative; overflow:hidden; display:flex; flex-direction:column; gap:.55rem; backdrop-filter:$blur-backdrop; }
   .timeline .container::after { left:30px; top:30px; }
   .timeline .content { width:auto; margin:0 0 0 66px; max-width:100%; }
   .timeline .container.left .content, .timeline .container.right .content { margin:0 0 0 66px; }
@@ -49,6 +49,13 @@
 @media (max-width:420px){
   .timeline .content { padding:18px 18px 16px; }
   .timeline .content h2 { font-size:.95rem; }
+/* Réduction des effets coûteux sur mobile */
+@media (max-width:640px){
+  .timeline .content { box-shadow:0 6px 18px -10px rgba(0,0,0,.5); backdrop-filter:none; }
+  .timeline::after { opacity:.12; }
+  .video-section .video-wrapper { box-shadow:0 4px 16px -8px rgba(0,0,0,.5); }
+  .timeline-3d-wrapper .timeline-markers canvas { filter:none; }
+}
   .timeline .content h3 { font-size:.82rem; }
 }
 

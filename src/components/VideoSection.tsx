@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useState, useRef, useEffect, useCallback } from 'react'
 import VideoRing from './three/VideoRing'
+import { useInView } from './three/useInView'
 
 export default function VideoSection(){
 	const { t } = useTranslation()
@@ -11,6 +12,7 @@ export default function VideoSection(){
 			const [duration, setDuration] = useState(0)
 			const [volume, setVolume] = useState(1)
 			const [muted, setMuted] = useState(false)
+	const { ref: sectionRef, inView } = useInView<HTMLDivElement>({ threshold:.2 })
 
 	// Sync paused state if user uses keyboard native controls
 		useEffect(()=>{
@@ -87,7 +89,7 @@ export default function VideoSection(){
 				}
 
 		return (
-			<section id="video" className="video-section" aria-labelledby="video-title">
+			<section id="video" ref={sectionRef} className="video-section" aria-labelledby="video-title">
 				<h1 id="video-title" className="section-title"><span className="accent-gradient">{t('video.title')}</span></h1>
 				<div className="video-frame" role="region" aria-label={t('video.title')}>
 					<div
@@ -101,12 +103,14 @@ export default function VideoSection(){
 							poster="/images/HCJ/portfolio.png"
 							tabIndex={0}
 							aria-label={t('video.title')}
-													playsInline
+																playsInline
+				                      disablePictureInPicture
+				                      controlsList="nodownload noplaybackrate"
 						>
 							<source src="/Video/portfolio-Presentation.mp4" type="video/mp4" />
 							{t('video.unsupported') || 'Video unsupported'}
 									</video>
-									<div className="video-ring-wrap"><VideoRing progress={duration? time/duration:0} playing={!paused} /></div>
+													<div className="video-ring-wrap">{inView && <VideoRing progress={duration? time/duration:0} playing={!paused} />}</div>
 						<button
 							type="button"
 							className="video-overlay-btn"
