@@ -50,6 +50,15 @@ export default function App(){
   return (
   <div className="app-shell">
       <a href="#main" className="skip-link">{t('access.skip','Aller au contenu')}</a>
+      <button 
+        className="theme-toggle" 
+        onClick={toggleTheme}
+        aria-label={t('access.toggleTheme', 'Basculer le thème')}
+        title={t('access.toggleTheme', 'Basculer le thème')}
+      >
+        <i className={theme === 'dark' ? 'icofont-sun' : 'icofont-moon'} />
+        {theme === 'dark' ? t('access.light', 'Clair') : t('access.dark', 'Sombre')}
+      </button>
   <ContactBar />
   <LanguageSwitcher />
 

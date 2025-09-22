@@ -86,3 +86,39 @@
 .timeline-3d-wrapper .timeline-markers canvas { width:100%!important; height:100%!important; display:block; filter:drop-shadow(0 8px 24px rgba(0,0,0,.55)); }
 .timeline-3d-wrapper { --tm-fade:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,.4)); }
 .timeline-3d-wrapper .timeline { position:relative; z-index:2; }
+
+// Light theme adjustments
+body[data-theme='light'] {
+	.timeline .container::after {
+		border:3px solid rgba(255,255,255,.95);
+		box-shadow:0 0 0 4px rgba(0,0,0,.08), 0 0 22px -6px $color-accent;
+	}
+	
+	.timeline .content {
+		background:rgba(255,255,255,.85);
+		border:1px solid rgba(0,0,0,.08);
+		box-shadow:0 8px 25px -10px rgba(0,0,0,.2), 0 0 0 1px rgba(0,0,0,.04);
+		backdrop-filter:blur(8px);
+		
+		&:before {
+			background:linear-gradient(130deg, rgba(0,0,0,.02), rgba(0,0,0,0));
+		}
+		
+		h3 {
+			color:var(--color-muted);
+		}
+	}
+	
+	.timeline::after {
+		opacity:.08;
+		background:linear-gradient(180deg,rgba($color-accent,.6),rgba($color-accent-alt,.6));
+	}
+	
+	.video-section .video-wrapper {
+		box-shadow:0 10px 40px -12px rgba(0,0,0,.25);
+	}
+	
+	.video-section .video-wrapper .controls {
+		background:linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,.1));
+	}
+}

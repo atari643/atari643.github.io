@@ -253,9 +253,73 @@ main, section { scroll-margin-top:72px; }
 
 /* Light theme adjustments */
 body[data-theme='light'] {
-	.glass { background:rgba(255,255,255,.65); border:1px solid rgba(0,0,0,.05); }
-	.mentor-card { background:linear-gradient(145deg,var(--color-surface),#f2f6fa); box-shadow:0 6px 20px -6px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,.06); }
-	.video-frame { background:linear-gradient(145deg,#ffffff,#e7edf3); }
+	.glass { 
+		background: rgba(255,255,255,.8); 
+		border: 1px solid rgba(0,0,0,.08); 
+		backdrop-filter: blur(20px) saturate(150%);
+	}
+	.mentor-card { 
+		background: linear-gradient(145deg, var(--color-surface), #f8fafc); 
+		box-shadow: 0 6px 20px -6px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.04); 
+		border: 1px solid rgba(0,0,0,.05);
+	}
+	.video-frame { 
+		background: linear-gradient(145deg, #ffffff, #f1f5f9); 
+		box-shadow: 0 20px 60px -18px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,.06);
+	}
+	.badge { 
+		background: rgba(0,0,0,.04); 
+		border: 1px solid rgba(0,0,0,.08); 
+		color: var(--color-text);
+	}
+	.badge--accent { 
+		background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-alt) 100%); 
+		color: #fff; 
+		border: none; 
+	}
+	.engagement-box:before { 
+		background: linear-gradient(120deg, rgba(59,130,246,.15), rgba(139,92,246,.15)); 
+		opacity: .6;
+	}
+	.etoile { 
+		background: #334155; 
+		box-shadow: 0 0 6px 2px rgba(51,65,85,.6); 
+	}
+	.section-divider .sd-line { 
+		background: linear-gradient(90deg,rgba(0,0,0,.08),rgba(0,0,0,.2),rgba(0,0,0,.08)); 
+	}
+	.section-divider--glow .sd-line { 
+		background: linear-gradient(90deg,rgba(59,130,246,.2),rgba(139,92,246,.35),rgba(59,130,246,.2)); 
+	}
+	.section-divider .sd-core { 
+		box-shadow: 0 0 0 4px rgba(0,0,0,.06), 0 0 22px -2px rgba(0,0,0,.2); 
+	}
+	.section-divider--glow .sd-core { 
+		box-shadow: 0 0 0 6px rgba(59,130,246,.2), 0 0 0 12px rgba(139,92,246,.1), 0 0 34px -4px rgba(0,0,0,.25); 
+	}
+	// Amélioration de la visibilité des textes sur fond clair
+	.accent-gradient {
+		background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-alt) 100%);
+		background-size: 200% 200%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+	// Contact bar améliorée pour le mode clair
+	.contact-bar {
+		background: rgba(255,255,255,.9);
+		border: 1px solid rgba(0,0,0,.08);
+		backdrop-filter: blur(20px) saturate(150%);
+	}
+	// Amélioration des cartes de projet
+	.project-card {
+		background: var(--color-surface);
+		border: 1px solid rgba(0,0,0,.06);
+		box-shadow: 0 4px 12px -4px rgba(0,0,0,.08);
+	}
+	.project-card:hover {
+		box-shadow: 0 8px 25px -8px rgba(0,0,0,.15);
+	}
 }
 
 /* Skip link accessibility */

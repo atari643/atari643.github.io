@@ -57,14 +57,16 @@ $font-family-base: 'Inter', 'Centra', system-ui, -apple-system, BlinkMacSystemFo
 
 /* Light theme overrides */
 body[data-theme='light'] {
-	--color-bg:#f6f8fb;
-	--gradient-bg: linear-gradient(135deg,#f6f8fb 0%,#e8eef5 50%,#dde5ee 100%);
-	--color-text:#1d2732;
-	--color-primary:#ffffff;
-	--color-surface:#ffffff;
-	--color-surface-alt:#eef2f7;
-	--color-muted:#546575;
-	--shadow-elevate: 0 4px 14px -4px rgba(0,0,0,.15), 0 8px 30px -10px rgba(0,0,0,.12);
+	--color-bg: #f8fafc;
+	--gradient-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 30%, #e2e8f0 60%, #cbd5e1 100%);
+	--color-text: #1e293b;
+	--color-primary: #ffffff;
+	--color-surface: #ffffff;
+	--color-surface-alt: #f1f5f9;
+	--color-muted: #64748b;
+	--color-accent: #3b82f6;
+	--color-accent-alt: #8b5cf6;
+	--shadow-elevate: 0 4px 14px -4px rgba(0,0,0,.1), 0 8px 30px -10px rgba(0,0,0,.08);
 }
 
 /* Mobile: réduire le blur pour de meilleures perfs */
