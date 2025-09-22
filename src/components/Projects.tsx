@@ -392,6 +392,7 @@ export default function Projects(){
   const [query, setQuery] = useState('')
   const pressTimer = useRef<number | null>(null)
   const prevBodyOverflow = useRef<string | null>(null)
+  const scrollYRef = useRef<number>(0)
   // Liste agrégée de tous les projets (avec catégorie attachée)
   const aggregatedList: (ProjectItem & { __cat: CategoryKey })[] = useMemo(()=> {
     return (Object.keys(data) as CategoryKey[]).reduce<(ProjectItem & {__cat:CategoryKey})[]>((acc,cat)=>{
@@ -423,17 +424,49 @@ export default function Projects(){
   // Scroll to exp on selection
   useEffect(() => { if(active) document.getElementById('exp')?.scrollIntoView({behavior:'smooth'}) }, [active])
 
-  // Body scroll lock when modal open
+  // Body scroll lock when modal open (prevent page jump to top)
   useEffect(()=>{
     if(modal){
+      // Capture current scroll position
+      scrollYRef.current = window.scrollY || window.pageYOffset || 0
+      // Save previous inline overflow to restore later
       prevBodyOverflow.current = document.body.style.overflow
+      // Lock body without causing jump
+      const style = document.body.style as CSSStyleDeclaration
+      style.position = 'fixed'
+      style.top = `-${scrollYRef.current}px`
+      style.left = '0'
+      style.right = '0'
+      style.width = '100%'
+      style.overflow = 'hidden'
       document.body.classList.add('modal-open')
-      document.body.style.overflow = 'hidden'
     } else {
+      // Restore body styles and scroll position
+      const top = document.body.style.top
       document.body.classList.remove('modal-open')
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
+      document.body.style.width = ''
       if(prevBodyOverflow.current !== null) document.body.style.overflow = prevBodyOverflow.current
+      // Compute previous scrollY (from stored ref preferred)
+      const y = scrollYRef.current || (top ? Math.abs(parseInt(top,10)) : 0)
+      window.scrollTo(0, y)
     }
-    return () => { document.body.classList.remove('modal-open'); if(prevBodyOverflow.current!==null) document.body.style.overflow = prevBodyOverflow.current }
+    return () => {
+      // Cleanup in case component unmounts while modal open
+      const top = document.body.style.top
+      document.body.classList.remove('modal-open')
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
+      document.body.style.width = ''
+      if(prevBodyOverflow.current!==null) document.body.style.overflow = prevBodyOverflow.current
+      const y = scrollYRef.current || (top ? Math.abs(parseInt(top,10)) : 0)
+      if(y) window.scrollTo(0, y)
+    }
   },[modal])
 
   // Change logo on hover (swap to 2.png)

@@ -176,17 +176,29 @@ body[data-theme='light'] {
 }
 
 /* Modal enhanced */
-.window { background:rgba(10,14,22,.78); backdrop-filter:blur(18px) saturate(140%); position:fixed; inset:0; z-index:$z-modal; display:flex; align-items:center; justify-content:center; padding:4vh clamp(1rem,4vw,4rem); animation:fadeIn .3s ease; }
+.window { 
+  background:rgba(10,14,22,.78); 
+  backdrop-filter:blur(18px) saturate(140%); 
+  position:fixed; inset:0; z-index:$z-modal; 
+  display:grid; place-items:center; 
+  height:100dvh; 
+  /* Respecte les encoches et assure un centrage exact */
+  padding: max(env(safe-area-inset-top), 12px) clamp(1rem,4vw,4rem) max(env(safe-area-inset-bottom), 12px);
+  animation:fadeIn .3s ease; 
+  overflow:auto; /* évite tout décalage si contenu > viewport sur mobile */
+}
 .window:before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 25%, rgba($color-accent,.25), transparent 70%), radial-gradient(circle at 70% 75%, rgba($color-accent-alt,.22), transparent 65%); pointer-events:none; mix-blend-mode:overlay; opacity:.6; }
 .window .contenu { position:relative; display:grid; grid-template-rows:auto 1fr auto; width:min(100%,1000px); max-height:86vh; background:linear-gradient(145deg,$color-surface-alt 0%,$color-surface 70%); border-radius:28px; box-shadow:0 0 0 1px rgba(255,255,255,.07), 0 18px 60px -18px rgba(0,0,0,.75); overflow:hidden; }
-.window h1 { margin:0; font-size:1.15rem; letter-spacing:.6px; padding:18px clamp(1.2rem,3vw,2.4rem) 18px 1.8rem; background:linear-gradient(120deg,$color-primary 0%, darken($color-primary,4%) 100%); border-bottom:1px solid rgba(255,255,255,.08); display:flex; align-items:center; gap:.75rem; }
+/* Scope legacy header style to the old container to éviter conflit avec .pm-header */
+.window .contenu h1 { margin:0; font-size:1.15rem; letter-spacing:.6px; padding:18px clamp(1.2rem,3vw,2.4rem) 18px 1.8rem; background:linear-gradient(120deg,$color-primary 0%, darken($color-primary,4%) 100%); border-bottom:1px solid rgba(255,255,255,.08); display:flex; align-items:center; gap:.75rem; }
 .window .close-btn, .window .icofont-close-line-circled { position:absolute; top:12px; right:12px; cursor:pointer; color:$color-text; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:50%; padding:6px; display:flex; align-items:center; justify-content:center; width:42px; height:42px; backdrop-filter:blur(6px); transition:$transition-fast; }
 .window .icofont-close-line-circled:hover { transform:rotate(90deg) scale(1.06); background:rgba(255,255,255,.15); }
 .window .body-scroll { position:relative; overflow:auto; padding:1.6rem clamp(1.2rem,3vw,2.4rem) 2.4rem; display:grid; gap:1.4rem; grid-template-columns: minmax(0,1fr); }
 .window .media-wrapper { width:100%; display:flex; justify-content:center; align-items:center; }
 .window .reTEX { width:100%; max-height:48vh; object-fit:contain; border-radius:16px; box-shadow:0 6px 22px -10px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.07); background:#0f151d; }
 .window p { margin:0; font-size:.9rem; line-height:1.5; color:$color-text; opacity:.88; }
-.window form { padding:14px clamp(1.4rem,3vw,2.4rem); display:flex; justify-content:flex-end; gap:14px; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0)); border-top:1px solid rgba(255,255,255,.08); }
+/* Scope legacy footer form pour ne pas écraser .pm-actions */
+.window .contenu form { padding:14px clamp(1.4rem,3vw,2.4rem); display:flex; justify-content:flex-end; gap:14px; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0)); border-top:1px solid rgba(255,255,255,.08); }
 .window .Download { @include m.button-base($color-accent,#fff); padding:14px 36px; font-weight:600; font-size:.9rem; box-shadow:0 8px 0 0 darken($color-accent,28%), 0 4px 18px -4px rgba($color-accent,.6); transition:$transition-medium; }
 .window .Download:hover { transform:translateY(-3px); box-shadow:0 14px 0 0 darken($color-accent,30%), 0 10px 28px -6px rgba($color-accent,.55); }
 .window .Download:active { transform:translateY(-1px); }
@@ -223,7 +235,7 @@ body.modal-open { overflow:hidden; }
 
 /* Modal accent dynamique */
 /* Nouvelle modal détaillée */
-.window .dialog { position:relative; display:flex; flex-direction:column; gap:0; width:min(100%,1080px); max-height:90vh; background:linear-gradient(155deg,$color-surface-alt 0%,$color-surface 65%); border-radius:32px; box-shadow:0 0 0 1px rgba(255,255,255,.07), 0 20px 60px -20px rgba(0,0,0,.8); overflow:hidden; animation:scaleIn .35s cubic-bezier(.4,.15,.25,1); }
+.window .dialog { position:relative; display:flex; flex-direction:column; gap:0; width:min(100%,1080px); max-height:90vh; background:linear-gradient(155deg,$color-surface-alt 0%,$color-surface 65%); border-radius:32px; box-shadow:0 0 0 1px rgba(255,255,255,.07), 0 20px 60px -20px rgba(0,0,0,.8); overflow:hidden; animation:scaleIn .35s cubic-bezier(.4,.15,.25,1); align-self:center; justify-self:center; }
 .pm-header { display:flex; align-items:stretch; justify-content:space-between; padding:0 clamp(1.4rem,3vw,2.6rem); background:linear-gradient(125deg, rgba(var(--category-accent-rgb)/.5) 0%, rgba(var(--category-accent-rgb)/.05) 60%, rgba(255,255,255,0) 100%); position:relative; min-height:78px; }
 .pm-head-text { display:flex; flex-direction:column; justify-content:center; gap:.55rem; padding:18px 0; }
 .pm-header h1 { margin:0; font-size:1.35rem; letter-spacing:.5px; background:linear-gradient(120deg,var(--category-accent) 0%, #fff 80%); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -251,4 +263,4 @@ body.modal-open { overflow:hidden; }
 @media (max-width:640px){ .pm-header h1 { font-size:1.15rem; } .pm-btn { padding:12px 24px 11px; font-size:.78rem; } .pm-media .media-ratio { border-radius:18px; aspect-ratio:16/9; } }
 @media (max-width:480px){ .pm-header { padding:0 1.1rem; } .pm-actions { padding:16px 1.1rem 20px; } }
 
-@keyframes scaleIn { from { transform:translateY(14px) scale(.96); opacity:0; } to { transform:translateY(0) scale(1); opacity:1; } }
+@keyframes scaleIn { from { transform:scale(.96); opacity:0; } to { transform:scale(1); opacity:1; } }
