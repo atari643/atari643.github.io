@@ -45,9 +45,12 @@ export default function ProjectsOrb(){
       pos[i3+2] = r * Math.cos(phi)
     }
     pGeo.setAttribute('position', new THREE.BufferAttribute(pos,3))
-    const pMat = new THREE.PointsMaterial({ size:.04, color:'#ffffff', transparent:true, opacity:.65 })
+    // Points désactivés pour éviter les carrés visibles
+    /*
+    const pMat = new THREE.PointsMaterial({ size:.02, color:'#ffffff', transparent:true, opacity:.3 })
     const pts = new THREE.Points(pGeo,pMat)
     scene.add(pts)
+    */
 
     let raf=0, t=0, running=true
     const animate=()=>{
@@ -58,7 +61,7 @@ export default function ProjectsOrb(){
       mesh2.rotation.x -= 0.002
       mesh2.rotation.y -= 0.003
       group.rotation.z = Math.sin(t*.4)*.4
-      pts.rotation.y += isMobile? 0.0005:0.0008
+      // pts.rotation.y += isMobile? 0.0005:0.0008 // Points désactivés
       renderer.render(scene,camera)
       raf=requestAnimationFrame(animate)
     }

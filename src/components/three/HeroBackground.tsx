@@ -1,13 +1,37 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { prefersReducedMotion } from '../../hooks/useReducedMotion'
 
 /** Subtle animated star / particle field for hero header */
 export default function HeroBackground(){
   const mountRef = useRef<HTMLDivElement | null>(null)
+  const [theme, setTheme] = useState(() => document.body.getAttribute('data-theme') || 'dark')
+  
+  // Observer pour détecter les changements de thème
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+          setTheme(document.body.getAttribute('data-theme') || 'dark')
+        }
+      })
+    })
+    
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    })
+    
+    return () => observer.disconnect()
+  }, [])
+  
   useEffect(()=>{
     const mount = mountRef.current
     if(!mount) return
+    
+    // Détecter le thème actuel
+    const isLightTheme = theme === 'light'
+    
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(55, mount.clientWidth / mount.clientHeight, 0.1, 1000)
     camera.position.z = 42
@@ -17,7 +41,7 @@ export default function HeroBackground(){
     renderer.outputColorSpace = THREE.SRGBColorSpace
     mount.appendChild(renderer.domElement)
 
-    // Stars
+    // Stars - couleurs adaptées au thème
     const starCount = 1600
     const positions = new Float32Array(starCount * 3)
     for(let i=0;i<starCount;i++){
@@ -28,25 +52,47 @@ export default function HeroBackground(){
     }
     const geometry = new THREE.BufferGeometry()
     geometry.setAttribute('position', new THREE.BufferAttribute(positions,3))
-    const material = new THREE.PointsMaterial({ size: .9, sizeAttenuation:true, color: new THREE.Color('#ffffff'), transparent:true, opacity:.85 })
+    
+    // Couleurs adaptées au thème
+    const starColor = isLightTheme ? '#64748b' : '#ffffff'
+    const starOpacity = isLightTheme ? 0.3 : 0.85
+    const material = new THREE.PointsMaterial({ 
+      size: .8, 
+      sizeAttenuation:true, 
+      color: new THREE.Color(starColor), 
+      transparent:true, 
+      opacity: starOpacity 
+    })
     const points = new THREE.Points(geometry, material)
     scene.add(points)
 
-    // Particules interactives centrales (léger volume)
+    // Particules interactives centrales désactivées pour éviter les carrés
     const interactiveGroup = new THREE.Group()
-    const miniCount = 90
+    // Commenté pour éviter les carrés bleus
+    /*
+    const miniCount = 30
     const miniPositions = new Float32Array(miniCount*3)
     for(let i=0;i<miniCount;i++){
       const i3=i*3
-      miniPositions[i3] = (Math.random()-0.5)*16
-      miniPositions[i3+1] = (Math.random()-0.5)*8
-      miniPositions[i3+2] = (Math.random()-0.5)*16
+      miniPositions[i3] = (Math.random()-0.5)*12
+      miniPositions[i3+1] = (Math.random()-0.5)*6
+      miniPositions[i3+2] = (Math.random()-0.5)*12
     }
     const miniGeo = new THREE.BufferGeometry()
     miniGeo.setAttribute('position', new THREE.BufferAttribute(miniPositions,3))
-    const miniMat = new THREE.PointsMaterial({ size:1.6, sizeAttenuation:true, color:'#8ab4ff', transparent:true, opacity:.7 })
+    
+    const miniColor = isLightTheme ? '#3b82f6' : '#8ab4ff'
+    const miniOpacity = isLightTheme ? 0.1 : 0.3
+    const miniMat = new THREE.PointsMaterial({ 
+      size: 0.8,
+      sizeAttenuation:true, 
+      color: miniColor, 
+      transparent:true, 
+      opacity: miniOpacity 
+    })
     const miniPoints = new THREE.Points(miniGeo, miniMat)
     interactiveGroup.add(miniPoints)
+    */
     scene.add(interactiveGroup)
 
     let targetRotX = 0, targetRotY = 0
@@ -59,9 +105,15 @@ export default function HeroBackground(){
     }
     mount.addEventListener('pointermove', onPointerMove)
 
-    // Light faint gradient plane for depth tint
+    // Light faint gradient plane for depth tint - adapté au thème
     const planeGeo = new THREE.PlaneGeometry(400,400,1,1)
-    const planeMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(0x111623), transparent:true, opacity:.35 })
+    const planeColor = isLightTheme ? 0xf1f5f9 : 0x111623
+    const planeOpacity = isLightTheme ? 0.2 : 0.35
+    const planeMat = new THREE.MeshBasicMaterial({ 
+      color: new THREE.Color(planeColor), 
+      transparent:true, 
+      opacity: planeOpacity 
+    })
     const plane = new THREE.Mesh(planeGeo, planeMat)
     plane.position.z = -120
     scene.add(plane)
@@ -93,7 +145,7 @@ export default function HeroBackground(){
       renderer.setSize(mount.clientWidth, mount.clientHeight)
     }
     window.addEventListener('resize', handleResize)
-  return () => { running=false; cancelAnimationFrame(raf); document.removeEventListener('visibilitychange', onVis); mount.removeEventListener('pointermove', onPointerMove); window.removeEventListener('resize', handleResize); geometry.dispose(); material.dispose(); miniGeo.dispose(); renderer.dispose(); mount.removeChild(renderer.domElement) }
-  },[])
+  return () => { running=false; cancelAnimationFrame(raf); document.removeEventListener('visibilitychange', onVis); mount.removeEventListener('pointermove', onPointerMove); window.removeEventListener('resize', handleResize); geometry.dispose(); material.dispose(); renderer.dispose(); mount.removeChild(renderer.domElement) }
+  },[theme])
   return <div className="three-hero-bg" ref={mountRef} aria-hidden="true" />
 }

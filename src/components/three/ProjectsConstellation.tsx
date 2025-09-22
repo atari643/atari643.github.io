@@ -97,9 +97,12 @@ export default function ProjectsConstellation({ nodes, active }: Props){
       pPos[i3+2] = Math.sin(a)*r*0.2
     }
     pGeo.setAttribute('position', new THREE.BufferAttribute(pPos,3))
-    const pMat = new THREE.PointsMaterial({ size:.1, color:'#ffffff', transparent:true, opacity:.6 }) // Reduced size and opacity
+    // Points désactivés pour éviter les carrés visibles
+    /*
+    const pMat = new THREE.PointsMaterial({ size:.05, color:'#ffffff', transparent:true, opacity:.2 })
     const pts = new THREE.Points(pGeo,pMat)
     scene.add(pts)
+    */
 
     let raf=0, t=0, running=true, lastTime=0
     const animate=(currentTime:number=0)=>{
@@ -115,7 +118,7 @@ export default function ProjectsConstellation({ nodes, active }: Props){
       t+= isMobile? 0.002:0.003 // Reduced animation speed
       if(!reduced){
         group.rotation.z += isMobile? 0.0005:0.0008 // Reduced rotation speed
-        pts.rotation.y += isMobile? 0.0003:0.0005 // Reduced rotation speed
+        // pts.rotation.y += isMobile? 0.0003:0.0005 // Points désactivés
         
         // Only animate active node, and with less frequency
         if(active && Math.floor(t*10) % 3 === 0) {

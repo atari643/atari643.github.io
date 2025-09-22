@@ -113,7 +113,16 @@ main, section { scroll-margin-top:72px; }
 @keyframes Card { 0%{ opacity:0; transform:translateY(-100px);} 100%{ opacity:1; transform:translateY(0);} }
 
 // Etoiles décoratives
-.etoile { width:5px; height:5px; background:#fff; border-radius:10px; position:absolute; box-shadow:0 0 6px 2px rgba(255,255,255,.8); animation:glowPulse 4s ease-in-out infinite; }
+.etoile { 
+	width:4px; 
+	height:4px; 
+	background:#fff; 
+	border-radius:50%; 
+	position:absolute; 
+	box-shadow:0 0 4px 1px rgba(255,255,255,.6); 
+	animation:glowPulse 4s ease-in-out infinite;
+	opacity:0.7;
+}
 .Top{ top:5%; left:5%; } .Right{ top:5%; right:5%; } .Bottom{ top:90%; right:5%; } .Left{ bottom:9.5%; left:5%; }
 
 // Generic section title improvement
@@ -282,8 +291,11 @@ body[data-theme='light'] {
 		opacity: .6;
 	}
 	.etoile { 
-		background: #334155; 
-		box-shadow: 0 0 6px 2px rgba(51,65,85,.6); 
+		background: #64748b; 
+		box-shadow: 0 0 3px 1px rgba(100,116,139,.4);
+		opacity: 0.2;
+		// Optionnel : masquer complètement en mode clair
+		// display: none;
 	}
 	.section-divider .sd-line { 
 		background: linear-gradient(90deg,rgba(0,0,0,.08),rgba(0,0,0,.2),rgba(0,0,0,.08)); 
@@ -327,7 +339,7 @@ body[data-theme='light'] {
 .skip-link:focus { top:0; }
 
 /* Theme toggle */
-.theme-toggle { position:fixed; top:14px; left:14px; z-index:1000; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); backdrop-filter:$blur-backdrop; padding:6px 10px; font-size:.7rem; font-weight:600; color:var(--color-text); border-radius:$radius-pill; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+.theme-toggle { position:fixed; top:72px; left:28px; z-index:1000; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); backdrop-filter:$blur-backdrop; padding:6px 10px; font-size:.7rem; font-weight:600; color:var(--color-text); border-radius:$radius-pill; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
 body[data-theme='light'] .theme-toggle { background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.12); }
 body[data-theme='light'] .theme-toggle:hover { background:rgba(0,0,0,.08); }
 .mentor-card:nth-child(1){animation-delay:.05s;} .mentor-card:nth-child(2){animation-delay:.15s;} .mentor-card:nth-child(3){animation-delay:.25s;} .mentor-card:nth-child(4){animation-delay:.35s;}
