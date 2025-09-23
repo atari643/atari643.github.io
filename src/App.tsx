@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState, useCallback } from 'react'
-import { usePerformanceOptimization } from './hooks/usePerformanceOptimization'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Timeline from './components/Timeline'
@@ -18,9 +17,6 @@ export default function App(){
   const { i18n, t } = useTranslation()
   const [theme, setTheme] = useState<'dark'|'light'>(()=> (localStorage.getItem('theme')==='light'? 'light':'dark'))
 
-  // Enable performance optimizations
-  usePerformanceOptimization()
-
   // Apply theme to body
   useEffect(()=>{ document.body.dataset.theme = theme; localStorage.setItem('theme', theme) },[theme])
   const toggleTheme = useCallback(()=> setTheme(t=> t==='dark'? 'light':'dark'),[])
@@ -28,7 +24,7 @@ export default function App(){
   // Sync html lang
   useEffect(()=>{ document.documentElement.lang = i18n.language },[i18n.language])
 
-  // Legacy-like etoile animation - optimized with longer intervals
+  // Legacy-like etoile animation
   useEffect(() => {
     const top = document.querySelector('.Top') as HTMLElement | null
     const bottom = document.querySelector('.Bottom') as HTMLElement | null
@@ -41,9 +37,9 @@ export default function App(){
       bottom.style.paddingLeft = n + '%'
       left.style.paddingBottom = r + '%'
       right.style.paddingTop = r + '%'
-      if(n < 90) n += 0.4; else window.clearInterval(id) // Slightly faster completion
-      if(r < 30) r += 0.14
-    }, 24) // Reduced frequency from 16ms to 24ms
+      if(n < 90) n += 0.5; else window.clearInterval(id)
+      if(r < 30) r += 0.17
+    }, 16)
     return () => window.clearInterval(id)
   }, [])
 

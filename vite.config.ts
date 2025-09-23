@@ -22,23 +22,6 @@ export default defineConfig({
 	build: {
 		outDir: 'dist',
 		emptyOutDir: true,
-		assetsDir: 'assets',
-		// Optimizations for better performance
-		minify: 'terser',
-		rollupOptions: {
-			output: {
-				manualChunks: {
-					vendor: ['react', 'react-dom'],
-					three: ['three'],
-					i18n: ['i18next', 'react-i18next']
-				}
-			}
-		}
-	},
-	// Optimize dev server
-	server: {
-		hmr: {
-			overlay: false
-		}
+		assetsDir: 'assets'
 	}
 })

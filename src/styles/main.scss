@@ -8,11 +8,6 @@
 
 * { box-sizing: border-box; }
 
-// Performance optimizations
-html {
-	scroll-behavior: smooth;
-}
-
 body {
 	margin:0;
 	font-family: $font-family-base;
@@ -22,9 +17,6 @@ body {
 	text-rendering:optimizeLegibility;
 	overflow-x:hidden;
 	font-size:clamp(.95rem, .9rem + .3vw, 1.05rem);
-	// GPU acceleration for better performance
-	transform: translateZ(0);
-	will-change: auto;
 	&::before {
 		content:''; position:fixed; inset:0; pointer-events:none; z-index:-1;
 		background:
@@ -32,10 +24,7 @@ body {
 			radial-gradient(circle at 80% 70%, rgba(236,72,153,.10), transparent 65%),
 			linear-gradient(135deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,0) 60%);
 		mix-blend-mode:plus-lighter;
-		animation:bgShift 22s linear infinite; // Slower animation
-		// GPU acceleration
-		transform: translateZ(0);
-		will-change: transform;
+		animation:bgShift 18s linear infinite;
 	}
 }
 
@@ -57,24 +46,10 @@ body {
 	@media (max-width:600px){ top:10px; right:10px; button { padding:5px 8px; font-size:.65rem; } }
 }
 
-@keyframes bgShift { 
-  0%{transform:translate3d(0,0,0) scale(1);} 
-  50%{transform:translate3d(0,-1%,0) scale(1.01);} 
-  100%{transform:translate3d(0,0,0) scale(1);} 
-}
-@keyframes floatSoft { 
-  0%,100%{transform:translateY(0);} 
-  50%{transform:translateY(-6px);} 
-}
-@keyframes glowPulse { 
-  0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,0);} 
-  50%{box-shadow:0 0 0 4px rgba(99,102,241,.12);} 
-}
-@keyframes gradientFlow { 
-  0%{background-position:0% 50%;} 
-  50%{background-position:100% 50%;} 
-  100%{background-position:0% 50%;} 
-}
+@keyframes bgShift { 0%{transform:translate3d(0,0,0) scale(1);} 50%{transform:translate3d(0,-2%,0) scale(1.02);} 100%{transform:translate3d(0,0,0) scale(1);} }
+@keyframes floatSoft { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+@keyframes glowPulse { 0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,0);} 50%{box-shadow:0 0 0 6px rgba(99,102,241,.15);} }
+@keyframes gradientFlow { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
 
 h1,h2,h3,h4,h5 { line-height:1.15; letter-spacing:.5px; font-weight:600; }
 p { line-height:1.6; }
@@ -93,21 +68,19 @@ main, section { scroll-margin-top:72px; }
 .badge--outline { background:transparent; }
 .badge i { font-size:.9rem; }
 
-// Legacy color pulse animations retained but optimized
-@keyframes ledJava {0%{box-shadow:0 0 20px red;}50%{box-shadow:0 0 20px blue;}100%{box-shadow:0 0 20px red;}}
-@keyframes ledCsharp {0%{box-shadow:0 0 20px #7797f8;}50%{box-shadow:0 0 20px #390094;}100%{box-shadow:0 0 20px #7797f8;}}
-@keyframes ledPy {0%{box-shadow:0 0 20px #0099f2;}50%{box-shadow:0 0 20px #f2c108;}100%{box-shadow:0 0 20px #0099f2;}}
-@keyframes ledWeb {0%{box-shadow:0 0 20px #dd4b25;}33%{box-shadow:0 0 20px #2862e9;}66%{box-shadow:0 0 20px #efd81d;}100%{box-shadow:0 0 20px #dd4b25;}}
-@keyframes ledSql {0%{box-shadow:0 0 20px #4a4a4a;}50%{box-shadow:0 0 20px #db5443;}100%{box-shadow:0 0 20px #4a4a4a;}}
-@keyframes ledLinux {0%{box-shadow:0 0 20px #d7d8d3;}33%{box-shadow:0 0 20px #000;}66%{box-shadow:0 0 20px #f5ce10;}100%{box-shadow:0 0 20px #d7d8d3;}}
-
-// Only apply animations on hover to reduce constant GPU usage
-.colorJava .card:hover{ animation:ledJava 3s infinite; }
-.colorCsharp .card:hover{ animation:ledCsharp 3s infinite; }
-.colorPython .card:hover{ animation:ledPy 3s infinite; }
-.colorWeb .card:hover{ animation:ledWeb 4s infinite; }
-.colorSql .card:hover{ animation:ledSql 3s infinite; }
-.colorLinux .card:hover{ animation:ledLinux 4s infinite; }
+// Legacy color pulse animations retained
+@keyframes ledJava {0%{box-shadow:0 0 25px red;}50%{box-shadow:0 0 25px blue;}100%{box-shadow:0 0 25px red;}}
+@keyframes ledCsharp {0%{box-shadow:0 0 25px #7797f8;}50%{box-shadow:0 0 25px #390094;}100%{box-shadow:0 0 25px #7797f8;}}
+@keyframes ledPy {0%{box-shadow:0 0 25px #0099f2;}50%{box-shadow:0 0 25px #f2c108;}100%{box-shadow:0 0 25px #0099f2;}}
+@keyframes ledWeb {0%{box-shadow:0 0 25px #dd4b25;}33%{box-shadow:0 0 25px #2862e9;}66%{box-shadow:0 0 25px #efd81d;}100%{box-shadow:0 0 25px #dd4b25;}}
+@keyframes ledSql {0%{box-shadow:0 0 25px #4a4a4a;}50%{box-shadow:0 0 25px #db5443;}100%{box-shadow:0 0 25px #4a4a4a;}}
+@keyframes ledLinux {0%{box-shadow:0 0 25px #d7d8d3;}33%{box-shadow:0 0 25px #000;}66%{box-shadow:0 0 25px #f5ce10;}100%{box-shadow:0 0 25px #d7d8d3;}}
+.colorJava .card{ animation:ledJava 3s infinite; }
+.colorCsharp .card{ animation:ledCsharp 3s infinite; }
+.colorPython .card{ animation:ledPy 3s infinite; }
+.colorWeb .card{ animation:ledWeb 4s infinite; }
+.colorSql .card{ animation:ledSql 3s infinite; }
+.colorLinux .card{ animation:ledLinux 4s infinite; }
 
 @keyframes cardClick { 0%{ transform:scale(1);} 50%{ transform:scale(.5);} 100%{ transform:scale(1);} }
 @keyframes Card { 0%{ opacity:0; transform:translateY(-100px);} 100%{ opacity:1; transform:translateY(0);} }
