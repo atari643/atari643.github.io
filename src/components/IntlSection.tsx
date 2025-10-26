@@ -24,6 +24,11 @@ export default function IntlSection(){
             <div className="content">
               <h2>{it.year}</h2>
               <h3>{it.title}</h3>
+              {it.image && (
+                <div className="intl-image-wrapper">
+                  <img src={it.image} alt={it.title} className="intl-image" />
+                </div>
+              )}
               <p>{it.text}</p>
             </div>
           </div>

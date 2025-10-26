@@ -7,7 +7,7 @@
 		"cursus": "Engineering Course",
 		"activities": "Activities",
 		"internships": "Internships",
-		"intl": "International Mobility",
+		"intl": "International Projects",
 		"career": "Career Development",
 		"engagement": "Engagement"
 	},
@@ -33,18 +33,19 @@
 		{"name":"Tom Camin","role":"IT Architect (Data, Security & Cloud)"},
 		{"name":"Elizaveta Shashkova","role":"Bridging education, research & industry (space)"}
 	],
-	"activities.title": "Activities & Sport",
+	"activities.title": "Activities & Sports",
 		"activities.items": [
-				{"year":"2022","title":"French Robotics Cup","text":"Participation with IUT Bordeaux team"},
-				{"year":"2023","title":"European Robotics Cup (Croatia)","text":"Vice-champions of Europe (team of 4)"}
+			{"title":"Robotics Club","description":"Active member of the robotics club. Participation in several national and international competitions, including the French Cup and the European Cup where we achieved second place.","icon":"icofont-robot"},
+			{"title":"Swimming","description":"Regular swimming practice to maintain good physical condition and develop endurance.","icon":"icofont-swimmer"},
+			{"title":"Trampoline","description":"Trampoline practice to improve balance, coordination and body control.","icon":"icofont-kid"}
 		],
 	"career.title": "Career Path",
 		"career.items": [
 				{"year":"2024","title":"Internship Capgemini (2 months)","text":"Web app maintenance & Python code compliance"}
 		],
-	"intl.title": "International Mobility",
+	"intl.title": "International Projects",
 		"intl.items": [
-			
+			{"year":"2023","title":"European Robot Soccer Cup - Croatia","text":"Second place at the European robot soccer competition in Croatia. This competition showcases autonomous robots playing football, with technical challenges in artificial intelligence, computer vision, and real-time control. Worked in an international team of 4 people.","image":"images/international/robot-soccer-croatia.jpg"}
 		],
 	"engagement.title": "Sustainability & Civic Engagement"
 		,"engagement.text": "Involved in Article 1 association promoting equal opportunities for students from modest backgrounds.",

@@ -7,7 +7,7 @@
 		"cursus": "Mon Cursus",
 		"activities": "Mes Activités",
 		"internships": "Mes Stages",
-		"intl": "Internationalisation",
+		"intl": "Projets Internationaux",
 		"career": "Développement Professionnel",
 		"engagement": "Engagement"
 	},
@@ -35,16 +35,17 @@
 	],
 	"activities.title": "Activités & Sport",
 		"activities.items": [
-			{"year":"2022","title":"Coupe de France de robotique","text":"Participation avec l'équipe de l'IUT de Bordeaux"},
-			{"year":"2023","title":"Coupe d'Europe robotique (Croatie)","text":"Vice-champions d'Europe (équipe de 4)"}
+			{"title":"Club de Robotique","description":"Membre actif du club de robotique. Participation à plusieurs compétitions nationales et internationales, notamment la Coupe de France et la Coupe d'Europe où nous avons obtenu la deuxième place.","icon":"icofont-robot"},
+			{"title":"Natation","description":"Pratique régulière de la natation pour maintenir une bonne condition physique et développer l'endurance.","icon":"icofont-swimmer"},
+			{"title":"Trampoline","description":"Pratique du trampoline pour améliorer l'équilibre, la coordination et le contrôle corporel.","icon":"icofont-kid"}
 		],
 	"career.title": "Stages / Parcours",
 		"career.items": [
 				{"year":"2024","title":"Stage Capgemini (2 mois)","text":"Maintenance d’une application web & conformité code Python"}
 		],
-	"intl.title": "Internationalisation",
+	"intl.title": "Projets Internationaux",
 		"intl.items": [
-			
+			{"year":"2023","title":"Coupe d'Europe de Robotique Soccer - Croatie","text":"Deuxième place à la compétition européenne de robotique soccer en Croatie. Cette compétition met en scène des robots autonomes jouant au football, avec des défis techniques d'intelligence artificielle, de vision par ordinateur et de contrôle en temps réel. Travail en équipe internationale de 4 personnes.","image":"images/international/robot-soccer-croatia.jpg"}
 		],
 	"engagement.title": "Engagement & Durabilité"
 		,"engagement.text": "Engagement dans l'association Article 1 pour l'égalité des chances et la réussite des étudiants issus de milieux modestes.",
