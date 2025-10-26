@@ -1,10 +1,13 @@
 @use 'variables' as *;
 @use 'mixins';
 @use 'hero';
+@use 'skills';
+@use 'achievements';
 @use 'projects';
 @use 'contact';
 @use 'globe';
 @use 'sections';
+@use '_navigation';
 
 * { box-sizing: border-box; }
 

@@ -1,92 +1,197 @@
-# portfolio-projet
+# 🚀 Portfolio de Quentin Artigala
 
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://atari643.github.io/)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-0.179-000000?style=for-the-badge&logo=three.js)](https://threejs.org/)
 
+Portfolio personnel interactif présentant mes projets, compétences et expériences en ingénierie logicielle.
 
-## Getting started
+> 🎓 Étudiant ingénieur à l'ENSEEIHT | 🥈 Vice-champion d'Europe de robotique | 🚀 Passionné par le spatial
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## ✨ Aperçu
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Portfolio moderne avec animations 3D, mode sombre/clair et support multilingue (FR/EN). Conçu pour mettre en valeur mes réalisations techniques et mon parcours académique.
 
-## Add your files
+**Points forts :**
+- ⚡ Performance optimisée avec Vite
+- 🎨 Design moderne avec animations Three.js
+- 🌍 Multilingue (Français / Anglais)
+- 🌓 Mode sombre / clair
+- ♿ Accessibilité optimisée (WCAG AA)
+- 📱 Responsive design
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## 🛠️ Technologies
+
+### Frontend
+- **React 18.3** - Bibliothèque UI
+- **TypeScript 5.5** - Typage statique
+- **Vite 7.1** - Build tool ultra-rapide
+- **Three.js 0.179** - Animations 3D (globe, constellations, orbe)
+
+### Styling
+- **SCSS / SASS** - Préprocesseur CSS
+- **CSS Custom Properties** - Thème dynamique
+- **Icofont** - Icônes vectorielles
+
+### Internationalisation
+- **i18next** - Gestion des traductions
+- **react-i18next** - Intégration React
+
+## 🚀 Installation & Lancement
+
+### Prérequis
+- Node.js 18+ 
+- npm ou yarn
+
+### Installation
+```bash
+# Cloner le repository
+git clone https://github.com/atari643/atari643.github.io.git
+
+# Naviguer dans le dossier
+cd atari643.github.io
+
+# Installer les dépendances
+npm install
+```
+
+### Développement
+```bash
+# Lancer le serveur de développement
+npm run dev
+
+# Ouvrir http://localhost:5173
+```
+
+### Build de production
+```bash
+# Créer le build optimisé
+npm run build
+
+# Prévisualiser le build
+npm run preview
+```
+
+## 📁 Structure du Projet
 
 ```
-cd existing_repo
-git remote add origin https://gitlab-ce.iut.u-bordeaux.fr/qartigala/portfolio-projet.git
-git branch -M main
-git push -uf origin main
+portfolio/
+├── public/              # Assets statiques
+│   ├── images/         # Images et logos
+│   ├── pdf/            # CV et documents
+│   └── Video/          # Vidéos de présentation
+├── src/
+│   ├── components/     # Composants React
+│   │   ├── Hero.tsx           # Section d'en-tête
+│   │   ├── Skills.tsx         # Compétences techniques
+│   │   ├── Achievements.tsx   # Réalisations
+│   │   ├── Projects.tsx       # Portfolio projets
+│   │   ├── CareerSection.tsx  # Expériences pro
+│   │   ├── IntlSection.tsx    # Expériences internationales
+│   │   └── three/             # Composants Three.js
+│   ├── styles/         # Styles SCSS modulaires
+│   │   ├── main.scss
+│   │   ├── _hero.scss
+│   │   ├── _skills.scss
+│   │   ├── _achievements.scss
+│   │   ├── _projects.scss
+│   │   └── _sections.scss
+│   ├── locales/        # Traductions (fr.json, en.json)
+│   ├── hooks/          # Custom React hooks
+│   ├── App.tsx         # Composant racine
+│   └── main.tsx        # Point d'entrée
+├── index.html          # Template HTML
+├── vite.config.ts      # Configuration Vite
+├── tsconfig.json       # Configuration TypeScript
+└── package.json        # Dépendances & scripts
 ```
 
-## Integrate with your tools
+## 🎨 Fonctionnalités
 
-- [ ] [Set up project integrations](https://gitlab-ce.iut.u-bordeaux.fr/qartigala/portfolio-projet/-/settings/integrations)
+### 🌐 Multilingue
+- Basculement dynamique FR/EN
+- Traductions complètes de l'interface
+- Persistence du choix de langue
 
-## Collaborate with your team
+### 🌓 Mode Sombre / Clair
+- Thème adaptatif
+- Transition fluide entre modes
+- Sauvegarde de la préférence utilisateur
+- Support `prefers-color-scheme`
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### 🎭 Animations 3D
+- **Globe interactif** (Three.js) - Section internationale
+- **Orbe de projets** - Visualisation artistique
+- **Constellation de technologies** - Navigation projets
+- **Marqueurs temporels 3D** - Timeline de parcours
 
-## Test and Deploy
+### ♿ Accessibilité
+- Navigation au clavier complète
+- Labels ARIA appropriés
+- Skip links pour navigation rapide
+- Gestion du focus
+- Contraste optimisé (WCAG AA)
 
-Use the built-in continuous integration in GitLab.
+### 📱 Responsive Design
+- Breakpoints optimisés (mobile, tablet, desktop)
+- Touch-friendly sur mobile
+- Images optimisées (lazy loading)
+- Performance mobile excellente
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## 🎯 Sections du Portfolio
 
-***
+1. **Hero** - Introduction percutante avec CTA
+2. **Réalisations** - Vice-championnat Europe, distinctions
+3. **Compétences** - Technologies et soft skills
+4. **Expériences Pro** - Stages et alternance détaillés
+5. **Projets** - Portfolio technique (Java, Python, Web, etc.)
+6. **Parcours Académique** - IUT Bordeaux → ENSEEIHT
+7. **Expériences Internationales** - Compétition robotique
+8. **Vidéo de Présentation** - Pitch vidéo
+9. **Mentors** - Influences professionnelles
+10. **Activités** - Engagement associatif et sport
+11. **Contact** - Email, GitHub, LinkedIn
 
-# Editing this README
+## 🚀 Déploiement
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Le portfolio est hébergé sur **GitHub Pages** avec déploiement automatique.
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Déployer manuellement
+```bash
+# Build de production
+npm run build
 
-## Name
-Choose a self-explaining name for your project.
+# Le dossier dist/ est prêt pour le déploiement
+# GitHub Pages déploie automatiquement depuis la branche main
+```
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### URL de production
+🔗 [https://atari643.github.io](https://atari643.github.io)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## 📊 Performance
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+- ⚡ Lighthouse Score: 95+
+- 🎨 First Contentful Paint: < 1.5s
+- 📦 Bundle Size: Optimisé avec code splitting
+- 🖼️ Images: Lazy loading + formats optimisés
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## 🤝 Contact
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+**Quentin Artigala**
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+- 📧 Email: [quentin.artigala@gmail.com](mailto:quentin.artigala@gmail.com)
+- 💼 LinkedIn: [Quentin Artigala](https://www.linkedin.com/in/quentin-artigala-182a53266)
+- 🐙 GitHub: [@atari643](https://github.com/atari643)
+- 🌐 Portfolio: [atari643.github.io](https://atari643.github.io)
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## 📄 Licence
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Ce projet est sous licence MIT. Vous êtes libre de vous en inspirer pour votre propre portfolio !
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+---
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+⭐ Si ce portfolio vous inspire, n'hésitez pas à mettre une étoile !
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+**Made with ❤️ and React by Quentin Artigala**
 
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.

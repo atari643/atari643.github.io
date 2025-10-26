@@ -256,11 +256,11 @@ const projectsDataEN: Record<string, ProjectItem[]> = {
       id:'s1',
       image:'/images/SQL/MCD.jpg',
       title:'Database Festival',
-      summary:'Création d’une base de données', // summary resté FR dans legacy EN fichier
+      summary:'Database creation',
       details:{
-        title:'Projet Base de données pour un festival', // original FR kept in EN legacy
+        title:'Database Project for a Festival',
         image:'/images/SQL/schemaBase.jpg',
-        text:"La conclusion du projet est qu'il est intéressant d’un point de vue apprentissage. Le thème est jeune et\n        dynamique en matière de liberté de référence (artiste). Le thème de la qualité des données\n        est extrêmement important et je pense que l’avoir traité est primordial. Aujourd’hui, le\n        modèle économique mondial tant énormément dans la collecte, le traitement et l’utilisation\n        des données comme nouvelle monnaie.",
+        text:"The conclusion of the project is that it is interesting from a learning perspective. The theme is young and dynamic in terms of freedom of reference (artist). The theme of data quality is extremely important and I think treating it is essential. Today, the global economic model relies heavily on data collection, processing and use as a new currency.",
         url:'/pdf/SQL/Portfolio-Quentin-SQL-1.pdf',
         buttonLabel:'PDF'
       }
@@ -385,7 +385,7 @@ function Modal({ onClose, content, category }:{ onClose:()=>void, content: Proje
 export default function Projects(){
   const { i18n, t } = useTranslation()
   const lang = (i18n.language && i18n.language.indexOf('en') === 0) ? 'en' : 'fr'
-  const data = lang === 'en' ? ({} as any) : projectsDataFR
+  const data = lang === 'en' ? projectsDataEN : projectsDataFR
   type CategoryKey = keyof typeof projectsDataFR
   const [active, setActive] = useState<CategoryKey | null>(null)
   const [modal, setModal] = useState<ProjectItem['details'] | null>(null)

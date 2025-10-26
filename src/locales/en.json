@@ -1,9 +1,17 @@
 {
 	"welcome": "Welcome to my Portfolio:",
 	"name": "Quentin Artigala",
-	"intro": "After two years at IUT Bordeaux (CS) I joined ENSEEIHT in Computer Science & Networks apprenticeship aiming to work in the space field.",
+	"title": "Software Engineer | Space Enthusiast",
+	"intro": "Software engineering student at ENSEEIHT (Computer Science & Networks specialization), with training in software development, network infrastructures and AI. European Robotics Vice-Champion | Consulting Apprentice at Toulouse INP - DSIN | Passionate about developing innovative technologies for space industry and quantum computing.",
+	"cta": {
+		"contact": "Contact me",
+		"cv": "Download CV",
+		"projects": "View my projects"
+	},
 	"nav": {
 		"experience": "Experience",
+		"skills": "Skills",
+		"achievements": "Achievements",
 		"cursus": "Engineering Course",
 		"activities": "Activities",
 		"internships": "Internships",
@@ -11,10 +19,74 @@
 		"career": "Career Development",
 		"engagement": "Engagement"
 	},
+	"skills": {
+		"title": "Technical Skills",
+		"categories": {
+			"languages": "Programming Languages",
+			"frameworks": "Frameworks & Libraries",
+			"tools": "Tools & Technologies",
+			"networks": "Networks & Systems",
+			"learning": "Currently Learning",
+			"management": "Management & Project Management",
+			"soft": "Soft Skills"
+		},
+		"items": {
+			"languages": ["Python", "Java", "C#", "TypeScript", "JavaScript", "C", "C++ (basic)", "SQL", "Assembly", "Bash"],
+			"frameworks": ["React", ".NET", "Angular"],
+			"tools": ["Git", "Docker (basics)", "Linux", "PostgreSQL", "MongoDB", "Vite", "Maven", "GitLab CI/CD (fundamentals)"],
+			"networks": ["TCP/IP", "Network Configuration", "Network Security", "Network Protocols", "System Administration"],
+			"learning": ["Statistics", "Local Network Configuration", "Concurrent Systems"],
+			"management": ["Project Management", "Agile Methodologies"],
+			"soft": ["Continuous Learning", "Technical Curiosity", "Teamwork", "Communication", "Problem-solving", "Autonomy"]
+		}
+	},
+	"achievements": {
+		"title": "Achievements & Awards",
+		"items": [
+			{
+				"icon": "icofont-trophy",
+				"title": "European Robotics Vice-Champion",
+				"year": "2023",
+				"description": "2nd place at the European Robot Soccer Cup in Croatia. Developed a predictive AI strategy in Python for an autonomous goalkeeper.",
+				"tags": ["Robotics", "AI", "Python", "Computer Vision"]
+			},
+			{
+				"icon": "icofont-graduate",
+				"title": "Admitted to ENSEEIHT",
+				"year": "2024",
+				"description": "Joined ENSEEIHT (National School of Electronics, Computer Science, Hydraulics and Telecommunications), a top-tier engineering school in France.",
+				"tags": ["Academic Excellence", "Engineering"]
+			},
+			{
+				"icon": "icofont-users-social",
+				"title": "Community Involvement",
+				"year": "2023-2024",
+				"description": "Active member of the robotics club at IUT. Participation in Article 1 association promoting equal opportunities in higher education.",
+				"tags": ["Leadership", "Solidarity", "Mentorship"]
+			},
+			{
+				"icon": "icofont-rocket-alt-2",
+				"title": "Career Goal: Space & Quantum",
+				"year": "2024-2027",
+				"description": "Strongly committed to continuous learning to develop expertise in innovative space technologies and quantum computing. Actively seeking internship opportunities and projects in the aerospace sector to gain hands-on experience in these cutting-edge fields.",
+				"tags": ["Space", "Quantum Computing", "Innovation", "Continuous Learning"]
+			}
+		]
+	},
 	"projects.sectionTitle": "Click on languages to view my experience",
 	"timeline.cursus": [
-		{ "year": "2022-2024", "text": "IUT Bordeaux - DUT Computer Science" },
-		{ "year": "2024-2027", "text": "ENSEEIHT - CS & Networks (apprenticeship)" }
+		{ 
+			"year": "2024-2027", 
+			"text": "ENSEEIHT - CS & Networks (apprenticeship)",
+			"description": "Top-tier engineering school (Toulouse INP). Network specialization: Internet protocols, operated networks (long-distance, telephony), computer architectures and systems. Complementary skills in object-oriented programming, databases, and theory (automata, graphs, logic).",
+			"skills": ["Internet Protocols", "Operated Networks", "Computer Architecture", "Systems", "Object-Oriented Programming", "Databases", "Graph Theory"]
+		},
+		{ 
+			"year": "2022-2024", 
+			"text": "IUT Bordeaux - BUT Computer Science (2 years)",
+			"description": "Versatile training: software development (Java, Python, Web), network infrastructures, DevOps, statistics, AI, agile methodologies and system administration. Hands-on approach with large-scale projects. Direct admission to engineering school after 2 years based on faculty recommendations.",
+			"skills": ["Java", "Python", "C", "SQL", "HTML/CSS/JS", "Linux", "Networks", "Agile", "AI", "Statistics"]
+		}
 	],
 	"video.title": "Presentation",
 	"video.play": "Play",
@@ -39,13 +111,48 @@
 			{"title":"Swimming","description":"Regular swimming practice to maintain good physical condition and develop endurance.","icon":"icofont-swimmer"},
 			{"title":"Trampoline","description":"Trampoline practice to improve balance, coordination and body control.","icon":"icofont-kid"}
 		],
-	"career.title": "Career Path",
+	"career.title": "Professional Experience",
 		"career.items": [
-				{"year":"2024","title":"Internship Capgemini (2 months)","text":"Web app maintenance & Python code compliance"}
+			{
+				"year": "2024-2027",
+				"company": "Toulouse INP - DSIN",
+				"title": "Software Engineering Consultant (apprenticeship)",
+				"location": "Toulouse, France",
+				"description": "Consultant within the Digital and Information Systems Department at Toulouse INP. End-to-end project design and implementation: business needs analysis, technical solution proposals, full-stack development, deployment and maintenance. Autonomous project management from conception to delivery with continuous learning of required technologies.",
+				"technologies": ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "Git", "Linux"],
+				"achievements": [
+					"Complete design and implementation of web projects from business requirements",
+					"Research and proposal of technical solutions adapted to constraints",
+					"Cross-functional collaboration with various Toulouse INP entities",
+					"Continuous process improvement and active technology watch"
+				]
+			},
+			{
+				"year": "2024",
+				"company": "Capgemini",
+				"title": "Software Development Internship",
+				"location": "Bordeaux, France",
+				"duration": "3 months",
+				"description": "Evolutionary and corrective maintenance of an internal web application. Improved Python code quality by applying compliance standards and best practices.",
+				"technologies": ["Python", "JavaScript", "MongoDB", "Git", "Agile"],
+				"achievements": [
+					"Fixed critical bugs improving application stability",
+					"Refactored Python code for better maintainability",
+					"Implemented unit tests increasing code coverage",
+					"Participated in daily stand-ups and Agile retrospectives"
+				]
+			}
 		],
-	"intl.title": "International Projects",
+	"intl.title": "International Experience",
 		"intl.items": [
-			{"year":"2023","title":"European Robot Soccer Cup - Croatia","text":"Second place at the European robot soccer competition in Croatia. This competition showcases autonomous robots playing football, with technical challenges in artificial intelligence, computer vision, and real-time control. Worked in an international team of 4 people.","image":"images/international/robot-soccer-croatia.jpg"}
+			{
+				"year": "2023",
+				"title": "European Robot Soccer Cup - Croatia",
+				"subtitle": "European Vice-Champion",
+				"text": "Second place at the European robot soccer competition in Croatia, competing against a multitude of international teams. This competition features autonomous robots playing football, with technical challenges in artificial intelligence, computer vision, and real-time control. My technical contribution: developed a predictive goalkeeper strategy in Python, implemented computer vision algorithms for ball tracking, trajectory prediction based on opponent robots' orientation, optimized reaction time to maximize saves. Skills developed: international teamwork (4 people), stress management in competition, real-time problem-solving, leadership and quick decision-making.",
+				"image": "images/international/robot-soccer-croatia.jpg",
+				"tags": ["Robotics", "AI", "Python", "Computer Vision", "Teamwork"]
+			}
 		],
 	"engagement.title": "Sustainability & Civic Engagement"
 		,"engagement.text": "Involved in Article 1 association promoting equal opportunities for students from modest backgrounds.",

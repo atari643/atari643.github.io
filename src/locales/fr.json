@@ -1,9 +1,17 @@
 {
-	"welcome": "Bienvenue sur mon PortFolio:",
+	"welcome": "Bienvenue sur mon Portfolio :",
 	"name": "Quentin Artigala",
-	"intro": "Après deux ans à l'IUT de Bordeaux (informatique) j'intègre l'ENSEEIHT en filière Informatique & Réseaux en alternance avec l'objectif de travailler dans le domaine spatial.",
+	"title": "Ingénieur Informatique | Passionné de Spatial",
+	"intro": "Ingénieur informatique en formation à l'ENSEEIHT (spécialité Informatique & Réseaux), avec un parcours en développement logiciel, infrastructures réseau et IA. Vice-champion d'Europe de robotique | Consultant en alternance à Toulouse INP - DSIN | Passionné par le développement de technologies innovantes pour le spatial et l'informatique quantique.",
+	"cta": {
+		"contact": "Me contacter",
+		"cv": "Télécharger CV",
+		"projects": "Voir mes projets"
+	},
 	"nav": {
 		"experience": "Mes Expériences",
+		"skills": "Compétences",
+		"achievements": "Réalisations",
 		"cursus": "Mon Cursus",
 		"activities": "Mes Activités",
 		"internships": "Mes Stages",
@@ -11,10 +19,74 @@
 		"career": "Développement Professionnel",
 		"engagement": "Engagement"
 	},
+	"skills": {
+		"title": "Compétences Techniques",
+		"categories": {
+			"languages": "Langages",
+			"frameworks": "Frameworks & Bibliothèques",
+			"tools": "Outils & Technologies",
+			"networks": "Réseaux & Systèmes",
+			"learning": "En apprentissage actif",
+			"management": "Gestion & Management",
+			"soft": "Compétences Transversales"
+		},
+		"items": {
+			"languages": ["Python", "Java", "C#", "TypeScript", "JavaScript", "C", "C++ (bases)", "SQL", "Assembleur", "Bash"],
+			"frameworks": ["React", ".NET", "Angular"],
+			"tools": ["Git", "Docker (bases)", "Linux", "PostgreSQL", "MongoDB", "Vite", "Maven", "GitLab CI/CD (notions)"],
+			"networks": ["TCP/IP", "Configuration réseau", "Sécurité réseau", "Protocoles réseaux", "Administration système"],
+			"learning": ["statistique", "Configuration réseau locaux", "Système concurrent"],
+			"management": ["Gestion de projet", "Méthodologies agiles"],
+			"soft": ["Apprentissage continu", "Curiosité technique", "Travail d'équipe", "Communication", "Résolution de problèmes", "Autonomie"]
+		}
+	},
+	"achievements": {
+		"title": "Réalisations & Distinctions",
+		"items": [
+			{
+				"icon": "icofont-trophy",
+				"title": "Vice-Champion d'Europe de Robotique",
+				"year": "2023",
+				"description": "2ème place à la Coupe d'Europe de Robot Soccer en Croatie parmi plusieurs équipes internationales. Développement d'une stratégie IA prédictive en Python pour le gardien autonome.",
+				"tags": ["Robotique", "IA", "Python", "Vision par ordinateur"]
+			},
+			{
+				"icon": "icofont-graduate",
+				"title": "Admission à l'ENSEEIHT",
+				"year": "2024",
+				"description": "Intégration de l'École Nationale Supérieure d'Électrotechnique, d'Électronique, d'Informatique, d'Hydraulique et des Télécommunications, école d'ingénieurs de rang A.",
+				"tags": ["Excellence académique", "Ingénierie"]
+			},
+			{
+				"icon": "icofont-users-social",
+				"title": "Engagement Associatif",
+				"year": "2023-2024",
+				"description": "Membre actif du club de robotique de l'IUT. Participation à l'association Article 1 pour l'égalité des chances dans l'éducation supérieure.",
+				"tags": ["Leadership", "Solidarité", "Mentorat"]
+			},
+			{
+				"icon": "icofont-rocket-alt-2",
+				"title": "Objectif de carrière : Spatial & Quantique",
+				"year": "2024-2027",
+				"description": "Fortement impliqué dans l'apprentissage continu pour développer mon expertise dans les technologies spatiales innovantes et l'informatique quantique. Recherche active d'opportunités de stage et de projets dans le secteur aérospatial pour acquérir une expérience concrète dans ces domaines d'avenir.",
+				"tags": ["Spatial", "Informatique quantique", "Innovation", "Apprentissage continu"]
+			}
+		]
+	},
 	"projects.sectionTitle": "Cliquer sur les langages pour voir mes Expériences",
 	"timeline.cursus": [
-		{ "year": "2022-2024", "text": "IUT de Bordeaux - DUT Informatique" },
-		{ "year": "2024-2027", "text": "ENSEEIHT - Informatique & Réseaux (alternance)" }
+		{ 
+			"year": "2024-2027", 
+			"text": "ENSEEIHT - Informatique & Réseaux (alternance)",
+			"description": "École d'ingénieur de haut niveau (Toulouse INP). Spécialisation réseau : protocoles Internet, réseaux opérés (longue distance, téléphonie), architectures et systèmes. Compétences complémentaires en programmation objet, bases de données et théorie (automates, graphes, logique).",
+			"skills": ["Protocoles Internet", "Réseaux opérés", "Architecture des ordinateurs", "Systèmes", "Programmation objet", "Bases de données", "Théorie des graphes", "Logique", "Statistiques"]
+		},
+		{ 
+			"year": "2022-2024", 
+			"text": "IUT Bordeaux - BUT Informatique (2 ans)",
+			"description": "Formation polyvalente : développement logiciel (Java, Python, Web), infrastructures réseau, DevOps, statistiques, IA, méthodologies agiles et administration système. Approche pratique avec projets d'envergure. Admission directe en école d'ingénieur après 2 ans sur recommandation des enseignants.",
+			"skills": ["Java", "Python", "C", "SQL", "HTML/CSS/JS", "Linux", "Réseau", "Agile", "IA", "Statistiques"]
+		}
 	],
 	"video.title": "Présentation",
 	"video.play": "Lire",
@@ -39,13 +111,48 @@
 			{"title":"Natation","description":"Pratique régulière de la natation pour maintenir une bonne condition physique et développer l'endurance.","icon":"icofont-swimmer"},
 			{"title":"Trampoline","description":"Pratique du trampoline pour améliorer l'équilibre, la coordination et le contrôle corporel.","icon":"icofont-kid"}
 		],
-	"career.title": "Stages / Parcours",
+	"career.title": "Expériences Professionnelles",
 		"career.items": [
-				{"year":"2024","title":"Stage Capgemini (2 mois)","text":"Maintenance d’une application web & conformité code Python"}
+			{
+				"year": "2024-2027",
+				"company": "Toulouse INP - DSIN",
+				"title": "Consultant en ingénierie logicielle (alternance)",
+				"location": "Toulouse, France",
+				"description": "Consultant au sein de la Direction des Systèmes d'Information et du Numérique de Toulouse INP. Mission complète de conception et réalisation de projets : analyse des besoins métiers, proposition de solutions techniques, développement full-stack, déploiement et maintenance. Autonomie dans la gestion de projets de bout en bout avec apprentissage continu des technologies nécessaires.",
+				"technologies": ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "Git", "Linux"],
+				"achievements": [
+					"Conception et réalisation complète de projets web à partir de besoins métiers",
+					"Recherche et proposition de solutions techniques adaptées aux contraintes",
+					"Collaboration transverse avec les différentes entités de Toulouse INP",
+					"Amélioration continue des processus et veille technologique active"
+				]
+			},
+			{
+				"year": "2024",
+				"company": "Capgemini",
+				"title": "Stage Développement Logiciel",
+				"location": "Bordeaux, France",
+				"duration": "3 mois",
+				"description": "Maintenance évolutive et corrective d'une application web interne. Amélioration de la qualité du code Python en appliquant les standards de conformité et bonnes pratiques.",
+				"technologies": ["Python", "JavaScript", "MongoDB", "Git", "Agile"],
+				"achievements": [
+					"Correction de bugs critiques améliorant la stabilité de l'application",
+					"Refactorisation du code Python pour une meilleure maintenabilité",
+					"Mise en place de tests unitaires augmentant la couverture de code",
+					"Participation aux daily stand-ups et rétrospectives Agile"
+				]
+			}
 		],
-	"intl.title": "Projets Internationaux",
+	"intl.title": "Expériences Internationales",
 		"intl.items": [
-			{"year":"2023","title":"Coupe d'Europe de Robotique Soccer - Croatie","text":"Deuxième place à la compétition européenne de robotique soccer en Croatie. Cette compétition met en scène des robots autonomes jouant au football, avec des défis techniques d'intelligence artificielle, de vision par ordinateur et de contrôle en temps réel. Travail en équipe internationale de 4 personnes.","image":"images/international/robot-soccer-croatia.jpg"}
+			{
+				"year": "2023",
+				"title": "Coupe d'Europe de Robotique Soccer - Croatie",
+				"subtitle": "Vice-Champion d'Europe",
+				"text": "Deuxième place à la compétition européenne de robotique soccer en Croatie, face à une multitude d'équipes internationales. Cette compétition met en scène des robots autonomes jouant au football, avec des défis techniques d'intelligence artificielle, de vision par ordinateur et de contrôle en temps réel. Ma contribution technique : développement d'une stratégie prédictive de gardien en Python, implémentation d'algorithmes de vision par ordinateur pour le tracking du ballon, prédiction de trajectoire basée sur l'orientation des robots adverses, optimisation du temps de réaction pour maximiser les arrêts. Compétences développées : travail en équipe internationale (4 personnes), gestion du stress en compétition, résolution de problèmes en temps réel, leadership et prise de décision rapide.",
+				"image": "images/international/robot-soccer-croatia.jpg",
+				"tags": ["Robotique", "IA", "Python", "Vision par ordinateur", "Travail d'équipe"]
+			}
 		],
 	"engagement.title": "Engagement & Durabilité"
 		,"engagement.text": "Engagement dans l'association Article 1 pour l'égalité des chances et la réussite des étudiants issus de milieux modestes.",

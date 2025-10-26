@@ -2,7 +2,7 @@
 @use 'mixins' as m;
 
 // Toggle button
-#list { position:fixed; top:1rem; left:1rem; padding:.65rem 1.1rem; border-radius:$radius-pill; background:var(--color-primary); color:var(--color-text); cursor:pointer; z-index:50; font-weight:600; display:flex; align-items:center; justify-content:center; gap:.5rem; font-size:$font-size-sm; border:1px solid rgba(255,255,255,.15); box-shadow:0 6px 0 0 rgba(0,0,0,.6); transition:$transition-fast;
+#list { position:fixed; top:1rem; left:1rem; padding:.65rem 1.1rem; border-radius:$radius-pill; background:var(--color-primary); color:var(--color-text); cursor:pointer; z-index:1001; font-weight:600; display:flex; align-items:center; justify-content:center; gap:.5rem; font-size:$font-size-sm; border:1px solid rgba(255,255,255,.15); box-shadow:0 6px 0 0 rgba(0,0,0,.6); transition:all 0.3s ease;
 	backdrop-filter:$blur-backdrop; -webkit-backdrop-filter:$blur-backdrop;
 	&:hover{ transform:translateY(3px); box-shadow:0 3px 0 0 rgba(0,0,0,.6); }
 	&:focus-visible{ outline:2px solid $color-accent; outline-offset:3px; }
@@ -10,12 +10,20 @@
 #list i { transition:$transition-fast; font-size:1rem; }
 .decendre i { transform:rotate(180deg); }
 
+// Adjust button position when nav is scrolled
+.main-nav.scrolled ~ * #list,
+body:has(.main-nav.scrolled) #list { top:5rem; }
+
 // Panel wrapper
-.contact { width:100%; position:fixed; top:0; left:0; z-index:$z-contact; pointer-events:none; }
+.contact { width:100%; position:fixed; top:0; left:0; z-index:999; pointer-events:none; transition:all 0.3s ease; }
 .contact .lien { display:flex; justify-content:center; gap:1rem; background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 100%); padding:1rem 1.25rem 1.35rem; backdrop-filter:$blur-backdrop; -webkit-backdrop-filter:$blur-backdrop; border-bottom:1px solid rgba(255,255,255,.08);
 	max-width:1040px; margin-inline:auto; border-radius:0 0 $radius-lg $radius-lg; box-shadow:0 10px 30px -8px rgba(0,0,0,.55);
 	pointer-events:auto; flex-wrap:wrap;
 }
+
+// Adjust panel position when nav is scrolled
+.main-nav.scrolled ~ * .contact,
+body:has(.main-nav.scrolled) .contact { top:4rem; }
 
 // Items
 .contact-item { position:relative; display:flex; align-items:center; gap:.5rem; }

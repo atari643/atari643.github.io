@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState, useCallback } from 'react'
 import Hero from './components/Hero'
+import Skills from './components/Skills'
+import Achievements from './components/Achievements'
 import Projects from './components/Projects'
 import Timeline from './components/Timeline'
 import VideoSection from './components/VideoSection'
@@ -12,6 +14,7 @@ import Mentors from './components/Mentors'
 import LanguageSwitcher from './components/LanguageSwitcher'
 import ContactBar from './components/ContactBar'
 import SectionDivider from './components/SectionDivider'
+import Navigation from './components/Navigation'
 
 export default function App(){
   const { i18n, t } = useTranslation()
@@ -46,6 +49,7 @@ export default function App(){
   return (
   <div className="app-shell">
       <a href="#main" className="skip-link">{t('access.skip','Aller au contenu')}</a>
+      <Navigation />
       <button 
         className="theme-toggle" 
         onClick={toggleTheme}
@@ -61,18 +65,35 @@ export default function App(){
   <main id="main">
   <Hero />
     <SectionDivider />
+    <section id="Achievements">
+    <Achievements />
+    </section>
+    <SectionDivider variant="glow" />
+    <section id="Skills">
+    <Skills />
+    </section>
+    <SectionDivider variant="dots" />
       <section id="Cursus">
         <h1 className="section-title"><span className="accent-gradient">{t('nav.cursus')}</span></h1>
-        <Timeline items={(t('timeline.cursus',{ returnObjects:true }) as any[]).map((o,i)=>({ year:o.year, text:o.text }))} />
+        <Timeline items={t('timeline.cursus',{ returnObjects:true }) as any[]} />
       </section>
-    <SectionDivider variant="glow" />
+    <SectionDivider />
+    <section id="Career">
+    <CareerSection />
+    </section>
+    <SectionDivider />
+    <section id="Projects">
     <Projects />
-    <SectionDivider variant="dots" />
+    </section>
+    <SectionDivider variant="glow" />
   <VideoSection />
+  <SectionDivider />
+  <section id="Intl">
+  <IntlSection />
+  </section>
+  <SectionDivider />
   <Mentors />
   <ActivitySection />
-  <CareerSection />
-  <IntlSection />
   <EngagementSection />
   </main>
     </div>

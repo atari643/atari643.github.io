@@ -4,34 +4,87 @@ import React from 'react'
 import { useInView } from './three/useInView'
 import Globe from './three/Globe'
 
+interface IntlItem {
+  year: string
+  title: string
+  subtitle?: string
+  text: string
+  image?: string
+  tags?: string[]
+}
+
 export default function IntlSection(){
   const { t } = useTranslation()
-  const items = t('intl.items',{ returnObjects:true }) as any[] || []
+  const items = t('intl.items',{ returnObjects:true }) as IntlItem[] || []
   useReveal('#Internationalisation')
   const { ref: globeRef, inView: globeInView } = useInView<HTMLDivElement>({ threshold:.2 })
+  
   return (
-    <section id="Internationalisation" aria-labelledby="intl-title">
-      <h1 id="intl-title" className="section-title"><span className="accent-gradient">{t('intl.title')}</span></h1>
+    <section id="Internationalisation" aria-labelledby="intl-title" className="intl-section">
+      <h1 id="intl-title" className="section-title">
+        <span className="accent-gradient">{t('intl.title')}</span>
+      </h1>
+      
       <div ref={globeRef} className="intl-globe-wrapper" aria-describedby="intl-globe-desc">
         <div className="globe-backdrop" aria-hidden="true" />
-        {globeInView && <Globe markers={[{lat:48.8566,lon:2.3522},{lat:51.5072,lon:-0.1276},{lat:40.7128,lon:-74.006},{lat:35.6762,lon:139.6503}]} />}
+        {globeInView && <Globe markers={[
+          {lat:45.4408, lon:12.3155},  // Venice (Croatia nearby)
+          {lat:48.8566, lon:2.3522},   // Paris
+          {lat:43.6047, lon:1.4442}    // Toulouse
+        ]} />}
         <p id="intl-globe-desc" className="visually-hidden">Globe 3D décoratif indiquant quelques villes internationales.</p>
-        <span className="globe-caption" aria-hidden="true">Global Reach</span>
+        <span className="globe-caption" aria-hidden="true">Global Experience</span>
       </div>
-      <div className="timeline">
-        {items.map((it,i)=>(
-          <div key={i} className={`container ${i%2?'right':'left'}`}>
-            <div className="content">
-              <h2>{it.year}</h2>
-              <h3>{it.title}</h3>
-              {it.image && (
-                <div className="intl-image-wrapper">
-                  <img src={it.image} alt={it.title} className="intl-image" />
+      
+      <div className="intl-content">
+        {items.map((item, i) => (
+          <article key={i} className={`intl-card ${i%2?'reverse':''}`}>
+            {item.image && (
+              <div className="intl-image-wrapper">
+                <div className="intl-image-badge">
+                  <i className="icofont-trophy" aria-hidden="true"></i>
+                </div>
+                <img src={item.image} alt={item.title} className="intl-image" loading="lazy" />
+              </div>
+            )}
+            
+            <div className="intl-text">
+              <div className="intl-header">
+                <span className="intl-year">{item.year}</span>
+                <h3 className="intl-title">{item.title}</h3>
+                {item.subtitle && <p className="intl-subtitle">{item.subtitle}</p>}
+              </div>
+              
+              <div className="intl-description">
+                {item.text.split('\n\n').map((paragraph, idx) => {
+                  if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+                    return <h4 key={idx} className="intl-subheading">{paragraph.replace(/\*\*/g, '')}</h4>
+                  }
+                  if (paragraph.startsWith('- ')) {
+                    return (
+                      <ul key={idx} className="intl-list">
+                        {paragraph.split('\n').filter(l => l.startsWith('- ')).map((line, li) => (
+                          <li key={li}>
+                            <i className="icofont-check-circled" aria-hidden="true"></i>
+                            {line.substring(2)}
+                          </li>
+                        ))}
+                      </ul>
+                    )
+                  }
+                  return <p key={idx}>{paragraph}</p>
+                })}
+              </div>
+              
+              {item.tags && item.tags.length > 0 && (
+                <div className="intl-tags">
+                  {item.tags.map((tag, idx) => (
+                    <span key={idx} className="tag">{tag}</span>
+                  ))}
                 </div>
               )}
-              <p>{it.text}</p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
