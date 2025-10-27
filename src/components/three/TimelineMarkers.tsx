@@ -132,7 +132,7 @@ export default function TimelineMarkers({ count }:Props){
           m.glow.rotation.z = t*0.2 + i*.2
           ;(m.glow.material as THREE.MeshBasicMaterial).opacity = .18 + (Math.sin(t*1.4 + i)*0.5 + .5)*0.22
         })
-        lineGroup.rotation.z = Math.sin(t*0.05)*0.015
+        // lineGroup.rotation.z = Math.sin(t*0.05)*0.015 // Désactivé pour éviter le tangage
       }
       renderer.render(scene,camera)
       if(!reduced) raf = requestAnimationFrame(animate)
