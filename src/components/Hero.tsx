@@ -4,7 +4,7 @@ import HeroBackground from './three/HeroBackground'
 
 export default function Hero(){
   const { t, i18n } = useTranslation()
-  const cvHref = i18n.language === 'fr' ? '/pdf/ENSEEIHT_CV_Quentin_Artigala_FR.pdf' : '/pdf/ENSEEIHT-CV-Quentin-Artigala-EN.pdf'
+  const cvHref = i18n.language === 'fr' ? '/pdf/CV_Quentin_Artigala_FR.pdf' : '/pdf/CV_Quentin_Artigala_EN.pdf'
   
   const scrollToContact = () => {
     const contactBtn = document.getElementById('list')

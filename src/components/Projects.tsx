@@ -158,6 +158,21 @@ const projectsDataFR: Record<string, ProjectItem[]> = {
         mediaWidth:'33%'
       }
     }
+  ],
+  c: [
+    {
+      id:'c1',
+      image:'/images/C/fork-demonstration.png',
+      title:'Démonstration Fork',
+      summary:'Comprendre le mécanisme de fork en C',
+      details:{
+        title:'Projet Démonstration du Fork en C',
+        image:'/images/C/fork-demonstration.png',
+        text:"Ce projet démontre le fonctionnement du fork en langage C. Le fork est un appel système qui permet de créer un nouveau processus (processus fils) à partir d'un processus existant (processus père). Chaque processus possède son propre espace mémoire et son propre PID (Process ID). Le projet illustre comment les processus père et fils s'exécutent de manière concurrente, comment ils partagent (ou non) les variables, et comment gérer la synchronisation entre processus. Cette démonstration est essentielle pour comprendre les concepts de programmation système et de gestion des processus sous Unix/Linux.",
+        url:'https://github.com/atari643/SAESysteme',
+        buttonLabel:'GitHub'
+      }
+    }
   ]
 }
 
@@ -292,6 +307,21 @@ const projectsDataEN: Record<string, ProjectItem[]> = {
         url:'/pdf/setup/Rapport_ARTIGALA_AUBIER_S2B.md',
         buttonLabel:'Rapport Markdown', // kept original label as legacy
         mediaWidth:'33%'
+      }
+    }
+  ],
+  c: [
+    {
+      id:'c1',
+      image:'/images/C/fork-demonstration.png',
+      title:'Fork Demonstration',
+      summary:'Understanding the fork mechanism in C',
+      details:{
+        title:'Fork Demonstration Project in C',
+        image:'/images/C/fork-demonstration.png',
+        text:"This project demonstrates how the fork system call works in the C programming language. Fork is a system call that allows creating a new process (child process) from an existing process (parent process). Each process has its own memory space and its own PID (Process ID). The project illustrates how parent and child processes execute concurrently, how they share (or don't share) variables, and how to manage synchronization between processes. This demonstration is essential for understanding system programming concepts and process management in Unix/Linux.",
+        url:'https://github.com/atari643/SAESysteme',
+        buttonLabel:'GitHub'
       }
     }
   ]
@@ -469,16 +499,6 @@ export default function Projects(){
     }
   },[modal])
 
-  // Change logo on hover (swap to 2.png)
-  const hoverSwap = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, path1: string, path2: string) => {
-    const img = e.currentTarget.querySelector('img') as HTMLImageElement | null
-    if(img) img.src = path2
-  }
-  const hoverBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, path1: string, path2: string) => {
-    const img = e.currentTarget.querySelector('img') as HTMLImageElement | null
-    if(img) img.src = path1
-  }
-
   const { ref: orbRef, inView: orbInView } = useInView<HTMLDivElement>({ threshold:.15 })
   const sectionClass = ''
   return (
@@ -491,6 +511,7 @@ export default function Projects(){
           {k:'web', label:'Web'},
           {k:'csharp', label:'C#'},
           {k:'python', label:'Python'},
+          {k:'c', label:'C'},
           {k:'sql', label:'SQL'},
           {k:'linux', label:'Setup'}
         ] as {k:CategoryKey,label:string}[]).filter(n=> (data as any)[n.k])
@@ -506,25 +527,33 @@ export default function Projects(){
             onClick={()=> setActive(null)}
           >{t('projects.all','Tous')}</button>
           {([
-
-            {k:'java', label:'Java', paths:['./images/logo/logoJava/1.png','./images/logo/logoJava/2.png']},
-            {k:'web', label:'Web', paths:['./images/logo/logoWeb/1.png','./images/logo/logoWeb/2.png']},
-            {k:'csharp', label:'C#', paths:['./images/logo/logoCsharp/1.png','./images/logo/logoCsharp/2.png']},
-            {k:'python', label:'Python', paths:['./images/logo/logoPython/1.png','./images/logo/logoPython/2.png']},
-            {k:'sql', label:'SQL', paths:['./images/logo/logoSql/1.png','./images/logo/logoSql/2.png']},
-            {k:'linux', label:'Setup', paths:['./images/logo/logoSetup/1.png','./images/logo/logoSetup/2.png']}
-          ] as {k:CategoryKey,label:string,paths:[string,string]}[]).map(btn=> (
+            {k:'java', label:'Java', icon:'☕'},
+            {k:'web', label:'Web', icon:'🌐'},
+            {k:'csharp', label:'C#', icon:'#️⃣'},
+            {k:'python', label:'Python', icon:'🐍'},
+            {k:'c', label:'C', icon:'⚙️'},
+            {k:'sql', label:'SQL', icon:'🗄️'},
+            {k:'linux', label:'Setup', icon:'🔧'}
+          ] as {k:CategoryKey,label:string,icon:string}[]).map(btn=> (
             <button
               key={btn.k}
               aria-label={btn.label}
               aria-pressed={active===btn.k}
               className={active===btn.k? 'active':''}
-              onMouseOver={(e)=>hoverSwap(e,btn.paths[0],btn.paths[1])}
-              onMouseOut={(e)=>hoverBack(e,btn.paths[0],btn.paths[1])}
               onClick={()=>setActive(btn.k)}
               onKeyDown={(e)=> { if(e.key==='Enter' || e.key===' '){ e.preventDefault(); setActive(btn.k) } }}
+              style={{
+                display:'flex',
+                flexDirection:'column',
+                alignItems:'center',
+                gap:'8px',
+                padding:'12px 20px',
+                fontSize:'14px',
+                fontWeight:500
+              }}
             >
-              <img className="lang" src={btn.paths[0]} alt={btn.label} loading="lazy" decoding="async" />
+              <span style={{fontSize:'32px'}} aria-hidden="true">{btn.icon}</span>
+              <span>{btn.label}</span>
             </button>
           ))}
 
