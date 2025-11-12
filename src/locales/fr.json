@@ -144,6 +144,11 @@
 			}
 		],
 	"intl.title": "Expériences Internationales",
+		"intl.tabsLabel": "Onglets de la section internationale",
+		"intl.tabs": {
+			"experiences": "Expériences",
+			"cep": "Plan d'Évolution de Carrière"
+		},
 		"intl.items": [
 			{
 				"year": "2023",
@@ -154,6 +159,78 @@
 				"tags": ["Robotique", "IA", "Python", "Vision par ordinateur", "Travail d'équipe"]
 			}
 		],
+	"cep": {
+		"title": "Mon Plan d'Évolution de Carrière",
+		"aspirations": {
+			"title": "Mes Aspirations",
+			"fieldsLabel": "Domaines",
+			"fields": "Aérospatial & Quantique",
+			"goalLabel": "Objectif",
+			"goal": "L'intersection de l'informatique quantique & l'IA pour la simulation aérospatiale, la navigation et la science des matériaux.",
+			"marketContextLabel": "Contexte du marché",
+			"marketContext": [
+				"Le quantique pour l'aérospatial projeté à 2,5 milliards $ d'ici 2030 (Fortune BI).",
+				"Partenariat Airbus & BMW sur la simulation quantique (Airbus, 2024).",
+				"Boeing teste des capteurs quantiques en vol (Boeing, 2023)."
+			]
+		},
+		"drivers": {
+			"title": "Mes Moteurs Principaux",
+			"list": [
+				{"icon": "fa-solid fa-heart", "label": "Plaisir"},
+				{"icon": "fa-solid fa-globe", "label": "Impact"},
+				{"icon": "fa-solid fa-sack-dollar", "label": "Prospérité"}
+			],
+			"description": "Mon objectif est de trouver un rôle qui aligne ces trois aspects : un travail qui me passionne, qui a un impact positif sur le monde, et qui offre une sécurité financière."
+		},
+		"values": {
+			"title": "Mes Valeurs Clés",
+			"list": ["Innovation", "Recherche", "Impact Significatif", "Axé sur les Compétences", "Centré sur l'Humain"]
+		},
+		"roadmap": {
+			"title": "Ma Feuille de Route",
+			"timeline": [
+				{
+					"title": "2025-2026 : Stage",
+					"description": "Partir au Canada pour un stage en aérospatial."
+				},
+				{
+					"title": "2027 : Diplôme",
+					"description": "Terminer mes études avec une spécialisation pertinente."
+				},
+				{
+					"title": "Post-2027 : Carrière",
+					"description": "M'installer au Québec pour travailler dans le secteur aérospatial."
+				},
+				{
+					"title": "Vision",
+					"description": "Devenir expert à l'intersection de l'aérospatial et du quantique."
+				}
+			]
+		},
+		"context": {
+			"marketTitle": "Opportunité de Marché",
+			"market": [
+				"Le secteur de l'informatique quantique connaît une croissance significative en tant que domaine stratégique. Le marché a atteint 1,07 milliard USD en 2024 et devrait atteindre 8,6 milliards USD d'ici 2027 [1].",
+				"À l'échelle de l'industrie, les postes liés au quantique ont connu une croissance substantielle, avec des pénuries de talents documentées indiquant une forte demande à long terme [2].",
+				"Dans l'aérospatial spécifiquement, les applications quantiques passent de la recherche à l'implémentation pratique, comme le démontrent les leaders de l'industrie tels que Boeing et Airbus [3][4]."
+			],
+			"whyTitle": "Pourquoi Cette Aspiration",
+			"why": [
+				"Cette intersection représente une opportunité unique de combiner une technologie émergente avec des applications concrètes éprouvées.",
+				"Le domaine revêt une importance stratégique pour les secteurs de l'aérospatial et de la défense.",
+				"Il nécessite à la fois une expertise technique approfondie et un apprentissage continu.",
+				"Une progression de carrière claire existe dans une industrie en croissance avec une demande soutenue."
+			],
+			"referencesTitle": "Références",
+			"references": [
+				"SpinQuanta, \"Analyse du marché de l'informatique quantique,\" 2025.",
+				"LinkedIn Workforce Insights, \"Aperçu du marché de l'emploi en technologie quantique,\" 2024.",
+				"Boeing, \"Test en vol de navigation quantique,\" Août 2024.",
+				"Airbus, BMW Group et Quantinuum, \"Informatique quantique pour les applications aérospatiales,\" 2023."
+			]
+		}
+	},
 	"engagement.title": "Engagement & Durabilité"
 		,"engagement.text": "Engagement dans l'association Article 1 pour l'égalité des chances et la réussite des étudiants issus de milieux modestes.",
 	"access": {

@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import useReveal from '../hooks/useReveal'
-import React from 'react'
+import React, { useState } from 'react'
 import { useInView } from './three/useInView'
 import Globe from './three/Globe'
+import CareerEvolutionPlan from './CareerEvolutionPlan'
 
 interface IntlItem {
   year: string
@@ -16,6 +17,7 @@ interface IntlItem {
 export default function IntlSection(){
   const { t } = useTranslation()
   const items = t('intl.items',{ returnObjects:true }) as IntlItem[] || []
+  const [activeTab, setActiveTab] = useState<'experiences' | 'cep'>('experiences')
   useReveal('#Internationalisation')
   const { ref: globeRef, inView: globeInView } = useInView<HTMLDivElement>({ threshold:.2 })
   
@@ -36,7 +38,39 @@ export default function IntlSection(){
         <span className="globe-caption" aria-hidden="true">Global Experience</span>
       </div>
       
-      <div className="intl-content">
+      {/* Tabs Navigation */}
+      <div className="intl-tabs" role="tablist" aria-label={t('intl.tabsLabel')}>
+        <button
+          role="tab"
+          aria-selected={activeTab === 'experiences'}
+          aria-controls="intl-experiences-panel"
+          onClick={() => setActiveTab('experiences')}
+          className={`intl-tab ${activeTab === 'experiences' ? 'active' : ''}`}
+        >
+          <i className="icofont-globe" aria-hidden="true"></i>
+          {t('intl.tabs.experiences')}
+        </button>
+        <button
+          role="tab"
+          aria-selected={activeTab === 'cep'}
+          aria-controls="intl-cep-panel"
+          onClick={() => setActiveTab('cep')}
+          className={`intl-tab ${activeTab === 'cep' ? 'active' : ''}`}
+        >
+          <i className="icofont-rocket-alt-2" aria-hidden="true"></i>
+          {t('intl.tabs.cep')}
+        </button>
+      </div>
+
+      {/* Experiences Tab Content */}
+      <div 
+        id="intl-experiences-panel"
+        role="tabpanel"
+        aria-labelledby="intl-experiences-tab"
+        hidden={activeTab !== 'experiences'}
+        className="intl-tab-content"
+      >
+        <div className="intl-content">
         {items.map((item, i) => (
           <article key={i} className={`intl-card ${i%2?'reverse':''}`}>
             {item.image && (
@@ -86,6 +120,18 @@ export default function IntlSection(){
             </div>
           </article>
         ))}
+        </div>
+      </div>
+
+      {/* CEP Tab Content */}
+      <div 
+        id="intl-cep-panel"
+        role="tabpanel"
+        aria-labelledby="intl-cep-tab"
+        hidden={activeTab !== 'cep'}
+        className="intl-tab-content"
+      >
+        <CareerEvolutionPlan />
       </div>
     </section>
   )

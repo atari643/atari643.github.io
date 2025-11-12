@@ -144,6 +144,11 @@
 			}
 		],
 	"intl.title": "International Experience",
+		"intl.tabsLabel": "International section tabs",
+		"intl.tabs": {
+			"experiences": "Experiences",
+			"cep": "Career Evolution Plan"
+		},
 		"intl.items": [
 			{
 				"year": "2023",
@@ -154,6 +159,78 @@
 				"tags": ["Robotics", "AI", "Python", "Computer Vision", "Teamwork"]
 			}
 		],
+	"cep": {
+		"title": "My Career Evolution Plan",
+		"aspirations": {
+			"title": "My Aspirations",
+			"fieldsLabel": "Fields",
+			"fields": "Aerospace & Quantum",
+			"goalLabel": "Goal",
+			"goal": "The intersection of Quantum Computing & AI for aerospace simulation, navigation, and materials science.",
+			"marketContextLabel": "Market Context",
+			"marketContext": [
+				"Quantum for Aerospace projected at $2.5B by 2030 (Fortune BI).",
+				"Airbus & BMW partnership on quantum simulation (Airbus, 2024).",
+				"Boeing flight-testing quantum sensors (Boeing, 2023)."
+			]
+		},
+		"drivers": {
+			"title": "My Core Drivers",
+			"list": [
+				{"icon": "fa-solid fa-heart", "label": "Enjoyment"},
+				{"icon": "fa-solid fa-globe", "label": "Impact"},
+				{"icon": "fa-solid fa-sack-dollar", "label": "Prosperity"}
+			],
+			"description": "My goal is to find a role that aligns all three: a job I am passionate about, that positively impacts the world, and provides financial security."
+		},
+		"values": {
+			"title": "My Key Values",
+			"list": ["Innovation", "Research", "Meaningful Impact", "Skill-Driven", "Human-Centric"]
+		},
+		"roadmap": {
+			"title": "My Roadmap",
+			"timeline": [
+				{
+					"title": "2025-2026: Internship",
+					"description": "Go to Canada for an aerospace internship."
+				},
+				{
+					"title": "2027: Graduation",
+					"description": "Finish my studies with a relevant specialization."
+				},
+				{
+					"title": "Post-2027: Career",
+					"description": "Move to Quebec to work in the aerospace sector."
+				},
+				{
+					"title": "Vision",
+					"description": "Become an expert at the intersection of aerospace and quantum."
+				}
+			]
+		},
+		"context": {
+			"marketTitle": "Market Opportunity",
+			"market": [
+				"The quantum computing sector is experiencing significant growth as a strategic field. The market reached USD 1.07 billion in 2024 and is projected to reach USD 8.6 billion by 2027 [1].",
+				"Industry-wide, quantum-related roles have grown substantially, with documented talent shortages indicating strong long-term demand [2].",
+				"In aerospace specifically, quantum applications are moving from research to practical implementation, as demonstrated by industry leaders like Boeing and Airbus [3][4]."
+			],
+			"whyTitle": "Why This Aspiration",
+			"why": [
+				"This intersection represents a unique opportunity to combine emerging technology with proven real-world applications.",
+				"The field holds strategic importance for aerospace and defense sectors.",
+				"It requires both deep technical expertise and continuous learning.",
+				"Clear career progression exists in a growing industry with sustained demand."
+			],
+			"referencesTitle": "References",
+			"references": [
+				"SpinQuanta, \"Quantum Computing Market Analysis,\" 2025.",
+				"LinkedIn Workforce Insights, \"Quantum Technology Job Market Overview,\" 2024.",
+				"Boeing, \"Quantum Navigation Flight Test,\" Aug. 2024.",
+				"Airbus, BMW Group, and Quantinuum, \"Quantum Computing for Aerospace Applications,\" 2023."
+			]
+		}
+	},
 	"engagement.title": "Sustainability & Civic Engagement"
 		,"engagement.text": "Involved in Article 1 association promoting equal opportunities for students from modest backgrounds.",
 	"access": {
