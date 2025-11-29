@@ -161,6 +161,12 @@
 		],
 	"cep": {
 		"title": "Mon Plan d'Évolution de Carrière",
+		"downloadPdf": "Télécharger le PDF",
+		"bibliography": {
+			"title": "Bibliographie",
+			"subtitle": "Career Evolution Plan - Documentation et Sources",
+			"referencesTitle": "Références"
+		},
 		"aspirations": {
 			"title": "Mes Aspirations",
 			"fieldsLabel": "Domaines",
