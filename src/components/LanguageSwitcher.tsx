@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
 /**
@@ -6,20 +6,10 @@ import { useTranslation } from 'react-i18next'
  * - Persists choice in localStorage (key: lang)
  * - Highlights active language
  * - Accessible (keyboard + aria)
+ * Note: Initial language is loaded in i18n.ts before React renders
  */
 export default function LanguageSwitcher(){
   const { i18n } = useTranslation()
-
-  // Load persisted language once
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem('lang')
-      if(stored && ['fr','en'].indexOf(stored) !== -1 && stored !== i18n.language){
-        i18n.changeLanguage(stored)
-      }
-    } catch { /* ignore */ }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   const setLang = useCallback((lng:string) => {
     if(lng === i18n.language) return
