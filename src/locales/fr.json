@@ -109,7 +109,7 @@
 		"activities.items": [
 			{"title":"Club de Robotique","description":"Membre actif du club de robotique. Participation à plusieurs compétitions nationales et internationales, notamment la Coupe de France et la Coupe d'Europe où nous avons obtenu la deuxième place.","icon":"icofont-robot"},
 			{"title":"Natation","description":"Pratique régulière de la natation pour maintenir une bonne condition physique et développer l'endurance.","icon":"icofont-swimmer"},
-			{"title":"Trampoline","description":"Pratique du trampoline pour améliorer l'équilibre, la coordination et le contrôle corporel.","icon":"icofont-kid"}
+			{"title":"Trampoline","description":"Pratique du trampoline pour améliorer l'équilibre, la coordination et le contrôle corporel.","icon":"icofont-jumping"}
 		],
 	"career.title": "Expériences Professionnelles",
 		"career.items": [

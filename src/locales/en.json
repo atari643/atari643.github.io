@@ -109,7 +109,7 @@
 		"activities.items": [
 			{"title":"Robotics Club","description":"Active member of the robotics club. Participation in several national and international competitions, including the French Cup and the European Cup where we achieved second place.","icon":"icofont-robot"},
 			{"title":"Swimming","description":"Regular swimming practice to maintain good physical condition and develop endurance.","icon":"icofont-swimmer"},
-			{"title":"Trampoline","description":"Trampoline practice to improve balance, coordination and body control.","icon":"icofont-kid"}
+			{"title":"Trampoline","description":"Trampoline practice to improve balance, coordination and body control.","icon":"icofont-jumping"}
 		],
 	"career.title": "Professional Experience",
 		"career.items": [
