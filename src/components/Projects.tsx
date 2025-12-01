@@ -451,9 +451,6 @@ export default function Projects(){
     return () => { if(pressTimer.current) window.clearInterval(pressTimer.current) }
   }, [])
 
-  // Scroll to exp on selection
-  useEffect(() => { if(active) document.getElementById('exp')?.scrollIntoView({behavior:'smooth'}) }, [active])
-
   // Body scroll lock when modal open (prevent page jump to top)
   useEffect(()=>{
     if(modal){
@@ -576,10 +573,10 @@ export default function Projects(){
       </div>
   <div className="projet" id="exp" aria-live="polite">
         {list.length ? (
-          <div className="grid">
+          <div className="grid" key={`grid-${active || 'all'}-${query}`}>
       {list.map(item => (
               <div
-                key={item.id}
+                key={`${item.__cat || 'all'}-${item.id}`}
                 className="card"
                 role="button"
                 tabIndex={0}
