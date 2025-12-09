@@ -173,6 +173,21 @@ const projectsDataFR: Record<string, ProjectItem[]> = {
         buttonLabel:'GitHub'
       }
     }
+  ],
+  matlab: [
+    {
+      id:'m1',
+      image:'/images/matlab/stats_preview.png',
+      title:'TP Statistiques',
+      summary:'Analyse statistique et simulation',
+      details:{
+        title:'Initiation Matlab et Statistiques',
+        image:'/images/matlab/stats_preview.png',
+        text:"Ce projet consiste en une initiation à MATLAB appliquée aux statistiques. Il explore la génération de variables aléatoires (loi uniforme, transformation de Box-Müller pour la loi normale), l'estimation de paramètres (loi de Weibull), et les tests d'adéquation (test de Kolmogorov). Le projet inclut la génération de signaux de test, l'étude de la convergence des estimateurs (méthode des moments vs maximum de vraisemblance) et l'analyse de données réelles (vitesse du vent).",
+        url:'https://github.com/atari643/MATLAB',
+        buttonLabel:'GitHub'
+      }
+    }
   ]
 }
 
@@ -321,6 +336,21 @@ const projectsDataEN: Record<string, ProjectItem[]> = {
         image:'/images/C/fork-demonstration.png',
         text:"This project demonstrates how the fork system call works in the C programming language. Fork is a system call that allows creating a new process (child process) from an existing process (parent process). Each process has its own memory space and its own PID (Process ID). The project illustrates how parent and child processes execute concurrently, how they share (or don't share) variables, and how to manage synchronization between processes. This demonstration is essential for understanding system programming concepts and process management in Unix/Linux.",
         url:'https://github.com/atari643/SAESysteme',
+        buttonLabel:'GitHub'
+      }
+    }
+  ],
+  matlab: [
+    {
+      id:'m1',
+      image:'/images/matlab/stats_preview.png',
+      title:'Statistics Lab',
+      summary:'Statistical analysis and simulation',
+      details:{
+        title:'Matlab Introduction and Statistics',
+        image:'/images/matlab/stats_preview.png',
+        text:"This project is an introduction to MATLAB applied to statistics. It explores the generation of random variables (uniform distribution, Box-Muller transform for normal distribution), parameter estimation (Weibull distribution), and goodness-of-fit tests (Kolmogorov test). The project includes the generation of test signals, the study of estimator convergence (method of moments vs maximum likelihood), and the analysis of real data (wind speed).",
+        url:'https://github.com/atari643/MATLAB',
         buttonLabel:'GitHub'
       }
     }
@@ -510,7 +540,8 @@ export default function Projects(){
           {k:'python', label:'Python'},
           {k:'c', label:'C'},
           {k:'sql', label:'SQL'},
-          {k:'linux', label:'Setup'}
+          {k:'linux', label:'Setup'},
+          {k:'matlab', label:'Matlab'}
         ] as {k:CategoryKey,label:string}[]).filter(n=> (data as any)[n.k])
           .map(n=> ({ key:n.k, label:n.label }))} active={active} />}
       </div>
@@ -530,7 +561,8 @@ export default function Projects(){
             {k:'python', label:'Python', icon:'🐍'},
             {k:'c', label:'C', icon:'⚙️'},
             {k:'sql', label:'SQL', icon:'🗄️'},
-            {k:'linux', label:'Setup', icon:'🔧'}
+            {k:'linux', label:'Setup', icon:'🔧'},
+            {k:'matlab', label:'Matlab', icon:'📊'}
           ] as {k:CategoryKey,label:string,icon:string}[]).map(btn=> (
             <button
               key={btn.k}
